@@ -1,8 +1,12 @@
-## Hottest Technologies
+# Hottest Technologies
 
 hottesttechnologies.com
 
 The website with statistics and trends about popular technologies.
+
+## Scraper
+
+The web scraper is the most important part of the project. We will need to scrape job listings from anywhere we can get our hands on them and extract key words (thinking cross)
 
 # TODO: UPDATE THIS
 
