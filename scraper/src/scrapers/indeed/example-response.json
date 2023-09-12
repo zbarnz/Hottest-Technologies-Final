@@ -1,0 +1,937 @@
+{
+  "status": "success",
+  "body": {
+    "accountKey": null,
+    "additionalLinksViewModel": {
+      "careerGuideArticleLinks": [],
+      "nearbyLocationLinks": [],
+      "similarCategoryLinks": [],
+      "similarJobTitleLinks": []
+    },
+    "apiPaths": {},
+    "apolloCachedResponse": [
+      {
+        "queryDocument": "query getViewJobJobData($jobKey: ID!, $shouldQueryJobTitle: Boolean!, $shouldQueryJobData: Boolean!, $shouldQuerySavedJob: Boolean!, $shouldQueryTitleNorm: Boolean!, $shouldQueryCompanyFields: Boolean!, $shouldQuerySalary: Boolean!, $shouldQueryIndeedApplyLink: Boolean!, $shouldQueryParentEmployer: Boolean!, $mobvjtk: String) { jobData(input: {jobKeys: [$jobKey]}) { __typename results { __typename job { __typename key ...JobTitle @include(if: $shouldQueryJobTitle) ...jobDataFields @include(if: $shouldQueryJobData) ...titleNormFields @include(if: $shouldQueryTitleNorm) ...companyFields @include(if: $shouldQueryCompanyFields) ...parentEmployerFields @include(if: $shouldQueryParentEmployer) compensation @include(if: $shouldQuerySalary) { __typename key } indeedApply @include(if: $shouldQueryIndeedApplyLink) { __typename applyLink(property: INDEED, trackingKeys: {mobvjtk: $mobvjtk}) { __typename url iaUid } } } } } savedJobsByKey(keys: [$jobKey]) @include(if: $shouldQuerySavedJob) { __typename state currentStateTime } } fragment JobTitle on Job { __typename title } fragment jobDataFields on Job { __typename title sourceEmployerName datePublished expired language normalizedTitle refNum source { __typename key name } feed { __typename key isDradis feedSourceType } url dateOnIndeed description { __typename html text } location { __typename countryCode admin1Code admin2Code admin3Code admin4Code city postalCode latitude longitude streetAddress formatted { __typename long short } } occupations { __typename key label } jobTypes: attributes(customClass: \"BM62A\") { __typename key label } indeedApply { __typename key scopes } attributes { __typename key label } hiringDemand { __typename isUrgentHire isHighVolumeHiring } thirdPartyTrackingUrls jobSearchMobileMigrationData { __typename advertiserId applyEmail applyUrl contactEmail contactPhone isNoUniqueUrl urlRewriteRule mapDisplayType jobTags locCountry tpiaAdvNum tpiaApiToken tpiaCoverLetter tpiaEmail tpiaFinishAppUrl tpiaJobCompanyName tpiaJobId tpiaJobLocation tpiaJobMeta tpiaJobTitle tpiaLocale tpiaName tpiaPhone tpiaPostUrl tpiaPresent tpiaResume tpiaResumeFieldsOptional tpiaResumeFieldsRequired tpiaScreenerQuestions iaVisibility } } fragment titleNormFields on Job { __typename normalizedTitle displayTitle } fragment companyFields on Job { __typename employer { __typename name key tier relativeCompanyPageUrl dossier { __typename images { __typename rectangularLogoUrl headerImageUrls { __typename url1960x400 } squareLogoUrls { __typename url256 } } } ugcStats { __typename globalReviewCount ratings { __typename overallRating { __typename count value } } } } } fragment parentEmployerFields on Job { __typename employer { __typename subsidiaryOptOutStatus parentEmployer { __typename name subsidiaryOptOutStatus } } }",
+        "responseData": {
+          "jobData": {
+            "__typename": "JobDataPayload",
+            "results": [
+              {
+                "__typename": "JobDataResult",
+                "job": {
+                  "__typename": "Job",
+                  "key": "205564c9d0c7ddd0",
+                  "title": "Embedded Software Engineer Manager",
+                  "employer": {
+                    "__typename": "Employer",
+                    "subsidiaryOptOutStatus": false,
+                    "parentEmployer": null
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "variables": {
+          "jobKey": "205564c9d0c7ddd0",
+          "shouldQueryJobTitle": true,
+          "shouldQueryJobData": false,
+          "shouldQuerySavedJob": false,
+          "shouldQueryTitleNorm": false,
+          "shouldQueryCompanyFields": false,
+          "shouldQuerySalary": false,
+          "shouldQueryIndeedApplyLink": false,
+          "shouldQueryParentEmployer": true,
+          "mobvjtk": "1h9uf4l9diofd815"
+        }
+      }
+    ],
+    "appCommonData": null,
+    "applyButtonSDKEnabled": true,
+    "autoClickApply": false,
+    "base64EncodedJson": "eyJjIjp0cnVlLCJlIjp0cnVlLCJnIjoiaHR0cDovL3d3dy5pbmRlZWQuY29tL3ZpZXdqb2I_ams9MjA1NTY0YzlkMGM3ZGRkMCZmcm9tPXRwLXNwb25maXJzdGpvYiZ0az0xaDl1ZjRqNXZpb2ZkODAyJnZpZXd0eXBlPWVtYmVkZGVkJmFkdm49MTE2NTIxMDYwMTc4MDMyNSZhZGlkPTM3MTIwMzMxMCZhZD0tNk5ZbGJma04wQkptelcyUDdpSmV2aHRFeVQ5aVA1cnJWNHlESTZmdXdGWWVXd1hUb1Bhbkc4eS1Ta242ek9IeEtWUFBlT1dEVFFJOG03UFdiTGNGamZscDF3dnpTYnU1ejFNc3NMQ3BPZ2wwQXEyU0VvaVQ3QVgyYmczMk9MaWE4MmpHS0Vud2FXd3JQclFCRmVqMHpDb3dOUmUwQks3M0ZVTXY4SjA0T215LXdRaFh2aUFlUkkzM3VQX0pUU2ZJUUpxR2ptYXBmVXQwYmJrNlZzSWRYRGd3RFlFTmtkSEtRNlltS0NkZXBDS2Y4WUJYdlBXUkZmOVhpZWcyZ2VVYW1TRkN3N1JTdlpWU0F3cGMxdHpWanlTZ0JSVWRLUEdUQ1Vmd3NrTjFyMjJ3RDFJVmVoTXJEbFFfVnJQRmtFX2pGQzRVZm1KQklKbi1TYnVQTWRQaEp1MTZETkVGVXh5QnFlTXdLTnBaN3Z5dnhaRDZWX2VMNXEyTkk0MlZGZDY3T0VjUVdtWkdwOEYxWnFZZUdmQmtqWTZvV3czNTRhNk5VdlJ3aVdpR2lIVk9QTTlYU0hjOGJPMW96ZVVoVEVWdXhGd29Hdmdfa3VQQ25HcmpZOHlrMjBia1VNVWdxNXRsaHB3Y1NIYlAwR19oMGVhNFdVNVR0ZVkxNDgzQ19NWlNtMFVDeVJVM05CYl9GVzRqTGY1NmN4TTJMVG5OSEhSTVJ4WmpYWGhoX2h6RGdHTS1nYUFkdmJCaVdFMDFHTEx6bWUyWk9BNmZqaC1qbW5Od29Hb2FIOGxWd0wxREo0NyZ4a2NiPVNvRFctX00zTC1XZHFhekF4SjBMYnprZENkUFAmY29udGludWVVcmw9JTJGam9icyUzRnElM0Rzb2Z0d2FyZSUyQmVuZ2luZWVyJTI2bCUzRFVuaXRlZCUyQlN0YXRlcyZzcGE9MSZoaWRlY21waGVhZGVyPTAiLCJoIjoiRW1iZWRkZWQgU29mdHdhcmUgRW5naW5lZXIgTWFuYWdlciIsImkiOiJTeXJhY3VzZSwgTlkgMTMyMTIiLCJqIjoic3BvbnNvcmVkIn0",
+    "baseInboxUrl": "https:\u002F\u002Finbox.indeed.com",
+    "baseUrl": "https:\u002F\u002Fwww.indeed.com",
+    "benefitsModel": {
+      "benefits": [
+        { "key": "FVKX2", "label": "401(k)" },
+        { "key": "FQJ2X", "label": "Dental insurance" },
+        { "key": "QXB7R", "label": "Employee assistance program" },
+        { "key": "G85UP", "label": "Flexible spending account" },
+        { "key": "EY33Q", "label": "Health insurance" },
+        { "key": "7KV6C", "label": "Health savings account" },
+        { "key": "HW4J4", "label": "Paid time off" },
+        { "key": "YDH5H", "label": "Referral program" },
+        { "key": "YQ98H", "label": "Retirement plan" },
+        { "key": "HJUWZ", "label": "Tuition reimbursement" },
+        { "key": "RZAT2", "label": "Vision insurance" }
+      ],
+      "benefitsCollapseThreshold": 7
+    },
+    "callToInterviewButtonModel": null,
+    "categorizedAttributesModel": null,
+    "chatbotApplyButtonLinkModel": null,
+    "clientsideProctorGroups": {
+      "collapsedJobDescription": false,
+      "isMosaicJobDetailsActive": false,
+      "showJobLocationBelowJD": false,
+      "splitRender": false,
+      "showSalaryGuide": true,
+      "callToApplyStickyBelowApplyNow": false,
+      "isVjLabelUpdateTestActive": false,
+      "isShiftRollupModuleActive": true,
+      "clearResetString": false,
+      "simpleVJImprove": false,
+      "isJsViewjobJobdetailsImproveSubheaderActive": true,
+      "simple2Pane": true,
+      "richerAppPromoV4": false,
+      "richerAppPromoV3": false,
+      "callToApplyStickySideBySide": false,
+      "connectionNavigator": false,
+      "richerAppPromoV5": false,
+      "richerAppPromoV2": false,
+      "richerAppPromoV1": false,
+      "addSaveButtonBack": true,
+      "toastOnVJFromDC": false,
+      "mobVJBenefits": true,
+      "oneGraphMigrationTitle": true,
+      "isConnectionNavigatorCallPrimary": true,
+      "hideJobDetialsForExpiredJobs": true,
+      "showJobLocationAboveJD": false,
+      "desktopvj_stickyheader_tst": false,
+      "callButtonPrimaryApplySecondary": false
+    },
+    "cmiJobCategoryModel": null,
+    "collapsedDescriptionPayload": {
+      "click": 0,
+      "descriptionHeight": "10rem",
+      "isDisclaimerAboveApply": false
+    },
+    "commuteInfoModel": {
+      "addressLinked": false,
+      "companyLocation": "7313 William Barry Boulevard, Syracuse, NY 13212",
+      "externalAddressLink": null,
+      "formattedStreetAddress": "7313 William Barry Boulevard, Syracuse, NY 13212",
+      "jobLatitude": 43.123554,
+      "jobLongitude": -76.10569,
+      "mapAriaLabel": "Map of job's location",
+      "mapPosition": "LOWER",
+      "obscureEmployerLocation": false,
+      "preciselyKey": "UDVInhyR3H3SEt5iGLsgu4nLaCEEhMr44fxUPU2V",
+      "staticMapsUrl": "https:\u002F\u002Fapi-maps.precisely.com\u002Fmaps\u002Fv1\u002Ftile\u002Fosm\u002F{z}\u002F{x}\u002F{y}.png"
+    },
+    "companyAvatarModel": null,
+    "companyFollowFormModel": null,
+    "companyTabModel": null,
+    "contactPersonModel": null,
+    "country": "US",
+    "cssResetProviders": {},
+    "ctk": "1h9uej3m1j5l7800",
+    "dcmModel": {
+      "category": "jobse0",
+      "source": "6927552",
+      "type": "sponsored"
+    },
+    "desktop": true,
+    "dgToken": "7B070A9AABDFD29DAD690D8D3BB9540B",
+    "dislikeFrom2paneEnabled": true,
+    "downloadAppButtonModel": null,
+    "dsanr": false,
+    "employerResponsiveCardModel": null,
+    "from": "tp-sponfirstjob",
+    "globalnavFooterHTML": "",
+    "globalnavHeaderHTML": "",
+    "highQualityMarketplace": null,
+    "highQualityMarketplaceHiringManager": null,
+    "hiringInsightsModel": {
+      "age": "30+ days ago",
+      "employerLastReviewed": 9,
+      "employerResponsiveCardModel": null,
+      "numOfCandidates": "1",
+      "postedToday": false,
+      "recurringHireText": null,
+      "urgentlyHiringModel": null
+    },
+    "indeedApplyButtonContainer": {
+      "disabled": false,
+      "employerResponsiveCard": null,
+      "enableStickyInquiry": false,
+      "enableStickyInquiryTooltip": false,
+      "hasMessage": false,
+      "iframeIndeedApplyButton": false,
+      "indeedApplyAttributes": "data-indeed-apply-apiToken='aa102235a5ccb18bd3668c0e14aa3ea7e2503cfac2a7a9bf3d6549899e125af4' data-indeed-apply-jobTitle='Embedded Software Engineer Manager' data-indeed-apply-jobId='647d514b678ae0cd9361' data-indeed-apply-jobLocation='Syracuse, NY 13212' data-indeed-apply-jobCompanyName='ICM Controls Corp' data-indeed-apply-jobMeta='{&amp;quot;vtk&amp;quot;:&amp;quot;1h9uf4l9diofd815&amp;quot;,&amp;quot;tk&amp;quot;:&amp;quot;1h9uf4j5viofd802&amp;quot;}' data-indeed-apply-questions='iq:\u002F\u002F647d514b678ae0cd9361?v=1' data-indeed-apply-postUrl='http:\u002F\u002Fmuffit\u002Fprocess-indeedapply' data-indeed-apply-coverletter='optional' data-indeed-apply-phone='optional' data-indeed-apply-resume='required' data-indeed-apply-jobUrl='https:\u002F\u002Fwww.indeed.com\u002Fviewjob?jk=205564c9d0c7ddd0' data-indeed-apply-advnum='1165210601780325' data-indeed-apply-noButtonUI='true' data-indeed-apply-pingbackUrl='https:\u002F\u002Fgdc.indeed.com\u002Fconv\u002ForgIndApp?co=US&amp;vjtk=1h9uf4l9diofd815&amp;jk=205564c9d0c7ddd0&amp;mvj=0&amp;tk=1h9uf4j5viofd802&amp;trk.origin=jobsearch&amp;sj=1&amp;vjfrom=tp-sponfirstjob&amp;advn=1165210601780325&amp;adid=371203310&amp;ad=-6NYlbfkN0BJmzW2P7iJevhtEyT9iP5rrV4yDI6fuwFYeWwXToPanG8y-Skn6zOHxKVPPeOWDTQI8m7PWbLcFjflp1wvzSbu5z1MssLCpOgl0Aq2SEoiT7AX2bg32OLia82jGKEnwaWwrPrQBFej0zCowNRe0BK73FUMv8J04Omy-wQhXviAeRI33uP_JTSfIQJqGjmapfUt0bbk6VsIdXDgwDYENkdHKQ6YmKCdepCKf8YBXvPWRFf9Xieg2geUamSFCw7RSvZVSAwpc1tzVjySgBRUdKPGTCUfwskN1r22wD1IVehMrDlQ_VrPFkE_jFC4UfmJBIJn-SbuPMdPhJu16DNEFUxyBqeMwKNpZ7vyvxZD6V_eL5q2NI42VFd67OEcQWmZGp8F1ZqYeGfBkjY6oWw354a6NUvRwiWiGiHVOPM9XSHc8bO1ozeUhTEVuxFwoGvg_kuPCnGrjY8yk20bkUMUgq5tlhpwcSHbP0G_h0ea4WU5TteY1483C_MZSm0UCyRU3NBb_FW4jLf56cxM2LTnNHHRMRxZjXXhh_hzDgGM-gaAdvbBiWE01GLLzme2ZOA6fjh-jmnNwoGoaH8lVwL1DJ47&amp;xkcb=SoDW-_M3L-WdqazAxJ0LbzkdCdPP&amp;astse=6bb76924a2f71d6e&amp;assa=925' data-indeed-apply-onappliedstatus='_updateIndeedApplyStatus' data-indeed-apply-onready='_onButtonReady' data-indeed-apply-jk='205564c9d0c7ddd0' data-indeed-apply-onclose=\"indeedApplyHandleModalClose\" data-indeed-apply-onapplied=\"indeedApplyHandleApply\" data-indeed-apply-oncontinueclick=\"indeedApplyHandleModalClose\" data-indeed-apply-onClick=\"indeedApplyHandleButtonClick\" data-indeed-apply-returnToJobSearchUrl='' data-acc-payload=\"1,2,22,1,144,1,552,1,3648,1,4392,1\"  data-indeed-apply-recentsearchquery='{\"what\":\"software engineer\",\"where\":\"United States\"}'",
+      "indeedApplyBaseUrl": "https:\u002F\u002Fapply.indeed.com",
+      "indeedApplyBootStrapAttributes": {
+        "spn": "1",
+        "hl": "en",
+        "tk": "1h9uf4j5viofd802",
+        "source": "idd",
+        "co": "US",
+        "vjtk": "1h9uf4l9diofd815",
+        "rsjc": "c1f894deebea3a02"
+      },
+      "indeedApplyButtonAttributes": {
+        "postUrl": "http:\u002F\u002Fmuffit\u002Fprocess-indeedapply",
+        "jk": "205564c9d0c7ddd0",
+        "onClick": "indeedApplyHandleButtonClick",
+        "jobTitle": "Embedded Software Engineer Manager",
+        "questions": "iq:\u002F\u002F647d514b678ae0cd9361?v=1",
+        "onappliedstatus": "_updateIndeedApplyStatus",
+        "advnum": "1165210601780325",
+        "jobCompanyName": "ICM Controls Corp",
+        "recentsearchquery": "{\"what\":\"software engineer\",\"where\":\"United States\"}",
+        "onclose": "indeedApplyHandleModalClose",
+        "jobUrl": "https:\u002F\u002Fwww.indeed.com\u002Fviewjob?jk=205564c9d0c7ddd0",
+        "onready": "_onButtonReady",
+        "onapplied": "indeedApplyHandleApply",
+        "coverletter": "optional",
+        "resume": "required",
+        "jobMeta": "{&quot;vtk&quot;:&quot;1h9uf4l9diofd815&quot;,&quot;tk&quot;:&quot;1h9uf4j5viofd802&quot;}",
+        "pingbackUrl": "https:\u002F\u002Fgdc.indeed.com\u002Fconv\u002ForgIndApp?co=US&vjtk=1h9uf4l9diofd815&jk=205564c9d0c7ddd0&mvj=0&tk=1h9uf4j5viofd802&trk.origin=jobsearch&sj=1&vjfrom=tp-sponfirstjob&advn=1165210601780325&adid=371203310&ad=-6NYlbfkN0BJmzW2P7iJevhtEyT9iP5rrV4yDI6fuwFYeWwXToPanG8y-Skn6zOHxKVPPeOWDTQI8m7PWbLcFjflp1wvzSbu5z1MssLCpOgl0Aq2SEoiT7AX2bg32OLia82jGKEnwaWwrPrQBFej0zCowNRe0BK73FUMv8J04Omy-wQhXviAeRI33uP_JTSfIQJqGjmapfUt0bbk6VsIdXDgwDYENkdHKQ6YmKCdepCKf8YBXvPWRFf9Xieg2geUamSFCw7RSvZVSAwpc1tzVjySgBRUdKPGTCUfwskN1r22wD1IVehMrDlQ_VrPFkE_jFC4UfmJBIJn-SbuPMdPhJu16DNEFUxyBqeMwKNpZ7vyvxZD6V_eL5q2NI42VFd67OEcQWmZGp8F1ZqYeGfBkjY6oWw354a6NUvRwiWiGiHVOPM9XSHc8bO1ozeUhTEVuxFwoGvg_kuPCnGrjY8yk20bkUMUgq5tlhpwcSHbP0G_h0ea4WU5TteY1483C_MZSm0UCyRU3NBb_FW4jLf56cxM2LTnNHHRMRxZjXXhh_hzDgGM-gaAdvbBiWE01GLLzme2ZOA6fjh-jmnNwoGoaH8lVwL1DJ47&xkcb=SoDW-_M3L-WdqazAxJ0LbzkdCdPP&astse=6bb76924a2f71d6e&assa=925",
+        "noButtonUI": "true",
+        "jobId": "647d514b678ae0cd9361",
+        "apiToken": "aa102235a5ccb18bd3668c0e14aa3ea7e2503cfac2a7a9bf3d6549899e125af4",
+        "jobLocation": "Syracuse, NY 13212",
+        "phone": "optional",
+        "oncontinueclick": "indeedApplyHandleModalClose",
+        "returnToJobSearchUrl": ""
+      },
+      "indeedApplyButtonModel": {
+        "applyBtnNewStyle": true,
+        "buttonSize": "block",
+        "buttonType": "branded",
+        "contentHtml": "Apply now",
+        "dataHref": null,
+        "disclaimer": null,
+        "href": "\u002F",
+        "icon": null,
+        "isBlock": false,
+        "isBookmarkIcon": null,
+        "isSimpleVjImproveActive": null,
+        "largeScreenSizeText": null,
+        "newTabWarningText": "opens in a new tab",
+        "occupationIds": null,
+        "openInNewTab": false,
+        "profileMicrocontentNegativeResponseValue": null,
+        "referrerpolicy": null,
+        "rel": null,
+        "sanitizedHref": null,
+        "sanitizedHtml": null,
+        "sticky": false,
+        "target": null,
+        "title": null,
+        "uipMosaicProviderEnv": null,
+        "viewJobDisplay": null
+      },
+      "indeedApplyScriptAttributes": {
+        "data-indeed-apply-qs": "vjtk=1h9uf4l9diofd815&tk=1h9uf4j5viofd802&rsjc=c1f894deebea3a02&spn=1"
+      },
+      "indeedApplyScriptLocation": "https:\u002F\u002Fapply.indeed.com\u002Findeedapply\u002Fstatic\u002Fscripts\u002Fapp\u002Fbootstrap.js?hl=en&co=US&source=idd",
+      "indeedApplyUrl": null,
+      "indeedPlusTestingEnv": false,
+      "shouldUseButtonPlaceholder": true,
+      "showIAPostapplySuccessToast": false,
+      "stagingLevel": "prod"
+    },
+    "indeedLogoModel": null,
+    "inlineJsErrEnabled": false,
+    "isApp": false,
+    "isApplyTextColorChanges": true,
+    "isApplyTextSizeChanges": true,
+    "isCriOS": false,
+    "isDislikeFormV2Enabled": false,
+    "isSafariForIOS": false,
+    "isSalaryNewDesign": false,
+    "isSyncJobs": false,
+    "jasJobViewPingModel": {
+      "url": "https:\u002F\u002Fjas.indeednps.com\u002F?jk=205564c9d0c7ddd0&ak=020d20624c6bde8bbd3b"
+    },
+    "jasxInputWhatWhereActive": true,
+    "jobAlertSignInModalModel": null,
+    "jobAlertSignUp": null,
+    "jobCardStyleModel": {
+      "fontSizeEnlarged": false,
+      "highContrastIconShown": false,
+      "jobCardShelfApplied": false,
+      "salaryBlack": false,
+      "shouldMarkClickedJobAsVisited": false
+    },
+    "jobInfoWrapperModel": {
+      "jobInfoModel": {
+        "appliedStateBannerModel": null,
+        "commuteInfoModel": {
+          "addressLinked": false,
+          "companyLocation": "7313 William Barry Boulevard, Syracuse, NY 13212",
+          "externalAddressLink": null,
+          "formattedStreetAddress": "7313 William Barry Boulevard, Syracuse, NY 13212",
+          "jobLatitude": 43.123554,
+          "jobLongitude": -76.10569,
+          "mapAriaLabel": "Map of job's location",
+          "mapPosition": "LOWER",
+          "obscureEmployerLocation": false,
+          "preciselyKey": "UDVInhyR3H3SEt5iGLsgu4nLaCEEhMr44fxUPU2V",
+          "staticMapsUrl": "https:\u002F\u002Fapi-maps.precisely.com\u002Fmaps\u002Fv1\u002Ftile\u002Fosm\u002F{z}\u002F{x}\u002F{y}.png"
+        },
+        "expiredJobMetadataModel": null,
+        "hideCmpHeader": false,
+        "isSmbD2iEnabled": false,
+        "jobDebugInfoModel": null,
+        "jobDescriptionSectionModel": {
+          "acmeMicrocontentSurveyUrl": "https:\u002F\u002Fcocos-api.indeed.com",
+          "isViewJobMismatchBadgeLoggingEnabled": false,
+          "jobDetailsSection": {
+            "contents": {},
+            "highlightedAttributesSectionModels": [],
+            "interactivePreferenceCollectionTst": -1,
+            "isJobDetailPreferenceCollectionEnabled": false,
+            "isJobDetailsShiftPreferenceCollectionEnabled": false,
+            "isJobExpired": false,
+            "isMinimumPayPreferenceEnabled": false,
+            "isMobPreferenceMatchVJActive": true,
+            "isMobSalaryTextActive": true,
+            "isMobVJSimpleJobDetailsActive": false,
+            "isPreferenceMismatchBanIconEnabled": false,
+            "isSimpleVJImproveActive": false,
+            "isVJPreferencesDataCollectionActive": false,
+            "isVJPreferencesGroupingsActive": false,
+            "isVJPreferencesHighlightedAttributesActive": true,
+            "isVJPreferencesUiGroupingsActive": false,
+            "jobTypes": [
+              {
+                "customClassLabels": [],
+                "customClassSuids": [],
+                "label": "Full-time",
+                "sentiment": "UNKNOWN",
+                "suid": "CF3CP"
+              }
+            ],
+            "knownUserSentimentIdMap": {},
+            "minimumPayPreferenceTst": -1,
+            "salaryInfoModel": null,
+            "segmentPreferences": [],
+            "shifts": [],
+            "shiftsAndSchedule": [
+              {
+                "customClassLabels": [
+                  "Indeed Attribute",
+                  "Shift",
+                  "Indeed Concept",
+                  "Hierarchically Ordered Attribute",
+                  "Schedule",
+                  "Job Detail",
+                  "Shift Length"
+                ],
+                "customClassSuids": [
+                  "68SWW",
+                  "2YJP9",
+                  "ZSMXX",
+                  "7A4G6",
+                  "BTSWR",
+                  "UHRV5",
+                  "6TMQE"
+                ],
+                "label": "8 hour shift",
+                "sentiment": "UNKNOWN",
+                "suid": "5GUGE"
+              },
+              {
+                "customClassLabels": [
+                  "Indeed Attribute",
+                  "Standard Shift",
+                  "Shift",
+                  "Indeed Concept",
+                  "Shift Time",
+                  "Schedule",
+                  "Job Detail",
+                  "Gig Feature"
+                ],
+                "customClassSuids": [
+                  "68SWW",
+                  "HJUZ4",
+                  "2YJP9",
+                  "ZSMXX",
+                  "FMH6S",
+                  "BTSWR",
+                  "UHRV5",
+                  "JA7AC"
+                ],
+                "label": "Day shift",
+                "sentiment": "UNKNOWN",
+                "suid": "PMS5Q"
+              },
+              {
+                "customClassLabels": [
+                  "Indeed Attribute",
+                  "Weekly Schedule",
+                  "Indeed Concept",
+                  "Weekly Day Range",
+                  "Day Range",
+                  "Schedule",
+                  "Job Detail"
+                ],
+                "customClassSuids": [
+                  "68SWW",
+                  "HMANH",
+                  "ZSMXX",
+                  "CZ9RJ",
+                  "SZ6CD",
+                  "BTSWR",
+                  "UHRV5"
+                ],
+                "label": "Monday to Friday",
+                "sentiment": "UNKNOWN",
+                "suid": "SAP7A"
+              }
+            ],
+            "title": "Job details"
+          },
+          "order": ["JOB_DETAILS", "QUALIFICATIONS"],
+          "qualificationsSectionModel": {
+            "content": {
+              "": [
+                "Bachelor's (Required)",
+                "Embedded software: 4 years (Required)",
+                "C++: 3 years (Required)",
+                "Work authorization (Required)"
+              ]
+            },
+            "title": "Qualifications"
+          }
+        },
+        "jobInfoHeaderModel": {
+          "a11yNewtabIconActive": true,
+          "companyImagesModel": {
+            "ejiBannerAsBackground": false,
+            "enhancedJobDescription": false,
+            "featuredEmployer": false,
+            "headerImageUrl": "https:\u002F\u002Fd2q79iu7y748jz.cloudfront.net\u002Fs\u002F_headerimage\u002F1960x400\u002F9f091551745e570936b5ad45453219da",
+            "logoAltText": "ICM Controls Corp logo",
+            "logoImageOverlayLower": false,
+            "logoUrl": "https:\u002F\u002Fd2q79iu7y748jz.cloudfront.net\u002Fs\u002F_squarelogo\u002F256x256\u002Fd0d4ee9ef0880daee95caa438b33e235",
+            "showBannerTop": false,
+            "showEnhancedJobImp": false,
+            "showIconInTitle": false
+          },
+          "companyName": "ICM Controls Corp",
+          "companyOverviewLink": "https:\u002F\u002Fwww.indeed.com\u002Fcmp\u002FIcm-Controls-Corp.-1?campaignid=mobvjcmp&from=mobviewjob&tk=1h9uf4l9diofd815&fromjk=205564c9d0c7ddd0",
+          "companyReviewLink": "https:\u002F\u002Fwww.indeed.com\u002Fcmp\u002FIcm-Controls-Corp.-1\u002Freviews?campaignid=mobvjcmp&cmpratingc=mobviewjob&from=mobviewjob&tk=1h9uf4l9diofd815&fromjk=205564c9d0c7ddd0&jt=Embedded+Software+Engineer+Manager",
+          "companyReviewModel": {
+            "companyName": "ICM Controls Corp",
+            "desktopCompanyLink": "https:\u002F\u002Fwww.indeed.com\u002Fcmp\u002FIcm-Controls-Corp.-1\u002Freviews?campaignid=viewjob&cmpratingc=mobviewjob&from=viewjob&tk=1h9uf4l9diofd815&fromjk=205564c9d0c7ddd0&jt=Embedded+Software+Engineer+Manager",
+            "mobileCompanyLink": "https:\u002F\u002Fwww.indeed.com\u002Fcmp\u002FIcm-Controls-Corp.-1\u002Freviews?campaignid=mobvjcmp&cmpratingc=mobviewjob&from=mobviewjob&tk=1h9uf4l9diofd815&fromjk=205564c9d0c7ddd0&jt=Embedded+Software+Engineer+Manager",
+            "navigableContainerModel": {
+              "contentHtml": null,
+              "hasBorderBottom": true,
+              "hasBorderTop": true,
+              "href": null,
+              "isRTL": false
+            },
+            "ratingsModel": {
+              "ariaContent": "2.8 out of 5 stars. Link to 31 company reviews (opens in a new tab)",
+              "count": 31,
+              "countContent": "31 reviews",
+              "descriptionContent": "Read what people are saying about working here.",
+              "rating": 2.8,
+              "showCount": true,
+              "showDescription": true,
+              "size": null
+            }
+          },
+          "employerActivity": null,
+          "employerResponsiveCardModel": null,
+          "encryptedFccCompanyId": null,
+          "formattedLocation": "Syracuse, NY 13212",
+          "hideRating": false,
+          "isDesktopApplyButtonSticky": false,
+          "isSimpleVjImproveActive": false,
+          "isSimplifiedHeader": false,
+          "jobNormTitle": null,
+          "jobTitle": "Embedded Software Engineer Manager",
+          "jobTypes": null,
+          "location": null,
+          "mobileStickyVjHeaderActive": false,
+          "openCompanyLinksInNewTab": false,
+          "parentCompanyName": null,
+          "preciseLocationModel": null,
+          "ratingsModel": null,
+          "recentSearch": null,
+          "remoteLocation": false,
+          "remoteWorkModel": null,
+          "salaryCurrency": null,
+          "salaryMax": null,
+          "salaryMin": null,
+          "salaryType": null,
+          "subtitle": "ICM Controls Corp - Syracuse, NY 13212",
+          "tagModels": null,
+          "taxonomyAttributes": null,
+          "viewJobDisplay": "DESKTOP_EMBEDDED",
+          "workplaceInsightsModel": null
+        },
+        "jobMetadataHeaderModel": { "jobType": "Full-time" },
+        "jobTagModel": null,
+        "resumeEvaluationResult": null,
+        "sanitizedJobDescription": "<p>Purpose: As lead of a software team, will be working in a self-motivated, fast paced environment, to design, implement, and maintain embedded controls’ firmware and Standard Operating Procedures.<\u002Fp>\n<p>Key Focus Areas:<\u002Fp>\n<ul>\n <li>· Programming<\u002Fli>\n <li>· Documentation Control<\u002Fli>\n <li>· Communications<\u002Fli>\n <li>· Trouble Shooting<\u002Fli>\n <li>· Documentation<\u002Fli>\n <li>· Research<\u002Fli>\n<\u002Ful>\n<p><b>Programming<\u002Fb><\u002Fp>\n<ul>\n <li>· Coding: Write coding for new products and maintain and modify code for existing products using embedded C programming\u002FWeb programming<\u002Fli>\n <li>· Perform unit and integration testing<\u002Fli>\n <li>· Conduct Software requirements analysis, software risk analysis, &amp; software performance analysis<\u002Fli>\n <li>· Record and adhere to software design specifications<\u002Fli>\n <li>· Maintain standards compliance<\u002Fli>\n<\u002Ful>\n<p><b>Documentation Control<\u002Fb><\u002Fp>\n<ul>\n <li>· Maintain Standard Operating Procedures<\u002Fli>\n <li>· Maintain software design documentation<\u002Fli>\n <li>· Lead software design review<\u002Fli>\n<\u002Ful>\n<p><b>Communications<\u002Fb><\u002Fp>\n<ul>\n <li>· Intra departmental<\u002Fli>\n <li>Peer review, consulting and follow-through on department objectives and deadlines<\u002Fli>\n <li>Recording and reporting<\u002Fli>\n <li>· Inter departmental<\u002Fli>\n <li>Production schedule – notifications<\u002Fli>\n <li>Work closely with Systems Hardware Design Engineers to collaborate on hardware\u002Fsoftware systems integration<\u002Fli>\n <li>Participate in and follow product through all stages of product life cycle<\u002Fli>\n<\u002Ful>\n<p><b>Troubleshooting<\u002Fb><\u002Fp>\n<ul>\n <li>Research and solve cross functional design\u002Fproduction issues<\u002Fli>\n <li>Work with Engineering, Quality, Production and other professional staff members to resolve discrepancies and variations as may occur relative to manufacturing process and\u002For test instructions, shop packet, and quality.<\u002Fli>\n<\u002Ful>\n<p><b>ESSENTIAL COMPETENCIES AND HIRING REQUISITES<\u002Fb><\u002Fp>\n<p><b>Education<\u002Fb>: Bachelor’s degree in Electrical Engineering or Computer Engineering required.<\u002Fp>\n<p><b>Experience<\u002Fb>: Participation in academic projects or work assignments involving the development of embedded firmware in C language or web application development required. 2+ years of professional experience in development of embedded firmware in C language, working experience of PIC microprocessors and knowledge of electronic hardware design preferred.<\u002Fp>\n<p><b>Essential Skills<\u002Fb>:<\u002Fp>\n<ul>\n <li>Possesses motor skills- aptitude for using various basic shop tools;<\u002Fli>\n <li>Possesses verbal intelligence - understand the meaning of words and respond effectively;<\u002Fli>\n <li>Computer skills and literacy sufficient to access, correct, input and search data and information and prepare reports;<\u002Fli>\n <li>Numerical intelligence - mathematical skills, read and interpret instruments and test equipment; skillful to recognize, read and work reliably with sequential alpha-numeric designations as contained in, work orders, prints, product codes, lot numbers;<\u002Fli>\n <li>Spatial relationship aptitude; able to read mechanical prints and schematics<\u002Fli>\n <li>Conflict resolution skills – recognizes and intervenes to deescalate conflict in a timely manner<\u002Fli>\n <li>Leadership skills – mentors, coaches and inspires others to overcome obstacles, persevere in efforts, accept accountability for and execute responsibilities; personal behavior elicits respect, responsiveness from others.<\u002Fli>\n<\u002Ful>\n<p><b>KEY SUCCESS FACTORS<\u002Fb>:<\u002Fp>\n<ul>\n <li>Quality<\u002Fli>\n <li>Productivity of work team<\u002Fli>\n <li>Accuracy, timeliness and thoroughness of records and reports<\u002Fli>\n <li>Judgment exercised in problem solving<\u002Fli>\n <li>Knowledge of and consistent enforcement of company policies<\u002Fli>\n<\u002Ful>\n<p>Job Type: Full-time<\u002Fp>\n<p>Pay: $80,000.00 - $120,000.00 per year<\u002Fp>\n<p>Benefits:<\u002Fp>\n<ul>\n <li>401(k)<\u002Fli>\n <li>Dental insurance<\u002Fli>\n <li>Employee assistance program<\u002Fli>\n <li>Flexible spending account<\u002Fli>\n <li>Health insurance<\u002Fli>\n <li>Health savings account<\u002Fli>\n <li>Paid time off<\u002Fli>\n <li>Referral program<\u002Fli>\n <li>Retirement plan<\u002Fli>\n <li>Tuition reimbursement<\u002Fli>\n <li>Vision insurance<\u002Fli>\n<\u002Ful>\n<p>Schedule:<\u002Fp>\n<ul>\n <li>8 hour shift<\u002Fli>\n <li>Day shift<\u002Fli>\n <li>Monday to Friday<\u002Fli>\n<\u002Ful>\n<p>Supplemental pay types:<\u002Fp>\n<ul>\n <li>Bonus pay<\u002Fli>\n<\u002Ful>\n<p>Education:<\u002Fp>\n<ul>\n <li>Bachelor's (Required)<\u002Fli>\n<\u002Ful>\n<p>Experience:<\u002Fp>\n<ul>\n <li>Embedded software: 4 years (Required)<\u002Fli>\n <li>C++: 3 years (Required)<\u002Fli>\n<\u002Ful>\n<p>Work Location: In person<\u002Fp>",
+        "screenerRequirementsModel": null,
+        "showExpiredHeader": false,
+        "tagModels": null,
+        "viewJobDisplay": "DESKTOP_EMBEDDED"
+      },
+      "sectionedJobInfoModel": null
+    },
+    "jobKey": "205564c9d0c7ddd0",
+    "jobLocation": "Syracuse, NY 13212",
+    "jobMetadataFooterModel": {
+      "age": "30+ days ago",
+      "indeedApplyAdaNotice": "If you require alternative methods of application or screening, you must approach the employer directly to request this as Indeed is not responsible for the employer's application process.",
+      "isShowJapanSafeJobSearchGuidelinesDisclaimer": false,
+      "originalJobLink": null,
+      "phoneNumber": null,
+      "saveJobLink": null,
+      "showReportJobAsButton": true,
+      "source": null
+    },
+    "jobSeenData": "tk=1h9uf4l9diofd815&context=viewjobrecs",
+    "jobTitle": "Embedded Software Engineer Manager",
+    "language": "en",
+    "lastVisitTime": 0,
+    "lazyProviders": {},
+    "locale": "en_US",
+    "localeData": {
+      "": [
+        null,
+        "Project-Id-Version: \nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2023-09-08 02:41-0500\nPO-Revision-Date: 2022-10-21 16:25+0000\nLast-Translator: Auto Generated <noreply@indeed.com>\nLanguage-Team: English (United States) <https:\u002F\u002Fweblate.corp.indeed.com\u002Fprojects\u002Findeed\u002Findeedmobile-i18n-content\u002Fen_US\u002F>\nLanguage: en_US\nMIME-Version: 1.0\nContent-Type: text\u002Fplain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 3.9.1\n"
+      ],
+      "iphone_home_find_jobs\u0004Find Jobs": [null, "Find Jobs"],
+      "iphone_home_location_caption_capitalized\u0004City, state, or zip code": [
+        null,
+        "City, state, zip code, or \"remote\""
+      ],
+      "mobVJJobDetailsPreferenceMatchShift\u0004Shift & Schedule": [
+        null,
+        "Shift and Schedule"
+      ]
+    },
+    "loggedIn": false,
+    "mobResourceTimingEnabled": false,
+    "mobtk": "1h9uf4l9diofd815",
+    "mosaicData": {
+      "host": {
+        "hostId": "jobsearch",
+        "logTk": "1h9uf4l9diofd815",
+        "pageId": "viewjob"
+      },
+      "platform": {
+        "assets": {
+          "runtimeLoaderUrl": "https:\u002F\u002Fc03.s3.indeed.com\u002Fmosaic-common\u002Fdist\u002FloadProviders.1165cc08f38edb0caa12.js?cacheKey=1",
+          "runtimeModule": {
+            "container": "mosaicPlatform",
+            "name": ".\u002FmosaicPlatform",
+            "shareScope": "react17",
+            "url": "https:\u002F\u002Fc03.s3.indeed.com\u002Fmosaic-common\u002Fdist\u002FremoteEntry.37ea6ac5d526db01c428.js?cacheKey=1"
+          },
+          "sharedCssUrls": [
+            "https:\u002F\u002Fc03.s3.indeed.com\u002Fmosaic-common\u002Fdist\u002Findex.39fb594906966db1fba1.css?cacheKey=1"
+          ],
+          "shimUrl": "https:\u002F\u002Fc03.s3.indeed.com\u002Fmosaic-common\u002Fdist\u002Fshim.1fda0d76e8ca51e8a649.js?cacheKey=1",
+          "webpackPublicPath": "https:\u002F\u002Fc03.s3.indeed.com\u002Fmosaic-common\u002Fdist"
+        },
+        "debug": { "request": null },
+        "env": "PRODUCTION",
+        "logTypes": {
+          "jsuipPlatformInitError": "unused-hash-value",
+          "mosaicPlatformLoadRecovery": "unused-hash-value",
+          "mosaicUserInteraction": "unused-hash-value",
+          "mosaicProviderSeen": "unused-hash-value",
+          "jsuipProviderExecutionError": "unused-hash-value",
+          "jsuipProviderLoadTimings": "unused-hash-value",
+          "jsuipAction": "unused-hash-value",
+          "jsuipPlatformLoadError": "unused-hash-value",
+          "jsuipProviderLoadError": "unused-hash-value"
+        },
+        "platformLogTk": "1h9uf4lbuiofd80j",
+        "proctor": {
+          "mosaic_change_page_debug_tst": {
+            "bucketName": "inactive",
+            "bucketValue": -1
+          },
+          "mosaic_sentry_removal_tst": {
+            "bucketName": "inactive",
+            "bucketValue": -1
+          },
+          "mosaic_mount_in_new_task_tst": {
+            "bucketName": "active",
+            "bucketValue": 1
+          }
+        }
+      },
+      "provider": {
+        "mosaic-provider-reportcontent": {
+          "assets": {
+            "cssUrl": "https:\u002F\u002Fc03.s3.indeed.com\u002Fmosaic-provider-reportcontent\u002Fdist\u002F591.ce94af0448852da672ea.css",
+            "i18nOverrides": null,
+            "i18nUrl": "https:\u002F\u002Fc03.s3.indeed.com\u002Fmosaic-provider-reportcontent\u002Fdist\u002Fi18n\u002Fcc0ba61e5155760abc54\u002Fen_US.js",
+            "jsUrl": "data:text\u002Fjavascript,(()%20=%3E%20%7Bvar%20s=document.currentScript,n=()=%3E%7B%7D;var%20r=window._INDEED&&window._INDEED.shared&&window._INDEED.shared.v1?(f)=%3Ef():(f)=%3Enew%20Promise((g,b)=%3Ewindow.addEventListener('onSharedDepsLoadersV1Available',()=%3Ef().then(g,b),%7Bonce:true%7D));r(()%20=%3E%20window._INDEED.shared.v1.load('module',%7B%22prereqUrls%22:%5B%5D,%22prereqContainers%22:%5B%22react17-shared%22%5D,%22urls%22:%5B%22https:%5Cu002F%5Cu002Fc03.s3.indeed.com%5Cu002Fmosaic-provider-reportcontent%5Cu002Fdist%5Cu002FremoteEntry.8985017a09c076d219ea.js%22%5D,%22container%22:%22mosaic-provider-reportcontent%22,%22module%22:%22.%5Cu002FReportContent-client%22,%22shareScope%22:%22react17%22%7D)).then(s.onload%7C%7Cn,s.onerror%7C%7Cn);s.onload=null;s.onerror=null;%7D)();"
+          },
+          "debug": {
+            "requestMetadata": {},
+            "response": null,
+            "responseError": null
+          },
+          "initialData": {
+            "jobKey": "205564c9d0c7ddd0",
+            "jobTitle": "Embedded Software Engineer Manager",
+            "companyName": "ICM Controls Corp",
+            "hostId": "jobsearch",
+            "pageId": "viewjob",
+            "ctk": "1h9uej3m1j5l7800",
+            "country": "US",
+            "language": "en",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36",
+            "mobvjtk": "1h9uf4l9diofd815",
+            "isMobile": false,
+            "indeedcsrftoken": "bDXnT9wDqTkk9fRQjnzFwJHdqhCVD7d7",
+            "isLoggedIn": false,
+            "isConfirmed": false,
+            "reportContentApiUrl": "https://reportcontent.indeed.com/api/v1/report/content",
+            "showAsButton": true,
+            "showPhotoLabel": false,
+            "showReportJobToast": false
+          },
+          "isCanary": false,
+          "isLazy": true,
+          "loadMethod": "VISIBLE",
+          "platformLogTk": "1h9uf4lbuiofd80j",
+          "providerId": "mosaic-provider-reportcontent",
+          "publicPath": "https:\u002F\u002Fc03.s3.indeed.com\u002Fmosaic-provider-reportcontent\u002Fdist\u002F",
+          "result": "enabled",
+          "serverRenderedContent": "<div class=\"mosaic-reportcontent-wrapper button\"><style data-emotion=\"css 16q8vsx\">.css-16q8vsx{box-sizing:border-box;background:none;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;appearance:none;text-align:left;-webkit-text-decoration:none;text-decoration:none;border:none;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;margin:0;padding-left:1rem;padding-right:1rem;line-height:1.5;font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;font-size:1rem;font-weight:700;border-radius:0.5rem;border-width:1px;border-style:solid;-webkit-transition:border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),background-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1),box-shadow 200ms cubic-bezier(0.645, 0.045, 0.355, 1),color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);transition:border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),background-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1),box-shadow 200ms cubic-bezier(0.645, 0.045, 0.355, 1),color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;padding-top:0.5625rem;padding-bottom:0.5625rem;color:#2d2d2d;border-color:#e4e2e0;background-color:#e4e2e0;}.css-16q8vsx::-moz-focus-inner{border:0;}@media (prefers-reduced-motion: reduce){.css-16q8vsx{-webkit-transition:none;transition:none;}}.css-16q8vsx:disabled{opacity:0.4;pointer-events:none;}.css-16q8vsx:focus{outline:none;box-shadow:0 0 0 0.125rem #ffffff,0 0 0 0.1875rem #2557a7;}.css-16q8vsx:focus:not([data-focus-visible-added]){box-shadow:none;}.css-16q8vsx[aria-disabled='true']{cursor:default;}.css-16q8vsx:visited{color:#2d2d2d;}.css-16q8vsx:hover:not([aria-disabled='true']){border-color:#d4d2d0;background-color:#d4d2d0;}.css-16q8vsx:active:not([aria-disabled='true']){box-shadow:inset 0 0.125rem 0.25rem rgba(45, 45, 45, 0.2),inset 0 0.0625rem 0.1875rem rgba(45, 45, 45, 0.12),inset 0 0 0.125rem rgba(45, 45, 45, 0.2);border-color:#b4b2b1;background-color:#b4b2b1;}.css-16q8vsx[aria-disabled='true']{border:transparent;background-color:rgba(228,226,224,0.4);color:rgba(45,45,45,0.4);}<\u002Fstyle><button class=\"mosaic-reportcontent-button desktop css-16q8vsx e8ju0x51\"><span class=\"mosaic-reportcontent-button-icon\"><\u002Fspan>Report job<\u002Fbutton><div class=\"mosaic-reportcontent-content\"><\u002Fdiv><\u002Fdiv>",
+          "serviceId": "mosaic-provider-reportcontent",
+          "shouldLogContainerClicks": false,
+          "shouldResetCss": false,
+          "zoneId": "legacyProvidersViewJob",
+          "zoneIndex": -1
+        },
+        "MosaicProviderCallToApplyFeedback": {
+          "assets": {
+            "cssUrl": "https:\u002F\u002Fc03.s3.indeed.com\u002Fmosaic-provider-seg-india\u002Fstatic\u002F110.792f01db0b4b0050614d.css",
+            "i18nOverrides": null,
+            "i18nUrl": "https:\u002F\u002Fc03.s3.indeed.com\u002Fmosaic-provider-seg-india\u002Fstatic\u002Fi18n\u002F877925b52936470d23b9\u002Fen_US.js",
+            "jsUrl": "data:text\u002Fjavascript,(()%20=%3E%20%7Bvar%20s=document.currentScript,n=()=%3E%7B%7D;var%20r=window._INDEED&&window._INDEED.shared&&window._INDEED.shared.v1?(f)=%3Ef():(f)=%3Enew%20Promise((g,b)=%3Ewindow.addEventListener('onSharedDepsLoadersV1Available',()=%3Ef().then(g,b),%7Bonce:true%7D));r(()%20=%3E%20window._INDEED.shared.v1.load('module',%7B%22prereqUrls%22:%5B%5D,%22prereqContainers%22:%5B%22react17-shared%22%5D,%22urls%22:%5B%22https:%5Cu002F%5Cu002Fc03.s3.indeed.com%5Cu002Fmosaic-provider-seg-india%5Cu002Fstatic%5Cu002FremoteEntry.9bac2cd513a38b9bdc31.js%22%5D,%22container%22:%22MosaicProviderCallToApplyFeedback%22,%22module%22:%22.%5Cu002FFeedbackForm-client%22,%22shareScope%22:%22react17%22%7D)).then(s.onload%7C%7Cn,s.onerror%7C%7Cn);s.onload=null;s.onerror=null;%7D)();"
+          },
+          "debug": {
+            "requestMetadata": {},
+            "response": null,
+            "responseError": null
+          },
+          "initialData": {},
+          "isCanary": false,
+          "isLazy": true,
+          "loadMethod": "VISIBLE",
+          "platformLogTk": "1h9uf4lbuiofd80j",
+          "providerId": "MosaicProviderCallToApplyFeedback",
+          "publicPath": "https:\u002F\u002Fc03.s3.indeed.com\u002Fmosaic-provider-seg-india\u002Fstatic\u002F",
+          "result": "enabled",
+          "serverRenderedContent": "",
+          "serviceId": "MosaicProviderSegIndia",
+          "shouldLogContainerClicks": true,
+          "shouldResetCss": true,
+          "zoneId": "viewjobModals",
+          "zoneIndex": -1
+        },
+        "js-match-insights-provider": {
+          "assets": {
+            "cssUrl": null,
+            "i18nOverrides": null,
+            "i18nUrl": null,
+            "jsUrl": null
+          },
+          "debug": {
+            "requestMetadata": {},
+            "response": null,
+            "responseError": null
+          },
+          "initialData": {},
+          "isCanary": false,
+          "isLazy": false,
+          "loadMethod": "VISIBLE",
+          "platformLogTk": "1h9uf4lbuiofd80j",
+          "providerId": "js-match-insights-provider",
+          "publicPath": null,
+          "result": "disabled",
+          "serverRenderedContent": null,
+          "serviceId": "js-match-insights-provider",
+          "shouldLogContainerClicks": true,
+          "shouldResetCss": false,
+          "zoneId": "aboveExtractedJobDescription",
+          "zoneIndex": -1
+        }
+      }
+    },
+    "oneGraphApiKey": "db7ac28c69eff9413df48909e55558cf4bf371590d8bef3165e4facbb7277a39",
+    "oneGraphApiUrl": "https:\u002F\u002Fapis.indeed.com\u002Fgraphql\u002F",
+    "originalJobLinkModel": null,
+    "pageId": "viewjob",
+    "parenttk": null,
+    "phoneLinkType": null,
+    "preciseLocationModel": null,
+    "profileBaseUrl": "https:\u002F\u002Fprofile.indeed.com",
+    "queryString": null,
+    "recentQueryString": "q1=software engineer&l1=united states&r1=-1&q2=software&l2=united states&r2=-1&q3=software&l3=remote&r3=-1",
+    "recommendedJobsModel": { "shouldShow": false },
+    "recommendedSearchesModel": {
+      "recommendedSearches": [],
+      "shouldShow": false
+    },
+    "relatedLinks": null,
+    "requestPath": "\u002Fviewjob?jk=205564c9d0c7ddd0&from=tp-sponfirstjob&tk=1h9uf4j5viofd802&viewtype=embedded&advn=1165210601780325&adid=371203310&ad=-6NYlbfkN0BJmzW2P7iJevhtEyT9iP5rrV4yDI6fuwFYeWwXToPanG8y-Skn6zOHxKVPPeOWDTQI8m7PWbLcFjflp1wvzSbu5z1MssLCpOgl0Aq2SEoiT7AX2bg32OLia82jGKEnwaWwrPrQBFej0zCowNRe0BK73FUMv8J04Omy-wQhXviAeRI33uP_JTSfIQJqGjmapfUt0bbk6VsIdXDgwDYENkdHKQ6YmKCdepCKf8YBXvPWRFf9Xieg2geUamSFCw7RSvZVSAwpc1tzVjySgBRUdKPGTCUfwskN1r22wD1IVehMrDlQ_VrPFkE_jFC4UfmJBIJn-SbuPMdPhJu16DNEFUxyBqeMwKNpZ7vyvxZD6V_eL5q2NI42VFd67OEcQWmZGp8F1ZqYeGfBkjY6oWw354a6NUvRwiWiGiHVOPM9XSHc8bO1ozeUhTEVuxFwoGvg_kuPCnGrjY8yk20bkUMUgq5tlhpwcSHbP0G_h0ea4WU5TteY1483C_MZSm0UCyRU3NBb_FW4jLf56cxM2LTnNHHRMRxZjXXhh_hzDgGM-gaAdvbBiWE01GLLzme2ZOA6fjh-jmnNwoGoaH8lVwL1DJ47&xkcb=SoDW-_M3L-WdqazAxJ0LbzkdCdPP&continueUrl=%2Fjobs%3Fq%3Dsoftware%2Bengineer%26l%3DUnited%2BStates&spa=1&hidecmpheader=0",
+    "resumeFooterModel": {
+      "buttonLink": {
+        "applyBtnNewStyle": null,
+        "buttonSize": "md",
+        "buttonType": "primary",
+        "contentHtml": "Upload Your Resume",
+        "dataHref": "\u002Fpromo\u002Fresume?from=bottomResumeCTAviewjob&trk.origin=viewjob",
+        "disclaimer": null,
+        "href": "\u002Fpromo\u002Fresume",
+        "icon": null,
+        "isBlock": false,
+        "isBookmarkIcon": null,
+        "isSimpleVjImproveActive": null,
+        "largeScreenSizeText": null,
+        "newTabWarningText": null,
+        "occupationIds": null,
+        "openInNewTab": false,
+        "profileMicrocontentNegativeResponseValue": null,
+        "referrerpolicy": null,
+        "rel": null,
+        "sanitizedHref": null,
+        "sanitizedHtml": null,
+        "sticky": false,
+        "target": null,
+        "title": null,
+        "uipMosaicProviderEnv": null,
+        "viewJobDisplay": null
+      },
+      "isJanusActive": true,
+      "letEmployersFindText": "Let Employers Find You"
+    },
+    "resumePromoCardModel": null,
+    "rtl": false,
+    "salaryGuideModel": {
+      "acmeMicrocontentEndpoint": "https:\u002F\u002Fcocos-api.indeed.com",
+      "country": "US",
+      "estimatedSalaryModel": null,
+      "formattedLocation": "Syracuse, NY",
+      "jobKey": "205564c9d0c7ddd0",
+      "language": "en"
+    },
+    "salaryInfoModel": {
+      "disclaimerIcon": null,
+      "featureTokens": [],
+      "indeedEstimateText": null,
+      "matchingSalary": false,
+      "minimumPayPreferencePresent": false,
+      "salaryEstimationDisclaimer": null,
+      "salaryLabel": null,
+      "salaryMax": 120000.0,
+      "salaryMin": 80000.0,
+      "salarySource": "EXTRACTION",
+      "salaryText": "$80,000 - $120,000 a year",
+      "salaryTextFormatted": false,
+      "salaryType": "YEARLY",
+      "userMinimumPayAmount": null,
+      "userMinimumPaySalaryType": null
+    },
+    "saveJobButtonContainerModel": {
+      "alreadySavedButtonModel": {
+        "actions": ["Saved", "Applied", "Interviewing", "Offered", "Hired"],
+        "buttonSize": null,
+        "buttonType": null,
+        "contentHtml": "Saved",
+        "href": "\u002F",
+        "iconSize": null
+      },
+      "applyFromComputerLogUrl": "\u002Fm\u002Frpc\u002Flog\u002Femailmyself?jk=205564c9d0c7ddd0&mobvjtk=1h9uf4l9diofd815&sbt=9f418f1303d63b0546dbe167f3580394&ctk=1h9uej3m1j5l7800&acctKey=",
+      "currentJobState": "VISITED",
+      "didYouApplyPromptModel": {
+        "calloutModel": {
+          "actionsList": null,
+          "actionsMap": {
+            "NO": {
+              "children": "Not interested",
+              "className": null,
+              "href": null,
+              "target": null
+            },
+            "LATER": {
+              "children": "Maybe later",
+              "className": null,
+              "href": null,
+              "target": null
+            },
+            "YES": {
+              "children": "Yes",
+              "className": null,
+              "href": null,
+              "target": null
+            }
+          },
+          "caretPosition": null,
+          "children": null,
+          "dismissAriaLabel": "Close",
+          "dismissAttributes": null,
+          "dismissHref": null,
+          "heading": "Did you apply?"
+        },
+        "jobKey": "205564c9d0c7ddd0",
+        "possibleResponses": { "NO": "NO", "LATER": "LATER", "YES": "YES" },
+        "userCanView": false
+      },
+      "didYouApplyResponseUrl": "\u002Fm\u002Frpc\u002Fdidyouapply?tk=1h9uf4l9diofd815&jobKey=205564c9d0c7ddd0&originPage=viewjob&from=viewjob",
+      "hashedCSRFToken": "9f418f1303d63b0546dbe167f3580394",
+      "isAlreadySavedButtonVisible": false,
+      "isDisableJobStatusChange": false,
+      "isLoggedIn": false,
+      "isSaveWithoutLoginEnabled": false,
+      "isSticky": false,
+      "isSyncJobs": false,
+      "mobtk": "1h9uf4l9diofd815",
+      "myIndeedLoginLink": "https:\u002F\u002Fsecure.indeed.com\u002Faccount\u002Flogin?co=US&hl=en_US&continue=http%3A%2F%2Fwww.indeed.com%2Fjobs%3Fq%3Dsoftware%2Bengineer%26l%3DUnited%2BStates&from=jsfe-desktopembedded-save-indeedmobile",
+      "myJobsAPIHref": "\u002Frpc\u002Flog\u002Fmyjobs\u002Ftransition_job_state?client=mobile&cause=statepicker&preserveTimestamp=false&tk=1h9uf4l9diofd815&jobKey=205564c9d0c7ddd0&originPage=viewjob",
+      "myJobsURL": "https:\u002F\u002Fmyjobs.indeed.com?co=US&hl=en_US&from=viewjob",
+      "pageId": "viewjob",
+      "passportInterceptModalModel": {
+        "baseSecureUrl": "https:\u002F\u002Fsecure.indeed.com",
+        "baseUrl": "http:\u002F\u002Fwww.indeed.com",
+        "branding": "save-job-modal",
+        "dismissible": true,
+        "email": null,
+        "from": "jsfe-embedded-save-job",
+        "type": "modal"
+      },
+      "possibleJobActions": {
+        "SAVED": "save",
+        "APPLIED": "apply",
+        "INTERVIEWING": "interview",
+        "OFFERED": "offer",
+        "HIRED": "hire",
+        "VISITED": "visit",
+        "ARCHIVED": "archive"
+      },
+      "possibleJobStates": {
+        "SAVED": "Saved",
+        "APPLIED": "Applied",
+        "INTERVIEWING": "Interviewing",
+        "OFFERED": "Offered",
+        "HIRED": "Hired",
+        "VISITED": "Visited",
+        "ARCHIVED": "Archived"
+      },
+      "saveButtonModel": {
+        "applyBtnNewStyle": null,
+        "buttonSize": "block",
+        "buttonType": "secondary",
+        "contentHtml": "Save this job",
+        "dataHref": null,
+        "disclaimer": null,
+        "href": "\u002F",
+        "icon": { "iconTitle": "save-icon", "iconType": null },
+        "isBlock": false,
+        "isBookmarkIcon": true,
+        "isSimpleVjImproveActive": null,
+        "largeScreenSizeText": null,
+        "newTabWarningText": null,
+        "occupationIds": null,
+        "openInNewTab": false,
+        "profileMicrocontentNegativeResponseValue": null,
+        "referrerpolicy": null,
+        "rel": null,
+        "sanitizedHref": null,
+        "sanitizedHtml": null,
+        "sticky": false,
+        "target": null,
+        "title": null,
+        "uipMosaicProviderEnv": null,
+        "viewJobDisplay": "DESKTOP_EMBEDDED"
+      },
+      "showSaveJobInlineCallout": true,
+      "uistates": {
+        "INTERVIEWING": "INTERVIEWING",
+        "OFFERED": "OFFERED",
+        "SAVED": "SAVED",
+        "VISITED": "VISITED",
+        "HIRED": "HIRED",
+        "ARCHIVED": "ARCHIVED",
+        "APPLIED": "APPLIED"
+      },
+      "viewJobDisplay": "DESKTOP_EMBEDDED"
+    },
+    "saveJobFailureModalModel": {
+      "closeAriaLabel": "Close",
+      "closeButtonText": "Close",
+      "message": "Please retry",
+      "signInButtonText": null,
+      "signInHref": null,
+      "title": "Failed to Save Job"
+    },
+    "saveJobLimitExceededModalModel": {
+      "closeAriaLabel": "Close",
+      "closeButtonText": null,
+      "message": "You reached the limit. Please log in to save additional jobs.",
+      "signInButtonText": "Sign in",
+      "signInHref": "https:\u002F\u002Fsecure.indeed.com\u002Faccount\u002Flogin?co=US&hl=en_US&continue=http%3A%2F%2Fwww.indeed.com%2Fjobs%3Fq%3Dsoftware%2Bengineer%26l%3DUnited%2BStates&from=viewjob_savejoblimitmodal",
+      "title": "You've already saved 20 jobs"
+    },
+    "segmentId": "software_dev_seo",
+    "segmentPhoneNumberButtonLinkModel": null,
+    "shareJobButtonContainerModel": {
+      "buttonIconModel": {
+        "color": "blue",
+        "position": null,
+        "size": "md",
+        "title": "Share this job",
+        "type": "\u002Fm\u002Fimages\u002Fnativeshare.svg"
+      },
+      "buttonModel": {
+        "buttonSize": null,
+        "buttonType": "secondary",
+        "children": "Share this job",
+        "disabled": false,
+        "href": null,
+        "isActive": false,
+        "isBlock": false,
+        "isResponsive": false,
+        "size": "md"
+      },
+      "fallbackButtonIconModel": {
+        "color": "blue",
+        "position": null,
+        "size": "md",
+        "title": "Copy link",
+        "type": "\u002Fm\u002Fimages\u002Ficon-copy.svg"
+      },
+      "shareText": "Check out this job on Indeed:\nICM Controls Corp\nEmbedded Software Engineer Manager\nSyracuse, NY 13212\nhttps:\u002F\u002Fwww.indeed.com\u002Fm\u002Fviewjob?jk=205564c9d0c7ddd0&from=native",
+      "shareType": "native",
+      "shareUrl": "https:\u002F\u002Fwww.indeed.com\u002Fm\u002Fviewjob?jk=205564c9d0c7ddd0&from=native",
+      "showUnderSaveButton": true
+    },
+    "shouldLogResolution": true,
+    "shouldShowConditionalBackButton": false,
+    "showEmployerResponsiveCard": false,
+    "showGlobalNavContent": false,
+    "showReportInJobButtons": false,
+    "sponsored": true,
+    "staticPrefix": "\u002F\u002Fc03.s3.indeed.com\u002Fm\u002Fs\u002F",
+    "stickyType": "ALWAYS",
+    "successfullySignedInModel": null,
+    "thirdPartyAndMobile": false,
+    "thirdPartyQuestionsToggle": false,
+    "viewJobButtonLinkContainerModel": null,
+    "viewJobDisplay": "DESKTOP_EMBEDDED",
+    "viewJobDisplayParam": "dtembd",
+    "viewjobDislikes": false,
+    "whatWhereFormModel": null,
+    "workplaceInsightsModel": null,
+    "zoneProviders": {}
+  }
+}
