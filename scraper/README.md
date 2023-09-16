@@ -4,49 +4,62 @@ Some stuff for how the scraper will function
 
 ## Bot Detection
 
-TLS fingerprinting is a prevalent method for detecting bots. When a client initiates a connection, it sends a 'hello' message to the server, which includes details on configuring the TLS connection. Here's how the process works:
+Cloudflare test site: https://nowsecure.nl
+(DONT VIST IN BROWSER YOULL HAVE A SEIZURE)
 
-**Creation of the Fingerprint:** Upon receiving the hello message, the server generates a hash fingerprint based on the client's configuration.
+### Factors in bot detection:
 
-**Comparison with Blocked Fingerprints:** The server compares this newly created fingerprint against a database of known, blocked fingerprints.
+- ### TLS Hanshake fingerprint
+    
+  TLS fingerprinting is a prevalent method for detecting bots. When a client initiates a connection, it sends a 'hello' message to the server, which includes details on configuring the TLS connection. Here's how the process works:
 
-**Response from the Server:**
+  **Creation of the Fingerprint:** Upon receiving the hello message, the server generates a hash fingerprint based on the client's configuration.
 
-- If a match is found, the server may either challenge the client or block the connection outright.
-- If no match is found, the connection proceeds normally.
+  **Comparison with Blocked Fingerprints:** The server compares this newly created fingerprint against a database of known, blocked fingerprints.
 
-To evade detection, one can attempt to generate a unique TLS hash by adjusting the order of the ciphers sent to the server. This can change the resulting fingerprint, potentially bypassing filters that rely on known blocked fingerprints. Note that the first three Ciphers in the list are standard and shouldnt be reordered for security reasons that I do not know.
+  **Response from the Server:**
 
-Example of the list of Ciphers sent by Node:
+  - If a match is found, the server may either challenge the client or block the connection outright.
+  - If no match is found, the connection proceeds normally.
 
-```
-TLS_AES_256_GCM_SHA384
-TLS_CHACHA20_POLY1305_SHA256
-TLS_AES_128_GCM_SHA256
-ECDHE-RSA-AES128-GCM-SHA256
-ECDHE-ECDSA-AES128-GCM-SHA256
-ECDHE-RSA-AES256-GCM-SHA384
-ECDHE-ECDSA-AES256-GCM-SHA384
-DHE-RSA-AES128-GCM-SHA256
-ECDHE-RSA-AES128-SHA256
-DHE-RSA-AES128-SHA256
-ECDHE-RSA-AES256-SHA384
-DHE-RSA-AES256-SHA384
-ECDHE-RSA-AES256-SHA256
-DHE-RSA-AES256-SHA256
-HIGH
-!aNULL
-!eNULL
-!EXPORT
-!DES
-!RC4
-!MD5
-!PSK
-!SRP
-!CAMELLIA 
-```
+  To evade detection, one can attempt to generate a unique TLS hash by adjusting the order of the ciphers sent to the server. This can change the resulting fingerprint, potentially bypassing filters that rely on known blocked fingerprints. Note that the first three Ciphers in the list are standard and shouldnt be reordered for security reasons that I do not know.
 
-For a detailed guide on how to modify the default TLS cipher suite in a Node.js environment, please refer to the official Node.js documentation: Modifying the Default TLS Cipher Suite.
+  Example of the list of Ciphers sent by Node:
+
+  ```
+  TLS_AES_256_GCM_SHA384
+  TLS_CHACHA20_POLY1305_SHA256
+  TLS_AES_128_GCM_SHA256
+  ECDHE-RSA-AES128-GCM-SHA256
+  ECDHE-ECDSA-AES128-GCM-SHA256
+  ECDHE-RSA-AES256-GCM-SHA384
+  ECDHE-ECDSA-AES256-GCM-SHA384
+  DHE-RSA-AES128-GCM-SHA256
+  ECDHE-RSA-AES128-SHA256
+  DHE-RSA-AES128-SHA256
+  ECDHE-RSA-AES256-SHA384
+  DHE-RSA-AES256-SHA384
+  ECDHE-RSA-AES256-SHA256
+  DHE-RSA-AES256-SHA256
+  HIGH
+  !aNULL
+  !eNULL
+  !EXPORT
+  !DES
+  !RC4
+  !MD5
+  !PSK
+  !SRP
+  !CAMELLIA 
+  ```
+
+  For a detailed guide on how to modify the default TLS cipher suite in a Node.js environment, please refer to the official Node.js documentation: Modifying the Default TLS Cipher Suite.
+
+
+- ### HTTP2 Fingerprint
+- ### Request headers 
+- ### Javascript enabled
+
 
 
 
@@ -67,6 +80,11 @@ To crawl linkedin, you must be whitelisted. Crawling is subject to [LinkedIn Cra
 `Public API`: [depricated](https://developer.indeed.com/docs/publisher-jobs/job-search) <br />
 
 Indeed robots.txt allows scaping on the /jobs route. 🥳
+
+#### Bot detection: 
+  Indeed uses cloudflare to detect bots. It looks like if you do not have javascript enabled (IE you make a direct AJAX request) cloudflare gets susicious and redirects you to set a bunch of cookies 
+
+  ![Alt text](image.png)
 ### Monster
 
 `Public API`: none <br />
