@@ -9,32 +9,33 @@ const { JSDOM } = jsdom;
 global.DOMParser = new JSDOM().window.DOMParser;
 
 /****************************************************************************************
- * 
+ *
  * THIS DOES NOT WORK YET, use playwright_scrape.js until I can reverse engineer cloudflare detection
  * I think something interesting is that the only browser controller that can not trigger cloudflare
  * is firefox + playwright. Explains why firefox with javascript disabled and cookies disabled also doesnt
  * trigger cloudflare. Im guessing cloudflare is less sensitive when using firefox intentionally since firefox
- * is more security focused than other browsers and thus doesnt give cloudflare as much information about the user 
+ * is more security focused than other browsers and thus doesnt give cloudflare as much information about the user
  * (example: Cookie protection by default). Cloudflare like to set a bunch of cookies when visiting protected websites,
  * I assume its using these somehow but im not sure how. This could all be wrong BTW
- * 
+ *
  *****************************************************************************************/
 
 const REQUEST_HEADERS = {
-  "user-agent": [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-    "AppleWebKit/537.36 (KHTML, like Gecko)",
-    "Chrome/116.0.0.0 Safari/537.36",
-  ].join(" "),
-  // "accept": "application/vnd.linkedin.normalized+json+2.1",
-  "accept-language": "en-US,en;q=0.9",
-  "accept":
-    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7,text/javascript",
-  "sec-ch-ua": `"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"`,
-  "x-li-lang": "en_US",
-  "x-restli-protocol-version": "2.0.0",
-  "cookie": `CTK=1had8h6tqkolk800; INDEED_CSRF_TOKEN=AMc9GcEKODqVG0b6GhKm9s8indGKRT0Y; PREF="TM=1694809758671:L=United+States"; _cfuvid=vtxBhv7.AI806A9OsdVt5yrIxTCL9nv4wcsowXwaOCw-1694809758975-0-604800000; _gcl_au=1.1.1938360106.1694809761; _ga=GA1.2.353556429.1694809761; _gid=GA1.2.1109775516.1694809761; SURF=bvezitgdM66BMEy2OQCPEOWqzeDnXHd0; indeed_rcc="PREF:LV:CTK"; SHARED_INDEED_CSRF_TOKEN=AMc9GcEKODqVG0b6GhKm9s8indGKRT0Y; LC="co=US"; __cf_bm=8zoRs_.Y6T6UJ4T6k80R7jc0B286OGfC8Kqh34wC4EY-1694895091-0-AX4jl0LKI9acfbD2pGiRiWaUtPm/yjvMmkXhCpbrj/YpYJJRO3EZ4UAfAmKvoX8te2FA96kp9zxqQiWNEwslYYI=; LV="LA=1694895410:LV=1694809758:CV=1694895410:TS=1694809758"; RQ="q=happy+lemon&l=United+States&ts=1694895719453&pts=1694809758672"; _gat=1; JSESSIONID=D1E13FE00BD40B66CC5CBA06DF7D1A59`,
-  // "x-li-track": '{"clientVersion":"1.2.6216","osName":"web","timezoneOffset":10,"deviceFormFactor":"DESKTOP","mpName":"voyager-web"}',
+  "Accept": [
+    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+  ],
+  "Accept-Encoding": ["gzip, deflate, br"],
+  "Accept-Language": ["en-US,en;q=0.5"],
+  "Dnt": ["1"],
+  "Sec-Fetch-Dest": ["document"],
+  "Sec-Fetch-Mode": ["navigate"],
+  "Sec-Fetch-Site": ["none"],
+  "Sec-Fetch-User": ["?1"],
+  "Te": ["trailers"],
+  "Upgrade-Insecure-Requests": ["1"],
+  "User-Agent": [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0",
+  ],
 };
 
 // REQUEST_HEADERS = {
@@ -57,24 +58,24 @@ const REQUEST_HEADERS = {
 //   "X-Amzn-Trace-Id": "Root=1-64fd398b-6812b2e958906bca5050588b",
 // };
 
-
-
 async function getSourceAsDOM(url) {
   try {
     const client = http2.connect(url);
-    console.log(http2.Htt);
-    console.log(url);
+    // console.log(http2.Htt);
+    // console.log(url);
 
     const ciphers = [
       "TLS_AES_128_GCM_SHA256",
-      "TLS_AES_256_GCM_SHA384",
       "TLS_CHACHA20_POLY1305_SHA256",
+      "TLS_AES_256_GCM_SHA384",
       "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
       "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
-      "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
-      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
       "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
       "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+      "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+      "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+      "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
       "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
       "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
       "TLS_RSA_WITH_AES_128_GCM_SHA256",
@@ -107,11 +108,13 @@ async function getSourceAsDOM(url) {
       ciphers,
     });
 
+    console.log(req)
+
     let data = "";
 
     req.on("response", (headers, flags) => {
       for (const name in headers) {
-        console.log(`${name}: ${headers[name]}`);
+        console.log(`name: ${name}: ${headers[name]}`);
       }
     });
 
@@ -119,6 +122,7 @@ async function getSourceAsDOM(url) {
       data += chunk;
     });
     req.on("end", () => {
+      console.log("data");
       console.log(data);
       client.close();
     });
@@ -160,7 +164,7 @@ async function getSourceAsDOM(url) {
   }
 }
 
-//getSourceAsDOM("https://www.indeed.com/jobs?q=happy+lemon&l=United+States");
+getSourceAsDOM("https://tools.scrapfly.io/api/fp/ja3?extended=1");
 
 //https://www.howsmyssl.com/a/check
 
