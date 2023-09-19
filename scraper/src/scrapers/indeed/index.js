@@ -21,21 +21,21 @@ global.DOMParser = new JSDOM().window.DOMParser;
  *****************************************************************************************/
 
 const REQUEST_HEADERS = {
-  "Accept": [
+  "Accept":
     "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-  ],
-  "Accept-Encoding": ["gzip, deflate, br"],
-  "Accept-Language": ["en-US,en;q=0.5"],
-  "Dnt": ["1"],
-  "Sec-Fetch-Dest": ["document"],
-  "Sec-Fetch-Mode": ["navigate"],
-  "Sec-Fetch-Site": ["none"],
-  "Sec-Fetch-User": ["?1"],
-  "Te": ["trailers"],
-  "Upgrade-Insecure-Requests": ["1"],
-  "User-Agent": [
+  "Accept-Encoding": "gzip, deflate, br",
+  "Accept-Language": "en-US,en;q=0.5",
+  "Cache-Control": "no-cache",
+  "Dnt": "1",
+  "Pragma": "no-cache",
+  "Sec-Fetch-Dest": "document",
+  "Sec-Fetch-Mode": "navigate",
+  "Sec-Fetch-Site": "none",
+  "Sec-Fetch-User": "?1",
+  "Te": "trailers",
+  "Upgrade-Insecure-Requests": "1",
+  "User-Agent":
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0",
-  ],
 };
 
 // REQUEST_HEADERS = {
@@ -65,22 +65,21 @@ async function getSourceAsDOM(url, path) {
     // console.log(url);
 
     const ciphers = [
+      "GREASE (0xAAAA)",
       "TLS_AES_128_GCM_SHA256",
-      "TLS_CHACHA20_POLY1305_SHA256",
       "TLS_AES_256_GCM_SHA384",
+      "TLS_CHACHA20_POLY1305_SHA256",
       "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
       "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
-      "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
-      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
-      "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
-      "TLS_RSA_WITH_AES_128_CBC_SHA",
-      "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
       "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+      "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
       "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
-      "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
-      "TLS_RSA_WITH_AES_128_GCM_SHA256",
       "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+      "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+      "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+      "TLS_RSA_WITH_AES_128_GCM_SHA256",
       "TLS_RSA_WITH_AES_256_GCM_SHA384",
+      "TLS_RSA_WITH_AES_128_CBC_SHA",
       "TLS_RSA_WITH_AES_256_CBC_SHA",
     ].join(":");
 
@@ -102,6 +101,14 @@ async function getSourceAsDOM(url, path) {
     //   httpsAgent: new https.Agent({ rejectUnauthorized: false }),
     // });
     //const response = fetch(url, {headers: REQUEST_HEADERS})
+
+    client.settings({
+      headerTableSize: 65536,
+      enablePush: false,
+      maxConcurrentStreams: 1000,
+      initialWindowSize: 6291456,
+      maxHeaderListSize: 262144,
+    });
 
     const req = client.request({
       ":path": path,
@@ -125,7 +132,7 @@ async function getSourceAsDOM(url, path) {
     });
     req.on("end", () => {
       try {
-        console.log(data)
+        console.log(data);
       } catch (error) {
         console.error("Failed to parse JSON:", error);
       }
@@ -169,8 +176,9 @@ async function getSourceAsDOM(url, path) {
   }
 }
 
-//getSourceAsDOM("https://www.indeed.com","/jobs?q=happy+lemon&l=United+States");
-getSourceAsDOM("https://tools.scrapfly.io", "/api/info/http");
+getSourceAsDOM("https://www.indeed.com", "/jobs?q=happy+lemon&l=United+States");
+//getSourceAsDOM("https://tools.scrapfly.io", "/api/info/http");
+//getSourceAsDOM("https://tools.scrapfly.io", "/api/fp/anything");
 
 //https://www.howsmyssl.com/a/check
 

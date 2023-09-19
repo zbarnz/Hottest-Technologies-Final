@@ -1,32 +1,105 @@
 const { webkit, firefox } = require("playwright");
 
+//can query: https://www.indeed.com/viewjob?jk=b18bfb26b33e7cd9
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); 
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
-(async () => {
+function spacesToPluses(str) {
+  return str.replace(/ /g, "+");
+}
+
+async function cloudflareCheck(page) {
+  const isCloudflare = await page.$eval(
+    "title",
+    (el) => el.textContent.toLowerCase().match(/cloudflare.*/) !== null
+  );
+
+  if (isCloudflare) {
+    throw new Error("Cloudflare Detected");
+  }
+}
+
+async function pullKeyList(searchTerm) {
   // Launch a new browser
-  const browser = await firefox.launch({ headless: false, slowMo: 1000 });
+  try {
+    const browser = await firefox.launch({ headless: true });
 
-  const context = await browser.newContext();
-  const page = await context.newPage();
-  console.log("gotogoog")
-  await page.goto("https://www.google.com");
-  await page.waitForTimeout(getRandomInt(3000,6000));
-  await page.goto("https://www.indeed.com/jobs?q=happy+lemon&l=United+States");
-  await page.waitForTimeout(getRandomInt(10000,15000));
+    const context = await browser.newContext();
+    const page = await context.newPage();
 
-  // Scroll the page to load additional content
-  await page.evaluate(() => window.scrollBy(0, window.innerHeight));
+    const query = spacesToPluses(searchTerm);
 
-  // Add another random delay of 1 to 5 seconds
-  await page.waitForTimeout(getRandomInt(1000,5000));
+    await page.goto(`https://www.indeed.com/jobs?q=${query}&sort=date`);
+    await page.waitForTimeout(getRandomInt(3000, 10000));
 
-  const html = await page.content()
+    await cloudflareCheck(page);
 
-  console.log(html);
-  await browser.close();
-})();
+    const jobKeys = await page.evaluate(() => {
+      if (
+        window._initialData &&
+        window._initialData.jobKeysWithTwoPaneEligibility
+      ) {
+        return window._initialData.jobKeysWithTwoPaneEligibility;
+      }
+      throw new Error(
+        "No job keys found. If this is unlikely, there is probably an issue getting the page"
+      );
+    });
+
+    await browser.close();
+    return Object.keys(jobKeys);
+  } catch (err) {
+    await browser.close();
+    console.log(err);
+
+    return null;
+  }
+}
+
+// pullKeyList().then((e) => {
+//   console.log(e);
+// });
+
+async function getJobInfo(key) {
+  try {
+    const browser = await firefox.launch({ headless: true });
+    const jobdata = {};
+
+    const context = await browser.newContext();
+    const page = await context.newPage();
+
+    await page.goto(`https://www.indeed.com/viewjob?jk=${key}`);
+    await page.waitForTimeout(getRandomInt(3000, 10000));
+
+    cloudflareCheck(page);
+
+    const content = await page.$eval(
+      'script[type="application/ld+json"]',
+      (e) => e.textContent
+    );
+
+    const data = JSON.parse(content);
+
+    console.log(data);
+
+    await browser.close();
+    return data;
+  } catch (err) {
+    await browser.close();
+    console.log(err);
+
+    return null;
+  }
+}
+
+async function mainScrape() {
+  const keyList = await pullKeyList("software engineer");
+
+  for (let key of keyList) {
+    await getJobInfo(key);
+  }
+}

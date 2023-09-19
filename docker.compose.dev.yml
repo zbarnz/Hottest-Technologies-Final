@@ -1,0 +1,14 @@
+version: "3"
+
+name: hottesttechnologies
+
+services:
+  postgres:
+    container_name: hottesttechnologies-postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: hottesttechnologies
+    ports:
+      - "5432:5432"
