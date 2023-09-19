@@ -84,7 +84,7 @@ async function getJobInfo(key) {
 
     const data = JSON.parse(content);
 
-    console.log(data);
+    console.log(data.title)
 
     await browser.close();
     return data;
@@ -103,3 +103,7 @@ async function mainScrape() {
     await getJobInfo(key);
   }
 }
+
+getJobInfo('4330f1d7b672f4cb').then((e) => {
+  console.log(e);
+});

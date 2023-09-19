@@ -1,38 +1,39 @@
 {
-  "frames": [
-    { "type": "SETTINGS" },
-    {
-      "type": "HEADERS",
-      "stream_id": 1,
-      "length": 539,
-      "headers": [
-        ":path: /api/info/http",
-        ":method: GET",
-        ":authority: tools.scrapfly.io:443",
-        ":scheme: https",
-        "headers: [object Object]",
-        "ciphers: TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA:TLS_RSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:TLS_RSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:TLS_RSA_WITH_AES_256_GCM_SHA384:TLS_RSA_WITH_AES_256_CBC_SHA"
-      ]
+  "@context": "http://schema.org",
+  "@type": "JobPosting",
+  "description": "<div><p>The Senior Engineer will be responsible for developing new features and performance enhancements for the store’s digital platform. This role will work closely with product managers, designers, and other engineers to design, develop, test, and deploy new features and improvements. The ideal candidate has a passion for technology, is always up to date with the latest industry trends, and is capable of delivering high-quality code.</p><p>Responsibilities:</p><ul><li>Develop and maintain the store’s digital platform</li><li>Work closely with product managers to understand requirements and design new features</li><li>Write clean, maintainable code that is easy to read and understand</li><li>Collaborate with designers to ensure a consistent user experience</li><li>Test and deploy new features and improvements</li><li>Stay up to date with the latest industry trends and best practices</li></ul><p>Qualifications:</p><ul><li>5+ years of experience in Java development</li><li>Strong knowledge of Spring Boot and microservices architecture</li><li>Experience with cloud platforms like AWS or Azure</li><li>Excellent problem-solving skills and attention to detail</li><li>Strong communication skills and ability to work in a team</li><li>Experience with front-end technologies like React or Angular is a plus</li></ul></div>",
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Francisco",
+      "addressRegion": "CA",
+      "postalCode": "94105",
+      "addressCountry": "US"
     }
-  ],
-  "headers": {
-    "user_agent": null,
-    "ordered": ["headers", "ciphers"],
-    "parsed_headers": {
-      "Ciphers": [
-        "TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA:TLS_RSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:TLS_RSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:TLS_RSA_WITH_AES_256_GCM_SHA384:TLS_RSA_WITH_AES_256_CBC_SHA"
-      ],
-      "Headers": ["[object Object]"]
-    },
-    "raw_headers": [
-      ":path: /api/info/http",
-      ":method: GET",
-      ":authority: tools.scrapfly.io:443",
-      ":scheme: https",
-      "headers: [object Object]",
-      "ciphers: TLS_AES_128_GCM_SHA256:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA:TLS_RSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256:TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA:TLS_RSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256:TLS_RSA_WITH_AES_256_GCM_SHA384:TLS_RSA_WITH_AES_256_CBC_SHA"
-    ],
-    "digest": "7d010443693eec253a121e2aa2ba177c"
   },
-  "version": 2
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Sephora"
+  },
+  "directApply": false,
+  "title": "Senior Engineer, Java, Store Digital",
+  "datePosted": "2023-09-17T20:29:03Z",
+  "validThrough": "2024-01-15T20:29:03Z",
+  "employmentType": ["FULL_TIME"],
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 164000,
+      "maxValue": 181000,
+      "unitText": "YEAR"
+    }
+  },
+  "jobLocationType": "TELECOMMUTE",
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "name": "United States"
+  }
 }
