@@ -10,5 +10,8 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
       POSTGRES_DB: hottesttechnologies
+    expose:
+      - "5432" 
     ports:
-      - "5432:5432" # respect prescient's ports 
+      - "5432:5433" # respect prescient's ports
+    command: -p 5433

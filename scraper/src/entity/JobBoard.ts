@@ -9,5 +9,5 @@ export class JobBoard {
     @Column()
     name: string
 
-    // might want to add some configuration stuff per job board so leaving this here
+    // might want to add some configuration stuff per job board so leaving this heretyr
 }

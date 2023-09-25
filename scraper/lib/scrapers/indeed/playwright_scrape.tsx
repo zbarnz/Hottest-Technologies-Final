@@ -1,23 +1,31 @@
-const { webkit, firefox } = require("playwright");
-const listingController = require("../../controllers/listing");
+const { firefox, webkit } = require("playwright");
 const { Listing } = require("../../../src/entity/Listing");
-console.log(listingController);
-//can query: https://www.indeed.com/viewjob?jk=b18bfb26b33e7cd9
+const listingController = require("../../controllers/listing");
 
-function getRandomInt(min, max) {
+console.log(listingController);
+
+export {};
+
+declare global {
+  interface Window {
+    _initialData: any;
+  }
+}
+
+function getRandomInt(min: number, max: number): number {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function spacesToPluses(str) {
+function spacesToPluses(str: string): string {
   return str.replace(/ /g, "+");
 }
 
-async function cloudflareCheck(page) {
+async function cloudflareCheck(page: any) {
   const isCloudflare = await page.$eval(
     "title",
-    (el) => el.textContent.toLowerCase().match(/cloudflare.*/) !== null
+    (el: any) => el.textContent.toLowerCase().match(/cloudflare.*/) !== null
   );
 
   if (isCloudflare) {
@@ -25,10 +33,10 @@ async function cloudflareCheck(page) {
   }
 }
 
-async function pullKeyList(searchTerm) {
-  // Launch a new browser
+async function pullKeyList(searchTerm: string): Promise<string[] | null> {
+  let browser;
   try {
-    const browser = await firefox.launch({ headless: true });
+    browser = await firefox.launch({ headless: true });
 
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -40,7 +48,7 @@ async function pullKeyList(searchTerm) {
 
     await cloudflareCheck(page);
 
-    const jobKeys = await page.evaluate(() => {
+    const jobKeys: any = await page.evaluate(() => {
       if (
         window._initialData &&
         window._initialData.jobKeysWithTwoPaneEligibility
@@ -56,21 +64,15 @@ async function pullKeyList(searchTerm) {
     return Object.keys(jobKeys);
   } catch (err) {
     console.log(err);
-    await browser.close();
-
+    if (browser) await browser.close();
     return null;
   }
 }
 
-// pullKeyList().then((e) => {
-//   console.log(e);
-// });
-
-async function getJobInfo(key) {
-  let content;
-
+async function getJobInfo(key: string): Promise<any | null> {
+  let browser;
   try {
-    const browser = await firefox.launch({ headless: true });
+    browser = await firefox.launch({ headless: true });
     const jobdata = {};
 
     const context = await browser.newContext();
@@ -82,34 +84,30 @@ async function getJobInfo(key) {
     cloudflareCheck(page);
 
     const content = await (async () => {
-      //@thudsonbu is there a better way to handle if $eval throws an error
       try {
         return await page.$eval(
           'script[type="application/ld+json"]',
-          (e) => e.textContent
+          (e: any) => e.textContent
         );
-      } catch(err) {
-        console.log(err)
-        return "test";
+      } catch (e) {
+        console.log(e);
+        return undefined;
       }
     })();
 
-    console.log(content)
-
     if (!content) {
-      console.log("couldnt find context obj"); //TODO data can still be grabbed from initialData if context isnt present (such as when the job has been delisted)
+      console.log("couldn't find context obj");
     }
 
     const data = JSON.parse(content);
 
-    console.log(data.title);
+    await saveListing(data);
 
     await browser.close();
     return data;
   } catch (err) {
     console.log(err);
-    await browser.close();
-
+    if (browser) await browser.close();
     return null;
   }
 }
@@ -117,32 +115,42 @@ async function getJobInfo(key) {
 async function mainScrape() {
   const keyList = await pullKeyList("software engineer");
 
-  for (let key of keyList) {
-    let jobinfo = await getJobInfo(key);
+  if (keyList) {
+    for (let key of keyList) {
+      let jobinfo = await getJobInfo(key);
 
-    saveListing(jobinfo);
+      saveListing(jobinfo);
+    }
   }
 }
 
-async function saveListing(data) {
+async function saveListing(data: any) {
   const listing = new Listing();
 
   listing.title = data.title;
   listing.description = data.description;
   listing.datePosted = data.datePosted;
-  listing.employmentType = data.employmentType.join(",");
-  listing.minSalary = data.baseSalary.value.minValue;
-  listing.maxSalary = data.baseSalary.value.maxValue;
-  listing.country = data.jobLocation.address.addressCountry;
-  listing.region1 = data.jobLocation.address.addressRegion;
-  listing.region2 = data.jobLocation.address.addressRegion2;
-  listing.locality = data.jobLocation.address.addressLocality;
+  listing.employmentType = data.employmentType?.join(",") ?? null;
+  listing.minSalary = data.baseSalary?.value?.minValue ?? null;
+  listing.maxSalary = data.baseSalary?.value?.maxValue ?? null;
+  listing.country = data.jobLocation?.address?.addressCountry ?? null;
+  listing.region1 = data.jobLocation?.address?.addressRegion ?? null;
+  listing.region2 = data.jobLocation?.address?.addressRegion2 ?? null;
+  listing.locality = data.jobLocation?.address?.addressLocality ?? null;
   listing.remoteFlag = data.jobLocationType == "TELECOMMUTE";
-  listing.jobBoardId = 1; //TODO get indeed job id
+  listing.jobBoardId = 1;
 
-  listingController.save(listing);
+  console.log(listing)
+
+  await listingController.save(listing);
 }
 
-getJobInfo("a35562b296e40f38").then((e) => {
+getJobInfo("eee10aa168717a70").then((e) => {
   console.log(e);
 });
+
+// pullKeyList("software").then((e) => {
+//   console.log(e);
+// });
+// Assuming Listing is a class or type defined elsewhere, it should be imported at the top.
+// import { Listing } from 'path-to-listing';

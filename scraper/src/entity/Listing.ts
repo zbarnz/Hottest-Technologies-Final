@@ -2,6 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from "ty
 
 import {JobBoard} from "./JobBoard"; 
 
+//TODO snake case
 @Entity()
 export class Listing {
 
@@ -14,17 +15,17 @@ export class Listing {
     @Column()
     description: string
 
-    @Column()
-    date_posted: number
+    @Column({name: "date_posted"})
+    datePosted: number
 
-    @Column()
-    employment_type: string     //eg "fulltime", "parttime", etc.
+    @Column({name: "employment_type"})
+    employmentType: string     //eg "fulltime", "parttime", etc.
 
-    @Column()
-    min_salary: number
+    @Column({name: "min_salary"})
+    minSalary: number
 
-    @Column()
-    max_salary: number
+    @Column({name: "max_salary"})
+    maxSalary: number
 
     @Column()
     country: string
@@ -38,23 +39,23 @@ export class Listing {
     @Column()
     locality: string
 
-    @Column()
-    remote_flag: boolean
+    @Column({name: "remote_flag"})
+    remoteFlag: boolean
 
-    @OneToOne(type => JobBoard) @JoinColumn()
-    job_board_id: number
+    @OneToOne(type => JobBoard) @JoinColumn({name: "job_board_id"})
+    jobBoardId: number
 
     // We can likely remove the below columns after some testing, but I need to ensure there's no important information in them first.
 
-    @Column()
-    requirements_object: string
+    @Column({name: "requirements_object"})
+    requirementsObject: string
 
-    @Column()
-    salary_object: string
+    @Column({name: "salary_object"})
+    salaryObject: string
 
-    @Column()
-    oragnization_object: string
+    @Column({name: "oragnization_object"})
+    oragnizationObject: string
 
-    @Column()
-    location_object: string
+    @Column({name: "location_object"})
+    locationObject: string
 }
