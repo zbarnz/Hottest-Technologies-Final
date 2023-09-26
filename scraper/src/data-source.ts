@@ -11,8 +11,18 @@ export const AppDataSource = new DataSource({
   password: "password",
   database: "hottesttechnologies",
   synchronize: true,
-  logging: true,
+  logging: false,
   entities: [Listing, JobBoard], //can also import like "src/entity/*.ts"
   migrations: [],
   subscribers: [],
 });
+
+let connection;
+
+export const getConnection = async (): Promise<DataSource> => {
+  if (!AppDataSource.isInitialized) {
+    connection = await AppDataSource.initialize();
+  }
+
+  return connection;
+};

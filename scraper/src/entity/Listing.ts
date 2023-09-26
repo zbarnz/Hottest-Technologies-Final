@@ -1,61 +1,80 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from "typeorm"
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  JoinColumn,
+} from "typeorm";
 
-import {JobBoard} from "./JobBoard"; 
+import { JobBoard } from "./JobBoard";
 
-//TODO snake case
 @Entity()
 export class Listing {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @PrimaryGeneratedColumn()
-    id: number
+  @Column()
+  title: string;
 
-    @Column()
-    title: string
+  @Column()
+  description: string;
 
-    @Column()
-    description: string
+  @Column({ nullable: true, type: "text" })
+  company: string;
 
-    @Column({name: "date_posted"})
-    datePosted: number
+  @Column({ name: "date_posted" })
+  datePosted: number;
 
-    @Column({name: "employment_type"})
-    employmentType: string     //eg "fulltime", "parttime", etc.
+  @Column({
+    name: "employment_type",
+    nullable: true,
+    type: "text",
+    array: true,
+  })
+  employmentType: string[] | null; //eg "fulltime", "parttime", etc.
 
-    @Column({name: "min_salary"})
-    minSalary: number
+  @Column({ nullable: true, type: "text" })
+  currency: string | null;
 
-    @Column({name: "max_salary"})
-    maxSalary: number
+  @Column({ name: "min_salary", nullable: true, type: "int" })
+  minSalary: number | null;
 
-    @Column()
-    country: string
+  @Column({ name: "max_salary", nullable: true, type: "int" })
+  maxSalary: number | null;
 
-    @Column()
-    region1: string
+  @Column({ nullable: true, type: "text" })
+  country: string | null;
 
-    @Column()
-    region2: string
+  @Column({ nullable: true, type: "text" })
+  region1: string | null;
 
-    @Column()
-    locality: string
+  @Column({ nullable: true, type: "text" })
+  region2: string | null;
 
-    @Column({name: "remote_flag"})
-    remoteFlag: boolean
+  @Column({ nullable: true, type: "text" })
+  locality: string | null;
 
-    @OneToOne(type => JobBoard) @JoinColumn({name: "job_board_id"})
-    jobBoardId: number
+  @Column({ name: "remote_flag", default: false })
+  remoteFlag: boolean = false;
 
-    // We can likely remove the below columns after some testing, but I need to ensure there's no important information in them first.
+  @ManyToOne((type) => JobBoard)
+  @JoinColumn({ name: "job_board_id" })
+  jobBoardId: number;
 
-    @Column({name: "requirements_object"})
-    requirementsObject: string
+  @Column({ name: "job_listing_id" })
+  jobListingId: string;
 
-    @Column({name: "salary_object"})
-    salaryObject: string
+  // We can likely remove the below columns after some testing, but I need to ensure there's no important information in them first.
 
-    @Column({name: "oragnization_object"})
-    oragnizationObject: string
+  @Column({ name: "requirements_object", nullable: true, type: "jsonb" })
+  requirementsObject: string;
 
-    @Column({name: "location_object"})
-    locationObject: string
+  @Column({ name: "salary_object", nullable: true, type: "jsonb" })
+  salaryObject: string;
+
+  @Column({ name: "oragnization_object", nullable: true, type: "jsonb" })
+  oragnizationObject: string;
+
+  @Column({ name: "location_object", nullable: true, type: "jsonb" })
+  locationObject: string;
 }
