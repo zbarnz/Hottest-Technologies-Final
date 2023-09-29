@@ -1,10 +1,13 @@
 import { error } from "console";
 import { JobBoard } from "src/entity/JobBoard";
 
-const { firefox, Browser } = require("playwright");
-const { Listing } = require("../../../src/entity/Listing");
-const listingController = require("../../controllers/listing");
+import { firefox, Browser } from "playwright";
+import { Listing } from "../../../src/entity/Listing";
+import { saveListing, getListing } from "../../controllers/listing";
 
+import { utcToInt } from "../../../src/utils/date";
+import { calculateYearlySalary, getRandomInt } from "../../../src/utils/math";
+import { spacesToPluses } from "../../../src/utils/string";
 
 declare global {
   interface Window {
@@ -12,40 +15,7 @@ declare global {
   }
 }
 
-type PayFrequency = "year" | "month" | "hour";
-
-function calculateYearlySalary(
-  frequency: PayFrequency,
-  amount: number
-): number {
-  switch (frequency.toLowerCase()) {
-    case "year":
-      return amount;
-    case "month":
-      return amount * 12;
-    case "hour":
-      // Assuming a 40-hour work week and 52 weeks in a year
-      return amount * 40 * 52;
-    default:
-      return 1337;
-  }
-}
-
-function utcToInt(utcString: string): number {
-  const dateObj = new Date(utcString);
-  const unixTimestampMillis = dateObj.getTime();
-  return Math.floor(unixTimestampMillis / 1000);
-}
-
-function getRandomInt(min: number, max: number): number {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min);
-}
-
-function spacesToPluses(str: string): string {
-  return str.replace(/ /g, "+");
-}
+//TODO introduce a duplicate check of some sort. I think checking if there is a same position title + company in the last month we just ignore it? tough to say. @thudson what do you think?
 
 async function cloudflareCheck(page: any) {
   const isCloudflare = await page.$eval(
@@ -59,7 +29,7 @@ async function cloudflareCheck(page: any) {
 }
 
 async function listingExists(jobListingId, jobBoardId) {
-  const existingListing = await listingController.get(jobListingId, jobBoardId);
+  const existingListing = await getListing(jobListingId, jobBoardId);
 
   if (existingListing) {
     //TODO if listing is older than 30 days and there are changes then update
@@ -68,8 +38,11 @@ async function listingExists(jobListingId, jobBoardId) {
   return null;
 }
 
-async function pullKeyList(searchTerm: string): Promise<string[] | null> {
-  let browser: typeof Browser;
+async function pullKeyList(
+  searchTerm: string,
+  skip?: number
+): Promise<string[] | null> {
+  let browser: Browser;
   try {
     browser = await firefox.launch({ headless: true });
 
@@ -78,8 +51,14 @@ async function pullKeyList(searchTerm: string): Promise<string[] | null> {
 
     const query = spacesToPluses(searchTerm);
 
-    await page.goto(`https://www.indeed.com/jobs?q=${query}&sort=date`);
-    await page.waitForTimeout(getRandomInt(3000, 10000));
+    let url = `https://www.indeed.com/jobs?q=${query}&sort=date`;
+
+    if (skip) {
+      url += `&start=${skip}`;
+    }
+
+    await page.goto(url);
+    await page.waitForTimeout(getRandomInt(1000, 4000));
 
     await cloudflareCheck(page);
 
@@ -114,7 +93,7 @@ async function getJobInfo(key: string): Promise<any | null> {
     const page = await context.newPage();
 
     await page.goto(`https://www.indeed.com/viewjob?jk=${key}`);
-    await page.waitForTimeout(getRandomInt(3000, 10000));
+    await page.waitForTimeout(getRandomInt(1000, 4000));
 
     cloudflareCheck(page);
 
@@ -147,8 +126,8 @@ async function getJobInfo(key: string): Promise<any | null> {
   }
 }
 
-async function mainScrape() {
-  const keyList = await pullKeyList("software engineer");
+async function mainScrape(term: string, skip?: number) {
+  const keyList = await pullKeyList(term, skip);
 
   if (keyList) {
     for (let jobListingId of keyList) {
@@ -165,12 +144,12 @@ async function mainScrape() {
 
       let jobinfo = await getJobInfo(jobListingId);
 
-      await saveListing(jobinfo, jobListingId, 1);
+      await compileListing(jobinfo, jobListingId, 1);
     }
   }
 }
 
-async function saveListing(
+async function compileListing(
   data: any,
   jobListingId: string,
   jobBoardId: number
@@ -184,20 +163,29 @@ async function saveListing(
     return;
   }
 
+  const safeMath = (
+    // Prevent math operations from returning NaN
+    func: (num: number) => number,
+    value: number
+  ): number | null => {
+    const result = func(value);
+    return isNaN(result) ? null : result;
+  };
+
   let maxYearlySalary: number;
   let minYearlySalary: number;
 
-  if (data.baseSalary?.value?.maxValue) {
+  if (data.baseSalary?.value?.maxValue || data.baseSalary?.value?.value) {
     maxYearlySalary = calculateYearlySalary(
       data.baseSalary.value.unitText || "Year",
-      data.baseSalary.value.maxValue
+      data.baseSalary?.value?.maxValue || data.baseSalary?.value?.value
     );
   }
 
-  if (data.baseSalary?.value?.minValue) {
+  if (data.baseSalary?.value?.minValue || data.baseSalary?.value?.value) {
     minYearlySalary = calculateYearlySalary(
       data.baseSalary.value.unitText || "Year",
-      data.baseSalary.value.minValue
+      data.baseSalary?.value?.minValue || data.baseSalary?.value?.value
     );
   }
 
@@ -205,11 +193,12 @@ async function saveListing(
 
   listing.title = data.title;
   listing.description = data.description;
+  listing.company = data.hiringOrganization.name;
   listing.datePosted = utcToInt(data.datePosted);
   listing.employmentType = data.employmentType ?? null;
   listing.currency = data.baseSalary?.currency ?? null;
-  listing.minSalary = minYearlySalary ?? null;
-  listing.maxSalary = maxYearlySalary ?? null;
+  listing.minSalary = safeMath(Math.floor, minYearlySalary) ?? null;
+  listing.maxSalary = safeMath(Math.ceil, maxYearlySalary) ?? null;
   listing.country = data.jobLocation?.address?.addressCountry ?? null;
   listing.region1 = data.jobLocation?.address?.addressRegion1 ?? null;
   listing.region2 = data.jobLocation?.address?.addressRegion2 ?? null;
@@ -222,19 +211,9 @@ async function saveListing(
   listing.oragnizationObject = data.hiringOrganization ?? null;
   listing.locationObject = data.jobLocation ?? null;
 
-  const res = await listingController.save(listing);
+  const res = await saveListing(listing);
   console.log("Listing added: " + res.id);
   return res;
 }
 
-export {mainScrape};
-
-// mainScrape().then(() => {
-//   console.log("success");
-// });
-
-// pullKeyList("software").then((e) => {
-//   console.log(e);
-// });
-// Assuming Listing is a class or type defined elsewhere, it should be imported at the top.
-// import { Listing } from 'path-to-listing';
+export { mainScrape };
