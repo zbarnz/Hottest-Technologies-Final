@@ -1,5 +1,5 @@
 import { error } from "console";
-import { JobBoard } from "src/entity/JobBoard";
+import { JobBoard } from "../../../src/entity/JobBoard";
 
 import { firefox, Browser } from "playwright";
 import { Listing } from "../../../src/entity/Listing";
