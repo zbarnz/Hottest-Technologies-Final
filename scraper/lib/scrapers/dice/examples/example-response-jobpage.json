@@ -1,0 +1,276 @@
+{
+  "props": {
+    "pageProps": {
+      "initialState": {
+        "authReducer": {
+          "auth": {
+            "isLoggedIn": false,
+            "legacyBearer": null,
+            "accessJwt": null,
+            "identityJwt": null
+          },
+          "peopleId": null,
+          "candidateId": null
+        },
+        "ssrAuthReducer": {
+          "ssrAccessToken": null,
+          "ssrLegacyBearer": null,
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"
+        },
+        "modalReducer": { "modal": null },
+        "geoHeaderReducer": {
+          "xDiceCityLatitude": "39.66670",
+          "xDiceCityLongitude": "-105.08540",
+          "xDiceCityName": "Lakewood",
+          "xDiceCityState": "CO",
+          "xDiceClientIp": "75.71.58.13, 10.13.225.149,52.200.88.36",
+          "xDiceCountryCode": "US",
+          "xDiceRealIp": "10.13.225.149"
+        },
+        "api": {
+          "queries": {
+            "getJobById(\"cf74edd9-eda5-4ee5-bfc8-d2ed9368e533\")": {
+              "status": "fulfilled",
+              "endpointName": "getJobById",
+              "requestId": "C9a7F31Kl2TEArxOHchwZ",
+              "originalArgs": "cf74edd9-eda5-4ee5-bfc8-d2ed9368e533",
+              "startedTimeStamp": 1695966938846,
+              "data": {
+                "statusCode": 200,
+                "statusMessage": "Job Found!",
+                "company": { "groupId": 2035343, "name": null },
+                "recruiter": {
+                  "displayRecruiterProfile": false,
+                  "id": "2035345",
+                  "recruiterId": null
+                },
+                "skills": [
+                  { "name": "Calibration" },
+                  { "name": "Manufacturing" },
+                  { "name": "Electrical engineering" },
+                  { "name": "OER" },
+                  { "name": "Python" },
+                  { "name": "Design" },
+                  { "name": "Debugging" },
+                  { "name": "Augmented reality" },
+                  { "name": "Failure analysis" },
+                  { "name": "Onshore" },
+                  { "name": "Computer engineering" },
+                  { "name": "Brand" },
+                  { "name": "Computer science" },
+                  { "name": "Sourcing" },
+                  { "name": "Testing" },
+                  { "name": "Computer hardware" },
+                  { "name": "C" },
+                  { "name": "Embedded software" },
+                  { "name": "C++" },
+                  { "name": "Art" },
+                  { "name": "Management" },
+                  { "name": "Software development" },
+                  { "name": "Firmware" },
+                  { "name": "Leadership" },
+                  { "name": "Virtual reality" }
+                ],
+                "applicationDetail": {
+                  "email": null,
+                  "ccEmail": null,
+                  "easyApply": false,
+                  "type": "APPLY_TO_URL",
+                  "url": "https://click.appcast.io/track/hfdyu4x?cs=njy\u0026amp;sjg=6dpo"
+                },
+                "employmentDetail": {
+                  "type": "DIRECT_HIRE",
+                  "contract": null,
+                  "directHire": { "types": ["FULL_TIME"] },
+                  "travel": { "percentage": "TRAVEL_NULL" }
+                },
+                "dateDeactivated": "2023-10-30T00:08:29.000Z",
+                "dateFirstActive": "2023-09-08T00:07:11.000Z",
+                "datePosted": "2023-09-08T00:07:11.000Z",
+                "dateUpdated": "2023-09-29T00:08:29.000Z",
+                "description": "Our high-profile client and American multinational technology corporation headquartered in Redmond, WA is seeking an experienced Firmware/Embedded Software Developer for 9-18 month contract assignment onsite in Redmond, WA. In this role, you will join a virtual reality camera team responsible to design, implement, and debug product firmware and embedded software for the Mixed Reality Display Software Team. This is an opportunity to work on state-of-the-art Mixed Reality, AR and VR technology. \u003cbr /\u003e\u003cbr /\u003e\u003cstrong\u003eJob Title: Firmware/Embedded Software Developer\u003c/strong\u003e\u003cbr /\u003e \u003cbr /\u003e\u003cstrong\u003eLocation: Onsite in Redmond, WA\u003c/strong\u003e\u003cbr /\u003e \u003cbr /\u003e\u003cstrong\u003ePay Rate: $68/HR on W2\u003c/strong\u003e\u003cbr /\u003e\u003cbr /\u003e\u003cstrong\u003eWhat's the Job?\u003c/strong\u003e\u003cbr /\u003e \u003cul\u003e \u003cli\u003e 80% working on design, coding, debugging 20% testing the code \u003cli\u003e Software and test development for the Mixed Reality display software team. \u003cli\u003e Test, debug, instrument and improve our display software and calibration tools. \u003cli\u003e Design and build functional automated tests for display software. \u003cli\u003e Assist with hardware bring-up and device manufacturing and failure analysis. \u003c/ul\u003e \u003cbr /\u003e\u003cstrong\u003eWhat's Needed?\u003c/strong\u003e\u003cbr /\u003e \u003cul\u003e \u003cli\u003e 5+ years of professional experience in firmware/embedded software development \u003cli\u003e Strong programming skills (C/C++) \u003cli\u003e Python desirable \u003cli\u003e Low level software development experience required \u003cli\u003e BS or MS in Computer Engineering, Electrical Engineering, Computer Science or related field OR equivalent experience. \u003c/ul\u003e \u003cbr /\u003e\u003cbr /\u003e\u003cstrong\u003eWhat's in it for me?\u003c/strong\u003e\u003cbr /\u003e \u003cul\u003e \u003cli\u003eOpportunity to work on state of the art Mixed Reality, AR and VR Technology \u003cli\u003ePTO \u003cli\u003eMedical/Dental/Vision \u003cli\u003e401K \u003c/ul\u003e \u003cbr /\u003e\u003cbr /\u003eIf this is a role that interests you and you'd like to learn more, click apply now and a recruiter will be in touch with you to discuss this great opportunity. We look forward to speaking with you!\u003cbr /\u003e\u003cbr /\u003e\u003cstrong\u003eAbout ManpowerGroup, Parent Company of:\u003c/strong\u003e\u003cstrong\u003eManpower, Experis, Talent Solutions, and Jefferson Wells\u003c/strong\u003e\u003cbr /\u003e \u003cbr /\u003e ManpowerGroup\u0026reg; (NYSE: MAN), the leading global workforce solutions company, helps organizations transform in a fast-changing world of work by sourcing, assessing, developing, and managing the talent that enables them to win. We develop innovative solutions for hundreds of thousands of organizations every year, providing them with skilled talent while finding meaningful, sustainable employment for millions of people across a wide range of industries and skills. Our expert family of brands - \u003cstrong\u003e Manpower, Experis, Talent Solutions, and Jefferson Wells \u003c/strong\u003e - creates substantial value for candidates and clients across more than 75 countries and territories and has done so for over 70 years. We are recognized consistently for our diversity - as a best place to work for Women, Inclusion, Equality and Disability and in 2022 ManpowerGroup was named one of the World\u0026apos;s Most Ethical Companies for the 13th year - all confirming our position as the brand of choice for in-demand talent.",
+                "detailView": {
+                  "absoluteUrl": "https://www.dice.com/job-detail/cf74edd9-eda5-4ee5-bfc8-d2ed9368e533",
+                  "relativeUrl": "/job-detail/cf74edd9-eda5-4ee5-bfc8-d2ed9368e533",
+                  "templateType": "BRAND_MAX",
+                  "suppressAds": true
+                },
+                "compensationDetail": {
+                  "rawText": "USD 68.00 per hour",
+                  "type": "HOURLY"
+                },
+                "id": "cf74edd9-eda5-4ee5-bfc8-d2ed9368e533",
+                "legacyJobId": "9e8358fbae681bccd8a4a3400eee402b",
+                "referenceCode": "18601_233271",
+                "title": "Firmware/Embedded Software Developer",
+                "status": "ACTIVE",
+                "locationDetail": {
+                  "locations": [
+                    {
+                      "city": "Redmond",
+                      "country": "US",
+                      "latitude": "47.683647",
+                      "longitude": "-122.12183",
+                      "postalCode": "98052",
+                      "preferred": true,
+                      "state": "WA",
+                      "street": null
+                    }
+                  ],
+                  "remote": false,
+                  "workFromHome": false
+                },
+                "titleSanitized": "Firmware/Embedded Software Developer",
+                "dateFirstActiveAgo": "21 days ago",
+                "dateUpdatedAgo": "5 hours ago"
+              },
+              "fulfilledTimeStamp": 1695966938967
+            },
+            "getCompanyById({\"groupId\":2035343,\"isBrandmax\":true})": {
+              "status": "fulfilled",
+              "endpointName": "getCompanyById",
+              "requestId": "ixrgz-AsQJK3pDtK42sCF",
+              "originalArgs": { "groupId": 2035343, "isBrandmax": true },
+              "startedTimeStamp": 1695966938967,
+              "data": {
+                "companyId": "0348055a-7aa1-4736-9371-67d1dd4c8776",
+                "desc": "Experis",
+                "groupId": 2035343,
+                "logoUrl": "https://cdn.filestackcontent.com/O8wHaeYISNizFt9NEtW5",
+                "name": "comsysd1",
+                "productType": "Subscription",
+                "profileUrl": "https://www.dice.com/company-profile/cf3562e3-f17c-5595-85c8-f0883527e496",
+                "status": "ACTIVE",
+                "employerBrandingAssets": {
+                  "legacy_company_id": 2035343,
+                  "brand_max_template": "FULL",
+                  "paid": false,
+                  "hex_background": null,
+                  "company_overview": "Transforming challenges into opportunity. Accelerating careers. Propelling business growth. Few companies can match Experis scope, history of success and our reputation as the global leader in professional talent and solutions. We know that peak performance is humanly possible. We help our clients and our talent to achieve it through our deep industry knowledge and an unmatched understanding of human potential.\u003cbr\u003e\u003cbr\u003eExperis accelerates business growth and careers by intensely attracting, assessing and placing specialized expertise in IT, Finance \u0026 Accounting, Engineering and other industries. We precisely deliver in-demand talent for mission-critical positions, enhancing the competitiveness of the organizations and people we serve. We also apply our expertise to provide a suite of proven workforce solutions that improve our clients' productivity, efficiency and cost containment.\u003cbr\u003e\u003cbr\u003eExperis is a dedicated business unit of ManpowerGroup a world leader in employment services for more than 60 years, and a recognized pioneer in the industry. \u003cbr\u003e\u003cbr\u003e \u003cbr\u003e\u003ca href='https://twitter.com/experis_us' target='_blank'\u003eTwitter\u003c/a\u003e\u003cbr\u003e\u003cbr\u003e\u003ca href='https://facebook.com/ExperisUS' target='_blank'\u003eFacebook\u003c/a\u003e\u003cbr\u003e",
+                  "company_profile_url": "https://www.dice.com/company-profile/cf3562e3-f17c-5595-85c8-f0883527e496",
+                  "tracking_pixel": null,
+                  "company_name": "Experis",
+                  "company_branding_images": [
+                    {
+                      "container": "prod-file-upload-store",
+                      "date": "2023-03-12T21:51:38.033Z",
+                      "filename": "logo.png",
+                      "handle": null,
+                      "key": "ft8fVJ3wQvWlolqFKjwQ_logo.png",
+                      "mimetype": "image/png",
+                      "size": 7307,
+                      "upload_id": null,
+                      "url": "https://cdn.filestackcontent.com/Y2cPZLPqTquwWN7Hn4uK",
+                      "typename": null,
+                      "label": "Branding_Banner"
+                    },
+                    {
+                      "container": "prod-file-upload-store",
+                      "date": "2023-03-12T21:51:38.033Z",
+                      "filename": "banner.png",
+                      "handle": null,
+                      "key": "UlSJhRGdSBmVk1cgvAhR_banner.png",
+                      "mimetype": "image/png",
+                      "size": 527576,
+                      "upload_id": null,
+                      "url": "https://cdn.filestackcontent.com/RTstifREKEFsfDLdyTpQ",
+                      "typename": null,
+                      "label": "About_Company_One"
+                    },
+                    {
+                      "container": "",
+                      "date": "2023-06-23T17:43:48.000Z",
+                      "filename": "transformed.png",
+                      "handle": "O8wHaeYISNizFt9NEtW5",
+                      "key": "",
+                      "mimetype": "image/png",
+                      "size": 59909,
+                      "upload_id": "1687542228190",
+                      "url": "https://cdn.filestackcontent.com/O8wHaeYISNizFt9NEtW5",
+                      "typename": null,
+                      "label": "Logo"
+                    }
+                  ],
+                  "company_videos": [],
+                  "social_handles": []
+                }
+              },
+              "fulfilledTimeStamp": 1695966939042
+            }
+          },
+          "mutations": {},
+          "provided": {},
+          "subscriptions": {
+            "getJobById(\"cf74edd9-eda5-4ee5-bfc8-d2ed9368e533\")": {
+              "C9a7F31Kl2TEArxOHchwZ": {}
+            },
+            "getCompanyById({\"groupId\":2035343,\"isBrandmax\":true})": {
+              "ixrgz-AsQJK3pDtK42sCF": {}
+            }
+          },
+          "config": {
+            "online": true,
+            "focused": true,
+            "middlewareRegistered": true,
+            "refetchOnFocus": false,
+            "refetchOnReconnect": false,
+            "refetchOnMountOrArgChange": false,
+            "keepUnusedDataFor": 60,
+            "reducerPath": "api"
+          }
+        },
+        "correlationIdReducer": {
+          "correlationId": "0df61a4f-eb68-462d-a08e-12dc605ddff7"
+        },
+        "featuresReducer": { "showAds": false },
+        "djvContext": {
+          "jobId": "cf74edd9-eda5-4ee5-bfc8-d2ed9368e533",
+          "canonical": "https://www.dice.com/job-detail/cf74edd9-eda5-4ee5-bfc8-d2ed9368e533",
+          "disabled": "",
+          "searchLink": "",
+          "isActive": true,
+          "debug": false,
+          "features": "",
+          "companyBrandMaxInfo": {},
+          "correlationId": "0df61a4f-eb68-462d-a08e-12dc605ddff7",
+          "suppressAds": true,
+          "optimize": null,
+          "antiFlicker": false,
+          "environment": "prod"
+        },
+        "awsWafHeaderReducer": { "xAamznWafXBotControl": null },
+        "employerBranding": {
+          "bannerImage": null,
+          "companyDescription": null,
+          "companyLogo": null,
+          "mediaSlot1": null,
+          "mediaSlot2": null,
+          "templateType": null,
+          "socialHandles": null,
+          "hexColor": null,
+          "companyProfileUrl": null,
+          "companyName": null
+        },
+        "toast": { "visible": false, "message": "" },
+        "company": {
+          "groupId": 2035343,
+          "logoUrl": "https://cdn.filestackcontent.com/O8wHaeYISNizFt9NEtW5",
+          "name": "Experis",
+          "profileUrl": "https://www.dice.com/company-profile/cf3562e3-f17c-5595-85c8-f0883527e496"
+        }
+      }
+    },
+    "__N_SSP": true
+  },
+  "page": "/[id]",
+  "query": { "id": "cf74edd9-eda5-4ee5-bfc8-d2ed9368e533" },
+  "buildId": "AH-jp_kbG-7k2Ue8_wFOE",
+  "assetPrefix": "/job-detail",
+  "isFallback": false,
+  "dynamicIds": [
+    7957, 3999, 3571, 9781, 4285, 1095, 2187, 8865, 6328, 3794, 7462, 5304,
+    3108, 6619, 8799, 611
+  ],
+  "gssp": true,
+  "scriptLoader": []
+}
