@@ -17,7 +17,7 @@ const REQUEST_HEADERS = {
   "Upgrade-Insecure-Requests": "1",
   "User-Agent":
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0",
-  "x-api-key": "1YAt0R9wBg4WfsF9VB2778F5CHLAPMVW3WAZcKd8",
+  "x-api-key": "1YAt0R9wBg4WfsF9VB2778F5CHLAPMVW3WAZcKd8", //TODO this is probably going to eventually refresh or somethign. need to create a function that visits dice and grabs a new api key
 };
 
 function buildURL(page: number = 1, pageSize: number = 15): string {
