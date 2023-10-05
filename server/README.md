@@ -71,3 +71,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+### GPT PROMPT:
+
+Give me an array of JSON objects where the first property is a programming technology and the second property is your confidence rating (as a percent) that the skill is part of the job description (example: {skill: "javascript", confidence: "0.93"}) for all programming technologies required for the following job description. Do not output any explanation or extra information than the array.
+
+Provide an array of JSON objects containing programming technologies that are explicitly mentioned as required skills in the following job description, along with a rating (as a percent) with how important that skill is for the job. Do not include skills that are mentioned but not explicitly required for the role. Do not output any explanation or extra information other than the array.

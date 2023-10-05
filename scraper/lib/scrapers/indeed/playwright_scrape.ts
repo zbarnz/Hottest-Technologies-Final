@@ -104,6 +104,7 @@ async function getJobInfo(key: string): Promise<any | null> {
           (e: any) => e.textContent
         );
       } catch (e) {
+        console.log(await page.content());
         console.log(e);
         return undefined;
       }
@@ -133,7 +134,7 @@ async function mainScrape(term: string, skip?: number) {
     for (let jobListingId of keyList) {
       const jobBoardId = 1; //TODO grab indeed's job board id from db instead of hardcode
 
-      const existingListing = await listingExists(jobListingId, jobBoardId);
+      const existingListing = await listingExists(jobListingId, jobBoardId); //TODO create connection pool and remove from arrayk
 
       if (existingListing) {
         console.log(

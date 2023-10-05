@@ -1,0 +1,24 @@
+"System One is seeking an Embedded Software Engineer for a long-term opportunity with a large Aerospace &amp; Defense Company in Grand Prairie, TX. Candidates must have active DOD secret security clearance for consideration. Embedded Software Engineers will need the ability to come up to speed on the existing software design and work with the systems/software/hardware leads to update the existing design/implementation. This will include interfacing with the hardware and processing uplinks/downlinks messages from the tactical datalink. Most of the software will be high-level application development in a Linux environment. The candidate will participate in formal software qualification testing as well as software development to support program commitments. Required Qualifications: Must have an active DOD secret security clearance Strong experience with C/C++ with a focus on modern C++ features; C++11 experience preferred Experience working with Linux distributions; CentOS/RHEL 7 or higher experience is preferred Experience working with pub/sub middleware (preferably RTI DDS) Must have a growth mindset with a strong ability to learn quickly and work in past paced environment. Willing to work in a closed area on-site full-time Can support routine domestic travel for government exercises (~20% travel) Desired Qualifications: Experience with VSCode, gcc, cmake Experience with Python programming and bash scripting Experience working with Agile methodologies, Git, GitLab CI, and automated testing 
+<br> 
+<div>
+ System One is seeking an Embedded Software Engineer for a long-term opportunity with a large Aerospace &amp; Defense Company in Grand Prairie, TX. Candidates must have active DOD secret security clearance for consideration. 
+ <br> 
+ <br> Embedded Software Engineers will need the ability to come up to speed on the existing software design and work with the systems/software/hardware leads to update the existing design/implementation. This will include interfacing with the hardware and processing uplinks/downlinks messages from the tactical datalink. Most of the software will be high-level application development in a Linux environment. The candidate will participate in formal software qualification testing as well as software development to support program commitments.
+ <br> 
+ <b>Required Qualifications:</b> 
+ <ul>
+  <li>Must have an active DOD secret security clearance </li>
+  <li>Strong experience with C/C++ with a focus on modern C++ features; C++11 experience preferred </li>
+  <li>Experience working with Linux distributions; CentOS/RHEL 7 or higher experience is preferred </li>
+  <li>Experience working with pub/sub middleware (preferably RTI DDS) </li>
+  <li>Must have a growth mindset with a strong ability to learn quickly and work in past paced environment. Willing to work in a closed area on-site full-time </li>
+  <li>Can support routine domestic travel for government exercises (~20% travel) </li>
+ </ul>
+ <b>Desired Qualifications:</b> 
+ <ul>
+  <li>Experience with VSCode, gcc, cmake </li>
+  <li>Experience with Python programming and bash scripting </li>
+  <li>Experience working with Agile methodologies, Git, GitLab CI, and automated testing</li>
+ </ul>
+</div>
+<p></p>"
