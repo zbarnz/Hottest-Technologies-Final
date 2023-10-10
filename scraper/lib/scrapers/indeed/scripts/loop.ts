@@ -34,7 +34,7 @@ async function loop(skip: boolean, skipStart?: number) {
     );
     await mainScrape("software engineer", skipCount);
 
-    let seconds = getRandomInt(2, 6);
+    let seconds = getRandomInt(3, 6);
     console.log(
       "waiting for about " +
         seconds +
@@ -49,7 +49,7 @@ async function loop(skip: boolean, skipStart?: number) {
     );
     await mainScrape("software developer", skipCount);
 
-    seconds = getRandomInt(2, 6);
+    seconds = getRandomInt(3, 6);
     console.log(
       "waiting for about " +
         seconds +
@@ -64,8 +64,17 @@ async function loop(skip: boolean, skipStart?: number) {
   }
 }
 
+function retryLoop() {
+  return loop(false)
+    .then(() => {
+      console.log("loop stopped");
+    })
+    .catch(error => {
+      console.error("Error encountered:", error);
+      return retryLoop(); // Try again if an error occurs
+    });
+}
 
-loop(true).then(() => {
-  console.log("loop stopped");
-});
+retryLoop();
+
 

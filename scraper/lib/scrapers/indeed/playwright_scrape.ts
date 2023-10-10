@@ -1,11 +1,11 @@
-import { error } from "console";
 import { JobBoard } from "../../../src/entity/JobBoard";
+import { saveListing, getListing } from "../../controllers/listing";
+
 
 import { firefox, Browser } from "playwright";
 import { Listing } from "../../../src/entity/Listing";
-import { saveListing, getListing } from "../../controllers/listing";
 
-import { utcToInt } from "../../../src/utils/date";
+import { utcToUnix } from "../../../src/utils/date";
 import { calculateYearlySalary, getRandomInt } from "../../../src/utils/math";
 import { spacesToPluses } from "../../../src/utils/string";
 
@@ -32,7 +32,7 @@ async function listingExists(jobListingId, jobBoardId) {
   const existingListing = await getListing(jobListingId, jobBoardId);
 
   if (existingListing) {
-    //TODO if listing is older than 30 days and there are changes then update
+    //TODO if listing is older than 30 days and there are changes then update + move to controller
     return existingListing.jobListingId;
   }
   return null;
@@ -195,7 +195,7 @@ async function compileListing(
   listing.title = data.title;
   listing.description = data.description;
   listing.company = data.hiringOrganization.name;
-  listing.datePosted = utcToInt(data.datePosted);
+  listing.datePosted = utcToUnix(data.datePosted);
   listing.employmentType = data.employmentType ?? null;
   listing.currency = data.baseSalary?.currency ?? null;
   listing.minSalary = safeMath(Math.floor, minYearlySalary) ?? null;

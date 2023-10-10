@@ -1,15 +1,18 @@
-type PayFrequency = "year" | "month" | "hour";
+type PayFrequency = "annual" | "year" | "month" | "hour" | "hourly";
 
 export function calculateYearlySalary(
   frequency: PayFrequency,
   amount: number
 ): number {
   switch (frequency.toLowerCase()) {
-    case "year":
+    case "annual": //dice
+    case "year": //indeed
       return amount;
-    case "month":
+    case "monthly": //dice
+    case "month": //indeed
       return amount * 12;
-    case "hour":
+    case "hourly": //dice
+    case "hour":  //indeed
       // Assuming a 40-hour work week and 52 weeks in a year
       return amount * 40 * 52;
     default:
