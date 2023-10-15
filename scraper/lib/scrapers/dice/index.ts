@@ -7,6 +7,8 @@ import { utcToUnix } from "../../../src/utils/date";
 const axios = require("axios");
 const cheerio = require("cheerio");
 
+//TODO create configurables file
+
 type SalaryData = {
   salary?: string;
 };
@@ -191,12 +193,12 @@ function getComplexMinMaxPay(pay: string): {
   //Sometimes a pay string can include an hourly and a yealy pay, 
   //thus giving us a return value like { minpay: 54, maxpay: 253000 }
   //to prevent this only allow max to be PERCENTAGE_THRESHOLD percent
-  //higher than the min
+  //higher than the min.
+  //**this happens like 1/500 times so honestly not a huge deal.**
 
   const PERCENTAGE_THRESHOLD = 1200; // for example, a value of 1200 means the max can be 1200% (or 12 times) larger than the min.
   if (min !== 0 && max / min > PERCENTAGE_THRESHOLD) {
     return { minpay: null, maxpay: null }; //TODO maybe we can remove the number from the string and rerun the regex?
-    //this happens like 1/500 times so honestly not a huge deal.
   }
 
   //screw dice for having raw text input for pay rate
@@ -220,6 +222,10 @@ async function compileDiceListing(
     const result = func(value);
     return isNaN(result) ? null : result;
   };
+
+  const [getJobByIdData, getCompanyByIdData] = Object.values(data.api.queries);
+
+  getComplexMinMaxPay("9")
 
   let maxYearlySalary: number;
   let minYearlySalary: number;

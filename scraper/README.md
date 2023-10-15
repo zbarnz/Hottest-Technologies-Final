@@ -1,3 +1,7 @@
+# Typeorm
+
+
+
 # Scraper
 
 Some stuff for how the scraper will function 

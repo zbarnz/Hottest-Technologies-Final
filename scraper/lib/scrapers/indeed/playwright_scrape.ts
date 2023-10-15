@@ -1,8 +1,7 @@
 import { JobBoard } from "../../../src/entity/JobBoard";
 import { saveListing, getListing } from "../../controllers/listing";
 
-
-import { firefox, Browser } from "playwright";
+import { firefox, Browser, Page } from "playwright";
 import { Listing } from "../../../src/entity/Listing";
 
 import { utcToUnix } from "../../../src/utils/date";
@@ -17,15 +16,15 @@ declare global {
 
 //TODO introduce a duplicate check of some sort. I think checking if there is a same position title + company in the last month we just ignore it? tough to say. @thudson what do you think?
 
-async function cloudflareCheck(page: any) {
-  const isCloudflare = await page.$eval(
-    "title",
-    (el: any) => el.textContent.toLowerCase().match(/cloudflare.*/) !== null
-  );
-
-  if (isCloudflare) {
-    throw new Error("Cloudflare Detected");
-  }
+async function cloudflareCheck(page: Page): Promise<boolean> {
+  const isCloudflare = await page.evaluate(() => {
+    const titleElement = document.querySelector("title");
+    if (titleElement) {
+      return titleElement.textContent.toLowerCase().includes("cloudflare");
+    }
+    return false;
+  });
+  return isCloudflare ? true : false;
 }
 
 async function listingExists(jobListingId, jobBoardId) {
@@ -60,7 +59,11 @@ async function pullKeyList(
     await page.goto(url);
     await page.waitForTimeout(getRandomInt(1000, 4000));
 
-    await cloudflareCheck(page);
+    const isCloudflare = await cloudflareCheck(page);
+
+    if (isCloudflare) {
+      throw new Error("Cloudflare detected!");
+    }
 
     const jobKeys: any = await page.evaluate(() => {
       if (
@@ -84,7 +87,7 @@ async function pullKeyList(
 }
 
 async function getJobInfo(key: string): Promise<any | null> {
-  let browser;
+  let browser: Browser;
   try {
     browser = await firefox.launch({ headless: true });
     const jobdata = {};
@@ -93,35 +96,40 @@ async function getJobInfo(key: string): Promise<any | null> {
     const page = await context.newPage();
 
     await page.goto(`https://www.indeed.com/viewjob?jk=${key}`);
-    await page.waitForTimeout(getRandomInt(1000, 4000));
+    await page.waitForTimeout(getRandomInt(2000, 5000));
 
-    cloudflareCheck(page);
+    const isCloudflare = await cloudflareCheck(page);
 
-    const content = await (async () => {
-      try {
-        return await page.$eval(
-          'script[type="application/ld+json"]',
-          (e: any) => e.textContent
-        );
-      } catch (e) {
-        console.log(await page.content());
-        console.log(e);
-        return undefined;
-      }
-    })();
-
-    if (!content) {
-      throw new Error("couldn't find context obj"); //TODO initial data has this data if context obj is missing as is the case for closed listings
+    if (isCloudflare) {
+      throw new Error("Cloudflare detected!");
     }
 
-    const data = JSON.parse(content);
+    let initialData;
 
-    //await saveListing(data, key, 1); //TODO grab indeed's job board id instead of hardcode
+    const content = await page.evaluate(() => {
+      const scriptElement = document.querySelector(
+        'script[type="application/ld+json"]'
+      );
+      return scriptElement ? scriptElement.textContent : null;
+    });
 
+    // if (!content) {                                //TODO desctructure this annoyance and extract job data into a @context obj. this is a pain in the ass
+    //   initialData = await page.evaluate(() => {
+    //     return window._initialData;
+    //   });
+    // }
+
+    if (!content) {
+      console.log("couldn't find context obj for " + key); //TODO initial data has this data if context obj is missing as is the case for closed listings
+      return null;
+    }
+
+    const data = JSON.parse(String(content));
     await browser.close();
     return data;
   } catch (err) {
     console.log(err);
+
     if (browser) await browser.close();
     return null;
   }
@@ -143,14 +151,16 @@ async function mainScrape(term: string, skip?: number) {
         continue;
       }
 
-      let jobinfo = await getJobInfo(jobListingId);
+      let jobInfo = await getJobInfo(jobListingId);
 
-      await compileListing(jobinfo, jobListingId, 1);
+      if (jobInfo) {
+        await compileSaveListing(jobInfo, jobListingId, 1);
+      }
     }
   }
 }
 
-async function compileListing(
+async function compileSaveListing(
   data: any,
   jobListingId: string,
   jobBoardId: number
@@ -211,6 +221,7 @@ async function compileListing(
   listing.salaryObject = data.baseSalary ?? null;
   listing.oragnizationObject = data.hiringOrganization ?? null;
   listing.locationObject = data.jobLocation ?? null;
+  listing.directApplyFlag = data.directApply;
 
   const res = await saveListing(listing);
   console.log("Listing added: " + res.id);

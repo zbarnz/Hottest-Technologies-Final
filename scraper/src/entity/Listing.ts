@@ -57,6 +57,12 @@ export class Listing {
   @Column({ name: "remote_flag", default: false })
   remoteFlag: boolean = false;
 
+  @Column({ name: "direct_apply_flag", default: false })
+  directApplyFlag: boolean = false;
+
+  @Column({ name: "closed_flag", default: false })
+  closedFlag: boolean = false;
+
   @ManyToOne((type) => JobBoard)
   @JoinColumn({ name: "job_board_id" })
   jobBoardId: number;
