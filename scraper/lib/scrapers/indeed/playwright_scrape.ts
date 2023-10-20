@@ -16,7 +16,7 @@ declare global {
 
 //TODO introduce a duplicate check of some sort. I think checking if there is a same position title + company in the last month we just ignore it? tough to say. @thudson what do you think?
 
-async function cloudflareCheck(page: Page): Promise<boolean> {
+export async function cloudflareCheck(page: Page): Promise<boolean> {
   const isCloudflare = await page.evaluate(() => {
     const titleElement = document.querySelector("title");
     if (titleElement) {
@@ -39,11 +39,12 @@ async function listingExists(jobListingId, jobBoardId) {
 
 async function pullKeyList(
   searchTerm: string,
-  skip?: number
+  skip?: number,
+  existingPage?: Page
 ): Promise<string[] | null> {
   let browser: Browser;
   try {
-    browser = await firefox.launch({ headless: true });
+    browser = await firefox.launch({ headless: false });
 
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -57,7 +58,7 @@ async function pullKeyList(
     }
 
     await page.goto(url);
-    await page.waitForTimeout(getRandomInt(1000, 4000));
+    await page.waitForTimeout(getRandomInt(5000, 10000));
 
     const isCloudflare = await cloudflareCheck(page);
 
@@ -77,7 +78,7 @@ async function pullKeyList(
       );
     });
 
-    await browser.close();
+    //await browser.close();
     return Object.keys(jobKeys);
   } catch (err) {
     console.log(err);
@@ -89,22 +90,19 @@ async function pullKeyList(
 async function getJobInfo(key: string): Promise<any | null> {
   let browser: Browser;
   try {
-    browser = await firefox.launch({ headless: true });
-    const jobdata = {};
+    browser = await firefox.launch({ headless: false });
 
     const context = await browser.newContext();
     const page = await context.newPage();
 
     await page.goto(`https://www.indeed.com/viewjob?jk=${key}`);
-    await page.waitForTimeout(getRandomInt(2000, 5000));
+    await page.waitForTimeout(getRandomInt(5000, 10000));
 
     const isCloudflare = await cloudflareCheck(page);
 
     if (isCloudflare) {
       throw new Error("Cloudflare detected!");
     }
-
-    let initialData;
 
     const content = await page.evaluate(() => {
       const scriptElement = document.querySelector(
@@ -125,7 +123,7 @@ async function getJobInfo(key: string): Promise<any | null> {
     }
 
     const data = JSON.parse(String(content));
-    await browser.close();
+    //await browser.close();
     return data;
   } catch (err) {
     console.log(err);

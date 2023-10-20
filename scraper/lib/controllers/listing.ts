@@ -37,6 +37,7 @@ export async function getListing(
  * @param {number}  minSalary - A Listing's minimum maxSalary value
  * @param {boolean} remote - find only remote jobs?
  * @param {string[]} [skills] - List of user's skills
+ * @param {boolean} [matchSkills] - Only find jobs that are a skills match
  * @param {number} requiredMatches number of skills Listing must contain
  * @returns {Promise<Listing[]>} Unapplied listings that matches user's preferences
  */
@@ -44,6 +45,7 @@ export async function findUnappliedListing(
   minSalary?: number,
   remote?: boolean,
   skills?: string[],
+  matchSkills?: boolean,
   requiredMatches?: number,
   limit?: number
 ): Promise<Listing[]> {
@@ -67,7 +69,6 @@ export async function findUnappliedListing(
     .createQueryBuilder(Listing, "listing")
     .addSelect(skillMatchQuery, "matchCount")
     .where("listing.maxSalary >= :minSalary", { minSalary }) //max sure the listing max salary is higher than the users min acceptable salary
-    .andWhere(`${skillMatchQuery} >= :requiredMatches`, { requiredMatches })
     .andWhere("listing.remoteFlag")
     .andWhere("listing.directApplyFlag")
     .orderBy("listing.datePosted", "DESC")
@@ -76,14 +77,19 @@ export async function findUnappliedListing(
   if (remote) {
     query = query.andWhere("listing.remoteFlag = TRUE");
   }
-  console.log(query);
+
+  if (matchSkills) {
+    query = query.andWhere(`${skillMatchQuery} >= :requiredMatches`, {
+      requiredMatches,
+    });
+  }
 
   let listings = await query.getRawAndEntities();
 
   // Calculate and add percentage match for each listing
   listings.entities = listings.entities.map((entity, index) => {
     const raw = listings.raw[index];
-    entity["numberMatch"] = raw.matchCount + '/' + skills.length;
+    entity["numberMatch"] = raw.matchCount + "/" + skills.length;
     return entity;
   });
 

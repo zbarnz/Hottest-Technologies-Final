@@ -1,0 +1,10 @@
+Using a temperature of 0.1, Output an array of skills I can put on my resume based on the following job description and an array of my skills. Include at least 10. Return only javascript array with no explanation. 
+Job Description """ 
+
+"""
+My skills """ 
+
+"""
+New array""" 
+
+"""

@@ -1,0 +1,15 @@
+Ill give you an array of question objects, a job description, and my resume. You must return a javascript array of answers (in the first person) in order. If my resume does not meet the minimum requirements, answer with the minimum requirement. If an options property exists, you must use one of the "label" fields to answer. Answer using only an array of strings. No explanation or comments.
+
+Job description ###
+
+###
+
+Resume ###
+
+###
+
+Questions ###
+
+###
+
+const array =

@@ -28,6 +28,10 @@ async function loop(skip: boolean, skipStart?: number) {
   let listingPerPage = 15;
 
   while (true) {
+    if (skip && skipCount > 750) {
+      skipCount = 0
+    }
+
     console.log(
       "Scraping listings for software engineer on page " +
         (Math.floor(skipCount / listingPerPage) + 1)
@@ -64,7 +68,7 @@ async function loop(skip: boolean, skipStart?: number) {
   }
 }
 
-loop(false)
+loop(true)
     .then(() => {
       console.log("loop stopped");
     })
