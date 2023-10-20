@@ -39,8 +39,7 @@ async function listingExists(jobListingId, jobBoardId) {
 
 async function pullKeyList(
   searchTerm: string,
-  skip?: number,
-  existingPage?: Page
+  skip?: number
 ): Promise<string[] | null> {
   let browser: Browser;
   try {
@@ -78,7 +77,7 @@ async function pullKeyList(
       );
     });
 
-    //await browser.close();
+    await browser.close();
     return Object.keys(jobKeys);
   } catch (err) {
     console.log(err);
@@ -123,7 +122,7 @@ async function getJobInfo(key: string): Promise<any | null> {
     }
 
     const data = JSON.parse(String(content));
-    //await browser.close();
+    await browser.close();
     return data;
   } catch (err) {
     console.log(err);
