@@ -39,15 +39,11 @@ async function listingExists(jobListingId, jobBoardId) {
 
 async function pullKeyList(
   searchTerm: string,
+  page: Page,
   skip?: number
 ): Promise<string[] | null> {
   let browser: Browser;
   try {
-    browser = await firefox.launch({ headless: false });
-
-    const context = await browser.newContext();
-    const page = await context.newPage();
-
     const query = spacesToPluses(searchTerm);
 
     let url = `https://www.indeed.com/jobs?q=${query}&sort=date`;
@@ -77,23 +73,18 @@ async function pullKeyList(
       );
     });
 
-    await browser.close();
+    //await browser.close();
     return Object.keys(jobKeys);
   } catch (err) {
     console.log(err);
-    if (browser) await browser.close();
+    //if (browser) await browser.close();
     return null;
   }
 }
 
-async function getJobInfo(key: string): Promise<any | null> {
+async function getJobInfo(key: string, page: Page): Promise<any | null> {
   let browser: Browser;
   try {
-    browser = await firefox.launch({ headless: false });
-
-    const context = await browser.newContext();
-    const page = await context.newPage();
-
     await page.goto(`https://www.indeed.com/viewjob?jk=${key}`);
     await page.waitForTimeout(getRandomInt(5000, 10000));
 
@@ -122,18 +113,36 @@ async function getJobInfo(key: string): Promise<any | null> {
     }
 
     const data = JSON.parse(String(content));
-    await browser.close();
+    //await browser.close();
     return data;
   } catch (err) {
     console.log(err);
 
-    if (browser) await browser.close();
+    //if (browser) await browser.close();
     return null;
   }
 }
 
-async function mainScrape(term: string, skip?: number) {
-  const keyList = await pullKeyList(term, skip);
+async function mainScrape(
+  term: string,
+  skip?: number,
+  existingPage?: Page
+): Promise<Page> {
+  let browser: Browser;
+  let page: Page;
+
+  if (!existingPage) {
+    browser = await firefox.launch({
+      headless: true,
+    });
+
+    const context = await browser.newContext();
+    page = await context.newPage();
+  } else {
+    page = existingPage;
+  }
+
+  const keyList = await pullKeyList(term, page, skip);
 
   if (keyList) {
     for (let jobListingId of keyList) {
@@ -148,13 +157,15 @@ async function mainScrape(term: string, skip?: number) {
         continue;
       }
 
-      let jobInfo = await getJobInfo(jobListingId);
+      let jobInfo = await getJobInfo(jobListingId, page);
 
       if (jobInfo) {
         await compileSaveListing(jobInfo, jobListingId, 1);
       }
     }
   }
+
+  return page;
 }
 
 async function compileSaveListing(
