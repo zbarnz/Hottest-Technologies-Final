@@ -1,0 +1,351 @@
+[
+  {
+    "viewId": "q_2",
+    "name": "q_d891c1a44e51a1b5a65eb3f8005ae455",
+    "question": "Are you able to commute to our NYC location as needed?",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "Yes" },
+      { "label": "No", "value": "No" }
+    ]
+  },
+  {
+    "viewId": "q_3",
+    "name": "q_d2d960e3adbd0f6d7d2aa54d10297128",
+    "question": "Do you have experience with HubSpot?",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "Yes" },
+      { "label": "No", "value": "No" }
+    ]
+  },
+  {
+    "viewId": "q_4",
+    "name": "q_2bfa9c79684b0702a9500d1261ded9b3",
+    "question": "Do you have 3+ years of experience in an IT support capacity?",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "Yes" },
+      { "label": "No", "value": "No" }
+    ]
+  },
+  {
+    "viewId": "q_5",
+    "name": "q_94547fe533878c1a6ecad961cfd247f6",
+    "question": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B visa status)?",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "Yes" },
+      { "label": "No", "value": "No" }
+    ]
+  },
+  {
+    "viewId": "q_6",
+    "name": "q_a0a8863f6dcb6779acd1b9bfdf5a3233",
+    "question": "Are you legally authorized to work in the United States?",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "Yes" },
+      { "label": "No", "value": "No" }
+    ]
+  },
+  {
+    "viewId": "q_7",
+    "name": "q_b86963d6c8897142176b7c95f1c6b478",
+    "question": "Do you have experience managing at least one person?",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "Yes" },
+      { "label": "No", "value": "No" }
+    ]
+  },
+  {
+    "viewId": "q_8",
+    "name": "q_8d919d733e9ce9a908f1096901bede60",
+    "question": "Do you have a minimum 10+ years of experience in both B2C and B2B marketing/ecommerce roles, with a deep focus on performance-based growth marketing?",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "Yes" },
+      { "label": "No", "value": "No" }
+    ]
+  },
+  {
+    "viewId": "q_9",
+    "name": "q_2a105c9a50022c95e136e854ac393566",
+    "question": "Are you able to accept a full-time employment position? (note- this is NOT a contract/1099 opportunity)",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "Yes" },
+      { "label": "No", "value": "No" }
+    ]
+  },
+  {
+    "viewId": "q_10",
+    "name": "q_dec080952656a7ea98369c859aeed215",
+    "question": "Are you located within the Eastern Standard Time Zone?",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "Yes" },
+      { "label": "No", "value": "No" }
+    ]
+  },
+  {
+    "viewId": "q_13",
+    "name": "q_2e83214940a3f3051c0208f876aec745",
+    "question": "Gender?",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Male", "value": "1" },
+      { "label": "Female", "value": "2" },
+      { "label": "I decline to identify", "value": "3" }
+    ]
+  },
+  {
+    "viewId": "q_14",
+    "name": "q_80ac663aa2204908849ef93fcc3b68d9",
+    "question": "Ethnicity/Race",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Hispanic or Latino", "value": "1" },
+      { "label": "White (Not Hispanic or Latino)", "value": "2" },
+      {
+        "label": "Black or African American (Not Hispanic or Latino)",
+        "value": "3"
+      },
+      {
+        "label": "Native Hawaiian or Other Pacific Islander (Not Hispanic or Latino)",
+        "value": "4"
+      },
+      { "label": "Asian (Not Hispanic or Latino)", "value": "5" },
+      {
+        "label": "American Indian or Alaska Native (Not Hispanic or Latino)",
+        "value": "6"
+      },
+      { "label": "Two or More Races (Not Hispanic or Latino)", "value": "7" },
+      { "label": "I decline to identify", "value": "8" }
+    ]
+  },
+  {
+    "viewId": "q_16",
+    "name": "q_30cea89dac23df91fbbbf9aaff9cd93a",
+    "question": "Are you a Verteran?",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      {
+        "label": "I IDENTIFY AS ONE OR MORE OF THE CLASSIFICATIONS OF PROTECTED VETERAN LISTED ABOVE ",
+        "value": "51"
+      },
+      { "label": "I AM NOT A PROTECTED VETERAN", "value": "52" },
+      { "label": "I DO NOT WISH TO IDENTIFY AT THIS TIME", "value": "53" }
+    ]
+  },
+  {
+    "viewId": "q_18",
+    "name": "q_5ad973a94da483ab25fdadebcad0f10b",
+    "question": "Voluntary Self-Identification of Disability<br><br> Form CC-305<br><br> OMB Control Number 1250-0005<br><br> Expires 04/30/2026<br><br> <b>Why are you being asked to complete this form?</b> <br><br>We are a federal contractor or subcontractor. The law requires us to provide equal employment opportunity to qualified people with disabilities. We have a goal of having at least 7% of our workers as people with disabilities. The law says we must measure our progress towards this goal. To do this, we must ask applicants and employees if they have a disability or have ever had one. People can become disabled, so we need to ask this question at least every five years.<br><br>Identifying yourself as an individual with a disability is voluntary, and we hope that you will choose to do so. Your answer will be maintained confidentially and not be seen by selecting officials or anyone else involved in making personnel decisions. Completing this form is voluntary, and we hope that you will choose to do so. Your answer is confidential. No one who makes hiring decisions will see it. Your decision to complete the form and your answer will not harm you in any way. If you want to learn more about the law or this form, visit the U.S. Department of Labor’s Office of Federal Contract Compliance Programs (OFCCP) website at www.dol.gov/ofccp.<br><br><b>How do you know if you have a disability?</b><br><br>A disability is a condition that substantially limits one or more of your “major life activities.” If you have or have ever had such a condition, you are a person with a disability. Disabilities include, but are not limited to:<br><br><ul><li> Alcohol or other substance use disorder (not currently using drugs illegally) </li><li> Autoimmune disorder, for example, lupus, fibromyalgia, rheumatoid arthritis, HIV/AIDS</li><li> Blind or low vision</li><li> Cancer (past or present)</li><li> Cardiovascular or heart disease</li><li> Celiac disease</li><li> Cerebral palsy</li><li> Deaf or serious difficulty hearing</li><li> Depression or anxiety</li><li> Diabetes</li><li> Disfigurement, for example, disfigurement caused by burns, wounds, accidents, or congenital disorders</li><li> Epilepsy or other seizure disorder</li><li> Gastrointestinal disorders, for example, Crohn's Disease, or irritable bowel syndrome</li><li> Intellectual or developmental disability</li><li> Mental health conditions, for example, depression, bipolar disorder, anxiety disorder, schizophrenia, PTSD</li><li> Missing limbs or partially missing limbs</li><li> Mobility impairment, benefiting from the use of a wheelchair, scooter, walker, leg brace(s) and/or other supports</li><li> Nervous system condition for example, migraine headaches, Parkinson’s disease, or Multiple sclerosis (MS)</li><li> Neurodivergence, for example, attention-deficit/hyperactivity disorder (ADHD), autism spectrum disorder, dyslexia, dyspraxia, other learning disabilities</li><li> Partial or complete paralysis (any cause)</li><li> Pulmonary or respiratory conditions, for example, tuberculosis, asthma, emphysema</li><li> Short stature (dwarfism)</li><li>Traumatic brain injury</li></ul><br><br> Please check one of the boxes below",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      {
+        "label": "Yes, I have a disability, or have had one in the past",
+        "value": "1"
+      },
+      {
+        "label": "No, I do not have a disability and have not had one in the past",
+        "value": "2"
+      },
+      { "label": "I do not want to answer", "value": "3" }
+    ]
+  },
+  {
+    "viewId": "q_20",
+    "name": "q_736580f0cdf85a51b9bf7915e88a2ba7",
+    "question": "Your Name:",
+    "max": null,
+    "requiredFormat": "TEXT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": []
+  },
+  {
+    "viewId": "q_21",
+    "name": "q_35f115d4d64362c5bb7519ad2b0a6521",
+    "question": "Today’s Date:",
+    "max": null,
+    "requiredFormat": "DATE",
+    "inputDatePattern": "MM/dd/yyyy",
+    "characterLimit": null,
+    "options": []
+  },
+  {
+    "viewId": "q_24",
+    "name": "q_fa2e47caf94a91c441e01b4848183aab",
+    "question": "Cover Letter",
+    "max": "1",
+    "requiredFormat": "FILE",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": []
+  },
+  {
+    "viewId": "q_29",
+    "name": "q_98d018d2adab4283611e94d2cfb6ac5f",
+    "question": "Country",
+    "max": null,
+    "requiredFormat": "HIERARCHICAL",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Australia", "value": "AU" },
+      { "label": "Austria", "value": "AT" },
+      { "label": "Belarus", "value": "BY" },
+      { "label": "Bonaire, Sint Eustatius and Saba", "value": "BQ" },
+      { "label": "Cyprus", "value": "CY" },
+      { "label": "Mauritius", "value": "MU" },
+      { "label": "Russia", "value": "RU" },
+      { "label": "United States", "value": "US" },
+      { "label": "United States Minor Outlying Islands", "value": "UM" }
+    ]
+  },
+  {
+    "viewId": "q_30",
+    "name": "q_62bdf56feb5b4633192ddf7eaa842d41",
+    "question": "Address",
+    "max": null,
+    "requiredFormat": "TEXT",
+    "inputDatePattern": null,
+    "characterLimit": 75,
+    "options": []
+  },
+  {
+    "viewId": "q_31",
+    "name": "q_2b1fe9323d269773d569c89d0e089a26",
+    "question": "Address #2",
+    "max": null,
+    "requiredFormat": "TEXT",
+    "inputDatePattern": null,
+    "characterLimit": 75,
+    "options": []
+  },
+  {
+    "viewId": "q_32",
+    "name": "q_1feb8d2d9feaa419e367a8e557be46a7",
+    "question": "City",
+    "max": null,
+    "requiredFormat": "TEXT",
+    "inputDatePattern": null,
+    "characterLimit": 30,
+    "options": []
+  },
+  {
+    "viewId": "q_33",
+    "name": "q_893b0f1c5583dde40166279d1cf3a5fc",
+    "question": "Zip/Postal Code",
+    "max": null,
+    "requiredFormat": "TEXT",
+    "inputDatePattern": null,
+    "characterLimit": 12,
+    "options": []
+  },
+  {
+    "viewId": "q_36",
+    "name": "q_c5f948e0d3efe03cfa8f81a132ff2b40",
+    "question": "Cell Phone",
+    "max": null,
+    "requiredFormat": "TEXT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": []
+  },
+  {
+    "viewId": "q_39",
+    "name": "q_ca167743e7a6173e2330984bb7c67c5d",
+    "question": "Are you an active employee of STARK?",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "Yes" },
+      { "label": "No", "value": "No" }
+    ]
+  },
+  {
+    "viewId": "q_40",
+    "name": "q_64b4cae759c68d3108183246b760e45d",
+    "question": "Comments",
+    "max": null,
+    "requiredFormat": "TEXTAREA",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": []
+  },
+  {
+    "viewId": "q_42",
+    "name": "q_fb9cb65dfa44dbf2453eef2864c5659d",
+    "question": "Check the box below if you would like to receive text messages from the company regarding your status in the hiring process. Data rates may apply.",
+    "max": null,
+    "requiredFormat": "MULTISELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      {
+        "label": "I am happy to receive text messages from Stark Carpet.",
+        "value": "Yes"
+      }
+    ]
+  },
+  {
+    "viewId": "q_44",
+    "name": "q_7df54c0db261a56803ca664ec8b2943e",
+    "question": "Answer affirmatively",
+    "max": null,
+    "requiredFormat": "SELECT",
+    "inputDatePattern": null,
+    "characterLimit": null,
+    "options": [
+      {
+        "label": "I have read and agree to this statement",
+        "value": "I have read and agree to this statement"
+      }
+    ]
+  }
+]

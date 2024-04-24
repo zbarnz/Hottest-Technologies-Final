@@ -1,5 +1,5 @@
 import { mainScrape } from "../playwright_scrape";
-import { Page } from "playwright-core";
+import { Page, Browser } from "playwright-core";
 
 // for running collection locally
 
@@ -28,24 +28,27 @@ async function loop(skip: boolean, skipStart?: number) {
   let skipCount = skipStart || 0;
   let listingPerPage = 15;
   let existingPage: Page;
+  let existingBrowser: Browser;
 
   while (true) {
     if (skip && skipCount > 750) {
       skipCount = 0;
-      let seconds = getRandomInt(3000, 6000); //sleep for a half hour to an hour between go agains
+      let seconds = getRandomInt(300, 900); //sleep for a half hour to an hour between go agains
       console.log("sleeping for about " + seconds/60 + "minutes");
       await sleep(seconds);
+      existingPage = null
     }
 
     console.log(
       "Scraping listings for software engineer on page " +
         (Math.floor(skipCount / listingPerPage) + 1)
     );
-    existingPage = await mainScrape(
+    ({ page: existingPage, browser: existingBrowser } = await mainScrape(
       "software engineer",
       skipCount,
-      existingPage
-    );
+      existingPage,
+      existingBrowser
+    ));
 
     let seconds = getRandomInt(3, 15);
     console.log(
@@ -60,11 +63,12 @@ async function loop(skip: boolean, skipStart?: number) {
       "Scraping listings for software developer on page " +
         (Math.floor(skipCount / listingPerPage) + 1)
     );
-    existingPage = await mainScrape(
+    ({ page: existingPage, browser: existingBrowser } = await mainScrape(
       "software developer",
       skipCount,
-      existingPage
-    );
+      existingPage,
+      existingBrowser
+    ));
 
     seconds = getRandomInt(3, 15);
     console.log(

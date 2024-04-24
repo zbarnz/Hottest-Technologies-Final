@@ -1,0 +1,679 @@
+{
+  "accountKey": "bcca090f34a62c52",
+  "additionalLinksViewModel": {
+    "careerGuideArticleLinks": [],
+    "nearbyLocationLinks": [],
+    "similarCategoryLinks": [],
+    "similarJobTitleLinks": []
+  },
+  "apiPaths": {},
+  "appCommonData": null,
+  "applyButtonSDKEnabled": true,
+  "autoClickApply": false,
+  "base64EncodedJson": "eyJjIjp0cnVlLCJlIjp0cnVlLCJnIjoiaHR0cDovL3d3dy5pbmRlZWQuY29tL3ZpZXdqb2I_ams9ODI3M2RhN2ZiYzdmZDViYSIsImgiOiJTZW5pb3IgR2FtZXBsYXkgRW5naW5lZXIgKFVuaXR5KSIsImkiOiJSZW1vdGUiLCJqIjoib3JnYW5pYyJ9",
+  "baseInboxUrl": "https://inbox.indeed.com",
+  "baseUrl": "https://www.indeed.com",
+  "benefitsModel": {
+    "benefits": [
+      {
+        "key": "FVKX2",
+        "label": "401(k)"
+      },
+      {
+        "key": "FQJ2X",
+        "label": "Dental insurance"
+      },
+      {
+        "key": "CFRGS",
+        "label": "Disability insurance"
+      },
+      {
+        "key": "EY33Q",
+        "label": "Health insurance"
+      },
+      {
+        "key": "Y2WS5",
+        "label": "Life insurance"
+      },
+      {
+        "key": "HW4J4",
+        "label": "Paid time off"
+      },
+      {
+        "key": "RZAT2",
+        "label": "Vision insurance"
+      }
+    ],
+    "benefitsCollapseThreshold": 7
+  },
+  "callToInterviewButtonModel": null,
+  "categorizedAttributesModel": null,
+  "chatbotApplyButtonLinkModel": null,
+  "clientsideProctorGroups": {
+    "collapsedJobDescription": false,
+    "isMosaicJobDetailsActive": false,
+    "showJobLocationBelowJD": false,
+    "isMobVJFontSpacingActive": false,
+    "splitRender": false,
+    "showSalaryGuide": true,
+    "callToApplyStickyBelowApplyNow": false,
+    "isVjLabelUpdateTestActive": true,
+    "clearResetString": true,
+    "simpleVJImprove": false,
+    "isJsViewjobJobdetailsImproveSubheaderActive": true,
+    "simple2Pane": true,
+    "richerAppPromoV4": false,
+    "richerAppPromoV3": false,
+    "callToApplyStickySideBySide": false,
+    "connectionNavigator": false,
+    "richerAppPromoV5": false,
+    "richerAppPromoV2": false,
+    "richerAppPromoV1": false,
+    "toastOnVJFromDC": false,
+    "isConnectionNavigatorCallPrimary": true,
+    "hideJobDetialsForExpiredJobs": true,
+    "showJobLocationAboveJD": false,
+    "desktopvj_stickyheader_tst": false,
+    "callButtonPrimaryApplySecondary": false
+  },
+  "cmiJobCategoryModel": null,
+  "collapsedDescriptionPayload": {
+    "click": 0,
+    "descriptionHeight": "10rem",
+    "isDisclaimerAboveApply": false
+  },
+  "commuteInfoModel": null,
+  "companyFollowFormModel": null,
+  "companyTabModel": null,
+  "contactPersonModel": null,
+  "country": "US",
+  "cssResetProviders": {
+    "mosaic-provider-reportcontent": false,
+    "js-match-insights-provider": false,
+    "MosaicProviderCallToApplyFeedback": true
+  },
+  "ctk": "1evehh85lu2la800",
+  "dcmModel": {
+    "category": "jobse0",
+    "source": "6927552",
+    "type": "organic"
+  },
+  "desktop": true,
+  "dgToken": "94C1F57E9F60F2588E6663F37F676763",
+  "dislikeFrom2paneEnabled": true,
+  "downloadAppButtonModel": null,
+  "dsanr": false,
+  "employerResponsiveCardModel": null,
+  "from": null,
+  "globalnavFooterHTML": "",
+  "globalnavHeaderHTML": "",
+  "highQualityMarketplace": {
+    "connectUrl": null,
+    "headingContentGroup": 2,
+    "match": false,
+    "messageCtaOverride": null,
+    "optedIn": true,
+    "rebrand": true,
+    "showEmployerDetails": null,
+    "showMessagingFirstExperience": null,
+    "token": null
+  },
+  "highQualityMarketplaceHiringManager": null,
+  "hiringInsightsModel": {
+    "age": "Just posted",
+    "employerLastReviewed": null,
+    "employerResponsiveCardModel": {
+      "description": "Responded to 75% or more applications in the past 30 days, typically within 1 day.",
+      "headline": null,
+      "responseRate": 0.88
+    },
+    "numOfCandidates": null,
+    "postedToday": true,
+    "recurringHireText": null,
+    "urgentlyHiringModel": null
+  },
+  "indeedApplyButtonContainer": {
+    "disabled": false,
+    "employerResponsiveCard": null,
+    "enableStickyInquiry": false,
+    "enableStickyInquiryTooltip": false,
+    "hasMessage": false,
+    "iframeIndeedApplyButton": false,
+    "indeedApplyAttributes": "data-indeed-apply-apiToken='c645bd6af59120e0e6d2f4ff28de22ee86f771ed4a6cc7a29ea208cc29c4cc8f' data-indeed-apply-jobTitle='Senior Gameplay Engineer (Unity)' data-indeed-apply-jobId='663041' data-indeed-apply-jobLocation='Los Angeles CA US' data-indeed-apply-jobCompanyName='Tempo' data-indeed-apply-postUrl='https://api.applicant-tracking.com/indeed_webhooks/apply' data-indeed-apply-jobUrl='https://www.indeed.com/viewjob?jk=8273da7fbc7fd5ba' data-indeed-apply-noButtonUI='true' data-indeed-apply-pingbackUrl='https://gdc.indeed.com/conv/orgIndApp?co=US&amp;vjtk=1hfhu8f6tkmed800&amp;jk=8273da7fbc7fd5ba&amp;mvj=0&amp;acct_key=bcca090f34a62c52&amp;astse=e502837e78810dc7&amp;assa=7737' data-indeed-apply-onappliedstatus='_updateIndeedApplyStatus' data-indeed-apply-onready='_onButtonReady' data-indeed-apply-jk='8273da7fbc7fd5ba' data-indeed-apply-continueUrl='http://www.indeed.com/viewjob?jk=8273da7fbc7fd5ba&amp;applied=1'  data-indeed-apply-recentsearchquery='{\"what\":\"happy lemon\",\"where\":\"United States\"}'",
+    "indeedApplyBaseUrl": "https://apply.indeed.com",
+    "indeedApplyBootStrapAttributes": {
+      "rojc": "8aeba4e052e13976,7b1ab7c3be29d88f,90c249c5704da94c,93a5e61d0586581b,b18bfb26b33e7cd9,9f1e4aa432b3fa3d",
+      "hl": "en",
+      "source": "idd-vj",
+      "co": "US",
+      "vjtk": "1hfhu8f6tkmed800",
+      "rsjc": "a870dd19fd883030,86b8607f1193a1a0,46c44f3246ed7a5b,a8b59a5c47148705,d8015daeb1c1da71,a35562b296e40f38,c13e0bf8cc073724,d747a13769be3912"
+    },
+    "indeedApplyButtonAttributes": {
+      "postUrl": "https://api.applicant-tracking.com/indeed_webhooks/apply",
+      "jk": "8273da7fbc7fd5ba",
+      "jobTitle": "Senior Gameplay Engineer (Unity)",
+      "onappliedstatus": "_updateIndeedApplyStatus",
+      "jobCompanyName": "Tempo",
+      "recentsearchquery": "{\"what\":\"happy lemon\",\"where\":\"United States\"}",
+      "jobUrl": "https://www.indeed.com/viewjob?jk=8273da7fbc7fd5ba",
+      "onready": "_onButtonReady",
+      "pingbackUrl": "https://gdc.indeed.com/conv/orgIndApp?co=US&vjtk=1hfhu8f6tkmed800&jk=8273da7fbc7fd5ba&mvj=0&acct_key=bcca090f34a62c52&astse=e502837e78810dc7&assa=7737",
+      "noButtonUI": "true",
+      "jobId": "663041",
+      "apiToken": "c645bd6af59120e0e6d2f4ff28de22ee86f771ed4a6cc7a29ea208cc29c4cc8f",
+      "jobLocation": "Los Angeles CA US",
+      "continueUrl": "http://www.indeed.com/viewjob?jk=8273da7fbc7fd5ba&applied=1"
+    },
+    "indeedApplyButtonModel": {
+      "applyBtnNewStyle": true,
+      "buttonSize": "block",
+      "buttonType": "branded",
+      "contentHtml": "Apply now",
+      "dataHref": null,
+      "disclaimer": null,
+      "href": "/",
+      "icon": null,
+      "isBlock": false,
+      "isBookmarkIcon": null,
+      "isSimpleVjImproveActive": null,
+      "largeScreenSizeText": null,
+      "newTabWarningText": null,
+      "occupationIds": null,
+      "openInNewTab": false,
+      "referrerpolicy": null,
+      "rel": null,
+      "sanitizedHref": null,
+      "sanitizedHtml": null,
+      "sticky": false,
+      "target": null,
+      "title": null,
+      "viewJobDisplay": null
+    },
+    "indeedApplyScriptAttributes": {
+      "data-indeed-apply-qs": "vjtk=1hfhu8f6tkmed800&rojc=8aeba4e052e13976%2C7b1ab7c3be29d88f%2C90c249c5704da94c%2C93a5e61d0586581b%2Cb18bfb26b33e7cd9%2C9f1e4aa432b3fa3d&rsjc=a870dd19fd883030%2C86b8607f1193a1a0%2C46c44f3246ed7a5b%2Ca8b59a5c47148705%2Cd8015daeb1c1da71%2Ca35562b296e40f38%2Cc13e0bf8cc073724%2Cd747a13769be3912"
+    },
+    "indeedApplyScriptLocation": "https://apply.indeed.com/indeedapply/static/scripts/app/bootstrap.js?hl=en&co=US&source=idd-vj",
+    "indeedApplyUrl": null,
+    "indeedPlusTestingEnv": false,
+    "shouldUseButtonPlaceholder": false,
+    "showIAPostapplySuccessToast": false,
+    "stagingLevel": "prod"
+  },
+  "indeedLogoModel": {
+    "showLogoWithKatakana": false,
+    "size": "lg"
+  },
+  "inlineJsErrEnabled": false,
+  "isApp": false,
+  "isApplyTextColorChanges": true,
+  "isApplyTextSizeChanges": true,
+  "isCriOS": false,
+  "isDislikeFormV2Enabled": true,
+  "isDsaAdDisclosureEnabled": false,
+  "isSafariForIOS": false,
+  "isSalaryNewDesign": false,
+  "isSyncJobs": false,
+  "jasJobViewPingModel": null,
+  "jasxInputWhatWhereActive": true,
+  "jobAlertSignInModalModel": null,
+  "jobAlertSignUp": null,
+  "jobCardStyleModel": {
+    "fontSizeEnlarged": false,
+    "highContrastIconShown": false,
+    "jobCardShelfApplied": false,
+    "salaryBlack": false,
+    "shouldMarkClickedJobAsVisited": false
+  },
+  "jobInfoWrapperModel": {
+    "jobInfoModel": {
+      "appliedStateBannerModel": null,
+      "commuteInfoModel": null,
+      "expiredJobMetadataModel": null,
+      "hideCmpHeader": false,
+      "isSmbD2iEnabled": false,
+      "jobDebugInfoModel": null,
+      "jobDescriptionSectionModel": {
+        "acmeMicrocontentSurveyUrl": "https://cocos-api.indeed.com",
+        "isViewJobMismatchBadgeLoggingEnabled": false,
+        "jobDetailsSection": {
+          "contents": {},
+          "highlightedAttributesSectionModels": [],
+          "interactivePreferenceCollectionTst": 8,
+          "isJobDetailPreferenceCollectionEnabled": true,
+          "isJobDetailsShiftPreferenceCollectionEnabled": true,
+          "isJobExpired": false,
+          "isMinimumPayPreferenceEnabled": true,
+          "isMobPreferenceMatchVJActive": true,
+          "isMobVJSimpleJobDetailsActive": false,
+          "isPreferenceMismatchBanIconEnabled": true,
+          "isSimpleVJImproveActive": false,
+          "isVJPreferencesDataCollectionActive": true,
+          "isVJPreferencesGroupingsActive": false,
+          "isVJPreferencesHighlightedAttributesActive": false,
+          "isVJPreferencesUiGroupingsActive": false,
+          "jobTypes": [
+            {
+              "customClassLabels": [],
+              "customClassSuids": [],
+              "label": "Full-time",
+              "sentiment": "POSITIVE",
+              "suid": "CF3CP"
+            }
+          ],
+          "knownUserSentimentIdMap": {
+            "TRYDN": ["TRYDN"],
+            "MG5WY": ["MG5WY"],
+            "8PA9N": ["8PA9N"],
+            "5M3JZ": ["5M3JZ"],
+            "B36JD": ["B36JD"],
+            "CH5MX": ["CH5MX"],
+            "YSDFB": ["YSDFB"],
+            "CF3CP": ["681bfb1c-ec5d-407c-ac65-f473d42cc3dc"],
+            "UM4V9": ["UM4V9"],
+            "FQMG4": ["FQMG4"],
+            "HFDVW": ["39089a00-ece1-4da8-b504-83f04bfb5a43"],
+            "SJ2HN": ["SJ2HN"],
+            "PP4CH": ["PP4CH"],
+            "HJSX6": ["HJSX6"],
+            "S2JZM": ["S2JZM"],
+            "7SRRR": ["7SRRR"],
+            "AJY84": ["AJY84"],
+            "47KNR": ["47KNR"],
+            "SAP7A": ["SAP7A"],
+            "MABSK": ["MABSK"]
+          },
+          "minimumPayPreferenceTst": 2,
+          "salaryInfoModel": null,
+          "segmentPreferences": [
+            {
+              "attributes": [
+                {
+                  "label": "Remote",
+                  "sentiment": "UNKNOWN",
+                  "suid": "DSQF7"
+                }
+              ],
+              "displayTitle": "Work setting"
+            }
+          ],
+          "shifts": [],
+          "shiftsAndSchedule": null,
+          "title": "Job details"
+        },
+        "order": ["JOB_DETAILS", "QUALIFICATIONS"],
+        "qualificationsSectionModel": null
+      },
+      "jobInfoHeaderModel": {
+        "a11yNewtabIconActive": true,
+        "companyImagesModel": {
+          "ejiBannerAsBackground": false,
+          "enhancedJobDescription": false,
+          "featuredEmployer": false,
+          "headerImageUrl": null,
+          "logoAltText": "Tempo logo",
+          "logoImageOverlayLower": false,
+          "logoUrl": null,
+          "showBannerTop": false,
+          "showEnhancedJobImp": false,
+          "showIconInTitle": false
+        },
+        "companyName": "Tempo",
+        "companyOverviewLink": "https://www.indeed.com/cmp/Tempo-1?campaignid=mobvjcmp&from=mobviewjob&tk=1hfhu8f6tkmed800&fromjk=8273da7fbc7fd5ba",
+        "companyReviewLink": "https://www.indeed.com/cmp/Tempo-1/reviews?campaignid=mobvjcmp&cmpratingc=mobviewjob&from=mobviewjob&tk=1hfhu8f6tkmed800&fromjk=8273da7fbc7fd5ba&jt=Senior+Gameplay+Engineer+%28Unity%29",
+        "companyReviewModel": null,
+        "employerActivity": null,
+        "employerResponsiveCardModel": {
+          "description": "Responded to 75% or more applications in the past 30 days, typically within 1 day.",
+          "headline": null,
+          "responseRate": 0.88
+        },
+        "encryptedFccCompanyId": null,
+        "formattedLocation": "Remote",
+        "hideRating": false,
+        "isDesktopApplyButtonSticky": true,
+        "isSimpleVjImproveActive": false,
+        "isSimplifiedHeader": false,
+        "jobNormTitle": null,
+        "jobTitle": "Senior Gameplay Engineer (Unity)",
+        "jobTypes": null,
+        "location": null,
+        "mobileStickyVjHeaderActive": false,
+        "openCompanyLinksInNewTab": true,
+        "parentCompanyName": null,
+        "preciseLocationModel": null,
+        "ratingsModel": null,
+        "recentSearch": null,
+        "remoteLocation": true,
+        "remoteWorkModel": {
+          "inlineText": false,
+          "text": "Remote",
+          "type": "REMOTE_ALWAYS"
+        },
+        "salaryCurrency": null,
+        "salaryMax": null,
+        "salaryMin": null,
+        "salaryType": null,
+        "subtitle": "Tempo - Remote",
+        "tagModels": null,
+        "taxonomyAttributes": null,
+        "viewJobDisplay": "DESKTOP_STANDALONE"
+      },
+      "jobMetadataHeaderModel": {
+        "jobType": "Full-time"
+      },
+      "jobTagModel": null,
+      "resumeEvaluationResult": null,
+      "sanitizedJobDescription": "<div>\n <p>As a Senior Gameplay Engineer, you will work with and mentor a tight-knit team authoring game features, tools, systems, services, and pipelines which empower our content creators to realize the vision of our games and your fellow engineers to level up and grow. You will work with engineers and producers to tackle the most difficult technical challenges our projects face. You will bring together wisdom, creativity, and technical mastery to make the impossible possible. You will help create a studio culture of growth, both personally and professionally.</p>\n <p></p>\n <p><b><br> What you will do:</b></p> \n <ul> \n  <li>Author gameplay features and systems</li> \n  <li>Assist with building and maintaining tools for authoring game content</li> \n  <li>Mentor junior team members</li> \n  <li>Assist with project planning and bug triage</li> \n  <li>Directly support Design and Customer Service teams</li>\n </ul>\n <br> \n <p></p> \n <p><b> What you will need :</b></p> \n <ul> \n  <li>5+ years experience with end-to-end development of AAA games in Unity</li> \n  <li>Experience creating tools and features for technical content creators</li> \n  <li>Excellent C# &amp; Unity Experience</li> \n  <li>Clear communication and teamwork skills</li> \n  <li>Experience working with game teams and supporting content creators</li> \n  <li>Experience providing technical guidance to developers of all levels</li> \n  <li>A willingness to learn new tools and systems</li> \n  <li>Excellent computer science fundamentals</li>\n </ul>\n <br> \n <p></p> \n <p><b> Bonus points for:</b></p> \n <ul> \n  <li>Familiarity with cloud based services such as Azure</li> \n  <li>Knowledge of SQL databases such as Postgresql / MySQL</li> \n  <li>Game platform support and development</li> \n  <li>Mobile/Console Experience</li> \n  <li>Security appsec and infosec experience</li> \n  <li>Shipped a cross platform product on PC / Mac / iOS / Android</li> \n  <li>Interest in blockchain technology</li> \n  <li>Love of games</li>\n </ul>\n <br> \n <p></p> \n <p><b> Who we are – Tempo Games Studio</b></p> \n <p> Tempo Games is a new start-up games studio in production on its first major title. The Bazaar is an infinitely replayable, global, and free-to-play strategy game for all platforms. In this genre-bending title, players take the role of an enterprising adventurer on a quest for wealth and glory in an intergalactic marketplace.</p> \n <p> Tempo is seeking to expand its team and hire best-in-class talent. The existing team has collectively delivered more than 100 games, events, and marketing campaigns with the largest companies on the globe, including Amazon, Microsoft, Nintendo, Epic, Sony, Activision Blizzard, Riot Games, Take-Two Interactive, Tencent, and ByteDance.</p> \n <p> Tempo fosters a culture of innovation, inclusion, and passion among its team and fans to deliver impactful experiences that shape the way we all create, entertain, and play. We invest everything into our staff, culture, and product.</p>\n <p></p>\n <p><b><br> Compensation and benefits:</b></p> \n <p> Tempo has listed the pay ranges it in good faith expects to pay applicants for this role, as of the time of this posting. Salary offered will be determined based on numerous relevant business and candidate factors including, for example, education, qualifications, certifications, experience, skills, domain knowledge, interview performance, position level, geographic location, and business or organizational needs.</p> \n <p> In the United States, the standard annual base pay range for this role is $115,000 and up, depending on the above-mentioned factors. This base pay range is for the U.S. and is not applicable to locations outside of the U.S.</p> \n <p> The salary is just one part of the overall compensation at Tempo. We also offer a package of benefits including discretionary paid time off, paid time off for federal holidays, medical/dental/vision insurance, life insurance, disability insurance, and tax-advantaged 401(k) accounts to regular full-time employees.</p>\n</div>",
+      "screenerRequirementsModel": null,
+      "showExpiredHeader": false,
+      "tagModels": null,
+      "viewJobDisplay": "DESKTOP_STANDALONE"
+    },
+    "sectionedJobInfoModel": null
+  },
+  "jobKey": "8273da7fbc7fd5ba",
+  "jobLocation": "Remote",
+  "jobMetadataFooterModel": {
+    "advertiserName": "",
+    "age": "Just posted",
+    "indeedApplyAdaNotice": "If you require alternative methods of application or screening, you must approach the employer directly to request this as Indeed is not responsible for the employer's application process.",
+    "isShowJapanSafeJobSearchGuidelinesDisclaimer": false,
+    "originalJobLink": {
+      "dataHref": null,
+      "href": "https://www.indeed.com/applystart?jk=8273da7fbc7fd5ba&from=vj&pos=top&mvj=0&spon=0&sjdu=YmZE5d5THV8u75cuc0H6Y26AwfY51UOGmh3Z9h4OvXg1UZNGFROJMRXmGVLRQy3V5Z_dA0xndw9ylAW4Hz2CAQ&astse=9a4590c0585e5955&assa=7904",
+      "openInNewTab": true,
+      "referrerpolicy": "origin",
+      "rel": "noopener",
+      "target": "_blank",
+      "text": "original job",
+      "title": null
+    },
+    "phoneNumber": null,
+    "saveJobLink": null,
+    "showReportJobAsButton": true,
+    "source": "Tempo"
+  },
+  "jobSeenData": "tk=1hfhu8f6tkmed800&context=viewjobrecs",
+  "jobTitle": "Senior Gameplay Engineer (Unity)",
+  "judyResponse": {},
+  "language": "en",
+  "lastVisitTime": 1699147368,
+  "lazyProviders": {
+    "mosaic-provider-reportcontent": "<div class=\"mosaic-reportcontent-wrapper button\"><style data-emotion=\"css 16q8vsx\">.css-16q8vsx{box-sizing:border-box;background:none;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;appearance:none;text-align:left;-webkit-text-decoration:none;text-decoration:none;border:none;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;position:relative;margin:0;padding-left:1rem;padding-right:1rem;line-height:1.5;font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;font-size:1rem;font-weight:700;border-radius:0.5rem;border-width:1px;border-style:solid;-webkit-transition:border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),background-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1),box-shadow 200ms cubic-bezier(0.645, 0.045, 0.355, 1),color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);transition:border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),background-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1),box-shadow 200ms cubic-bezier(0.645, 0.045, 0.355, 1),color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;width:auto;padding-top:0.5625rem;padding-bottom:0.5625rem;color:#2d2d2d;border-color:#e4e2e0;background-color:#e4e2e0;}.css-16q8vsx::-moz-focus-inner{border:0;}@media (prefers-reduced-motion: reduce){.css-16q8vsx{-webkit-transition:none;transition:none;}}.css-16q8vsx:disabled{opacity:0.4;pointer-events:none;}.css-16q8vsx:focus{outline:none;box-shadow:0 0 0 0.125rem #ffffff,0 0 0 0.1875rem #2557a7;}.css-16q8vsx:focus:not([data-focus-visible-added]){box-shadow:none;}.css-16q8vsx[aria-disabled='true']{cursor:default;}.css-16q8vsx:visited{color:#2d2d2d;}.css-16q8vsx:hover:not([aria-disabled='true']){border-color:#d4d2d0;background-color:#d4d2d0;}.css-16q8vsx:active:not([aria-disabled='true']){box-shadow:inset 0 0.125rem 0.25rem rgba(45, 45, 45, 0.2),inset 0 0.0625rem 0.1875rem rgba(45, 45, 45, 0.12),inset 0 0 0.125rem rgba(45, 45, 45, 0.2);border-color:#b4b2b1;background-color:#b4b2b1;}.css-16q8vsx[aria-disabled='true']{border:transparent;background-color:rgba(228,226,224,0.4);color:rgba(45,45,45,0.4);}</style><button class=\"mosaic-reportcontent-button desktop css-16q8vsx e8ju0x51\"><span class=\"mosaic-reportcontent-button-icon\"></span>Report job</button><div class=\"mosaic-reportcontent-content\"></div></div>",
+    "js-match-insights-provider": "<style data-emotion=\"css kyg8or\">.css-kyg8or{box-sizing:border-box;margin:0;min-width:0;}</style><div class=\"css-kyg8or eu4oa1w0\"><style data-emotion=\"js-match-insights-provider kyg8or\">body .js-match-insights-provider-kyg8or{box-sizing:border-box;margin:0;min-width:0;}</style><div class=\"js-match-insights-provider-kyg8or eu4oa1w0\"><style data-emotion=\"js-match-insights-provider 1283b4z\">body .js-match-insights-provider-1283b4z{box-sizing:border-box;margin:0;min-width:0;margin-bottom:1.5rem;margin-top:1rem;}</style><div class=\"js-match-insights-provider-1283b4z eu4oa1w0\"><style data-emotion=\"js-match-insights-provider 14dlqhn\">body .js-match-insights-provider-14dlqhn{margin:0;margin-bottom:0.5rem;color:#2d2d2d;font-weight:700;font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;font-size:1.25rem;line-height:1.5;margin-bottom:0;}</style><h2 class=\"js-match-insights-provider-14dlqhn e1tiznh50\">Profile insights</h2><style data-emotion=\"js-match-insights-provider xvmbeo\">body .js-match-insights-provider-xvmbeo{font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;font-weight:inherit;color:#595959;font-size:0.75rem;line-height:1.5;}</style><span class=\"js-match-insights-provider-xvmbeo e1wnkr790\"><span>Your <style data-emotion=\"js-match-insights-provider 1cr09u7\">body .js-match-insights-provider-1cr09u7{border-radius:0;color:#2557a7;font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;text-decoration:none;transition:border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),background-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1),border-bottom-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),border-bottom-style 200ms cubic-bezier(0.645, 0.045, 0.355, 1),border-bottom-width 200ms cubic-bezier(0.645, 0.045, 0.355, 1),border-radius 200ms cubic-bezier(0.645, 0.045, 0.355, 1),box-shadow 200ms cubic-bezier(0.645, 0.045, 0.355, 1),color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);border-bottom:1px solid;cursor:pointer;color:#767676!important;}body .js-match-insights-provider-1cr09u7:hover{color:#164081;}body .js-match-insights-provider-1cr09u7:active{color:#0d2d5e;}body .js-match-insights-provider-1cr09u7:focus{outline:none;border-bottom:1px solid;border-bottom-color:transparent;border-radius:4px;box-shadow:0 0 0 1px;}body .js-match-insights-provider-1cr09u7:focus:not([data-focus-visible-added]){box-shadow:none;border-bottom:1px solid;border-radius:0;}body .js-match-insights-provider-1cr09u7:visited{color:#2557a7;}body .js-match-insights-provider-1cr09u7:hover,body .js-match-insights-provider-1cr09u7:active{color:#164081;}@media (prefers-reduced-motion: reduce){body .js-match-insights-provider-1cr09u7{transition:none;}}body .js-match-insights-provider-1cr09u7:focus:active:not([data-focus-visible-added]){box-shadow:none;border-bottom:1px solid;border-radius:0;}body body .js-match-insights-provider-1cr09u7:hover,body body .js-match-insights-provider-1cr09u7:active,body body .js-match-insights-provider-1cr09u7:focus,body body .js-match-insights-provider-1cr09u7:visited{text-decoration:none!important;}</style><a href=\"https://profile.indeed.com\" target=\"_blank\" aria-label=\"profile (opens in a new window)\" class=\"js-match-insights-provider-1cr09u7 e19afand0\">profile<style data-emotion=\"js-match-insights-provider r5jz5s\">body .js-match-insights-provider-r5jz5s{width:1.5rem;height:1.5rem;color:inherit;display:inline-flex;flex:0 0 auto;height:1em;width:1em;margin:0 0 0.25rem 0.25rem;vertical-align:middle;}</style><svg xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" role=\"img\" fill=\"currentColor\" viewBox=\"0 0 24 24\" aria-hidden=\"true\" class=\" js-match-insights-provider-r5jz5s eac13zx0\"><path d=\"M14.504 3a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h3.085l-9.594 9.594a.5.5 0 000 .707l.707.708a.5.5 0 00.707 0l9.594-9.595V9.5a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-6a.5.5 0 00-.5-.5h-6z\"></path><path d=\"M5 3.002a2 2 0 00-2 2v13.996a2 2 0 001.996 2.004h14a2 2 0 002-2v-6.5a.5.5 0 00-.5-.5h-1a.5.5 0 00-.5.5v6.5L5 18.998V5.002L11.5 5a.495.495 0 00.496-.498v-1a.5.5 0 00-.5-.5H5z\"></path></svg></a> might be <style data-emotion=\"js-match-insights-provider igfe2n\">body .js-match-insights-provider-igfe2n{font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;font-weight:inherit;color:#595959;font-size:inherit;line-height:inherit;color:#b16300;font-weight:700;}</style><span class=\"js-match-insights-provider-igfe2n e1wnkr790\">missing</span> qualifications mentioned in the job description</span></span></div><style data-emotion=\"js-match-insights-provider h05mm8\">body .js-match-insights-provider-h05mm8{display:flex;box-sizing:border-box;margin:0;min-width:0;gap:1.5rem;flex-flow:column;}</style><div class=\"js-match-insights-provider-h05mm8 e37uo190\"><style data-emotion=\"js-match-insights-provider vrz8i4\">body .js-match-insights-provider-vrz8i4{display:flex;box-sizing:border-box;margin:0;min-width:0;display:flex;justify-content:center;position:fixed;top:0;left:0;width:100%;}</style><div class=\"js-match-insights-provider-vrz8i4 e37uo190\"></div><style data-emotion=\"js-match-insights-provider 16m282m\">body .js-match-insights-provider-16m282m{display:flex;box-sizing:border-box;margin:0;min-width:0;gap:1rem;}</style><div class=\"js-match-insights-provider-16m282m e37uo190\"><style data-emotion=\"js-match-insights-provider 1pdva1a\">body .js-match-insights-provider-1pdva1a{width:1.25rem;height:1.25rem;color:#767676;}</style><svg xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" role=\"img\" fill=\"currentColor\" viewBox=\"0 0 20 20\" data-testid=\"section-icon\" aria-hidden=\"true\" class=\"js-match-insights-provider-1pdva1a eac13zx0\"><path d=\"M9.75 1a.5.5 0 00-.5.5v2a.5.5 0 00.5.5h.5a.5.5 0 00.5-.5v-2a.5.5 0 00-.5-.5h-.5zM16 10.25a.5.5 0 00.5.5h2a.5.5 0 00.5-.5v-.5a.5.5 0 00-.5-.5h-2a.5.5 0 00-.5.5v.5zm-14.5.5a.5.5 0 01-.5-.5v-.5a.5.5 0 01.5-.5h2a.5.5 0 01.5.5v.5a.5.5 0 01-.5.5h-2zm2.379-6.518a.5.5 0 000 .707l.707.707a.5.5 0 00.707 0l.354-.353a.5.5 0 000-.707l-.707-.707a.5.5 0 00-.708 0l-.353.353zm12.242.708a.5.5 0 000-.708l-.353-.353a.5.5 0 00-.708 0l-.707.707a.5.5 0 000 .707l.354.353a.5.5 0 00.707 0l.707-.707zM7.5 16v1.5a.5.5 0 00.5.5h4a.5.5 0 00.5-.5V16h-5zm5-2.877a4 4 0 10-5 0V14.5h5v-1.377z\"></path></svg><style data-emotion=\"js-match-insights-provider e6s05i\">body .js-match-insights-provider-e6s05i{box-sizing:border-box;margin:0;min-width:0;width:100%;}</style><div class=\"js-match-insights-provider-e6s05i eu4oa1w0\"><style data-emotion=\"js-match-insights-provider 11n8e9a\">body .js-match-insights-provider-11n8e9a{margin:0;margin-bottom:0.25rem;color:#2d2d2d;font-weight:700;font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;font-size:0.875rem;line-height:1.5;margin-bottom:0;}</style><h3 class=\"js-match-insights-provider-11n8e9a e1tiznh50\">Skills</h3><style data-emotion=\"js-match-insights-provider 3pgver\">body .js-match-insights-provider-3pgver{box-sizing:border-box;margin:0;min-width:0;flex-direction:row;padding:0;margin:0;display:flex;flex-wrap:wrap;}</style><ul class=\"js-match-insights-provider-3pgver eu4oa1w0\"><style data-emotion=\"js-match-insights-provider r3a978\">body .js-match-insights-provider-r3a978{box-sizing:border-box;margin:0;min-width:0;display:inline-flex;list-style-type:none;}</style><li data-testid=\"list-item\" class=\"js-match-insights-provider-r3a978 eu4oa1w0\"><style data-emotion=\"js-match-insights-provider 1kq4x2h\">body .js-match-insights-provider-1kq4x2h{box-sizing:border-box;margin:0;min-width:0;display:inline-flex;align-items:center;flex-direction:row;justify-content:center;padding:0.5rem;margin:0;border-radius:0.25rem;padding-left:0.5rem;padding-right:0.5rem;margin-top:0.25rem;margin-right:0.5rem;color:#595959;border-color:#f3f2f1;background-color:#f3f2f1;margin-bottom:0.25rem;border:0;}body .js-match-insights-provider-1kq4x2h:focus{border-color:#2557a7;}body .js-match-insights-provider-1kq4x2h:hover{background-color:#e4e2e0;}body .js-match-insights-provider-1kq4x2h:active{background-color:#d4d2d0;}</style><button class=\"js-match-insights-provider-1kq4x2h eu4oa1w0\"><style data-emotion=\"js-match-insights-provider 157rxm8\">body .js-match-insights-provider-157rxm8{box-sizing:border-box;margin:0;min-width:0;display:flex;gap:0.25rem;border:none;align-items:center;margin-top:1px;margin-bottom:1px;}</style><div class=\"js-match-insights-provider-157rxm8 eu4oa1w0\"><style data-emotion=\"js-match-insights-provider 1lnlp3w\">body .js-match-insights-provider-1lnlp3w{font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;font-weight:inherit;color:#595959;font-size:0.75rem;line-height:1.5;font-weight:700;display:flex;color:#595959;}</style><span data-testid=\"iOS-tile\" class=\"js-match-insights-provider-1lnlp3w e1wnkr790\">iOS</span><style data-emotion=\"js-match-insights-provider tv5n3a\">body .js-match-insights-provider-tv5n3a{width:1.125rem;height:1.125rem;color:#595959;margin-right:-.2rem;}</style><svg xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" role=\"img\" fill=\"currentColor\" viewBox=\"0 0 18 18\" aria-label=\"missing qualification\" class=\"js-match-insights-provider-tv5n3a eac13zx0\"><path d=\"M5.113 7.693a.5.5 0 010-.707l.212-.213a.5.5 0 01.707 0L9 9.741l2.969-2.968a.5.5 0 01.707 0l.212.213a.5.5 0 010 .707l-3.313 3.312a.387.387 0 01-.009.01l-.212.211a.5.5 0 01-.707 0l-.212-.212-.007-.006-3.315-3.315z\"></path></svg></div></button></li><li data-testid=\"list-item\" class=\"js-match-insights-provider-r3a978 eu4oa1w0\"><button class=\"js-match-insights-provider-1kq4x2h eu4oa1w0\"><div class=\"js-match-insights-provider-157rxm8 eu4oa1w0\"><span data-testid=\"Unity-tile\" class=\"js-match-insights-provider-1lnlp3w e1wnkr790\">Unity</span><svg xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" role=\"img\" fill=\"currentColor\" viewBox=\"0 0 18 18\" aria-label=\"missing qualification\" class=\"js-match-insights-provider-tv5n3a eac13zx0\"><path d=\"M5.113 7.693a.5.5 0 010-.707l.212-.213a.5.5 0 01.707 0L9 9.741l2.969-2.968a.5.5 0 01.707 0l.212.213a.5.5 0 010 .707l-3.313 3.312a.387.387 0 01-.009.01l-.212.211a.5.5 0 01-.707 0l-.212-.212-.007-.006-3.315-3.315z\"></path></svg></div></button></li><li data-testid=\"list-item\" class=\"js-match-insights-provider-r3a978 eu4oa1w0\"><button class=\"js-match-insights-provider-1kq4x2h eu4oa1w0\"><div class=\"js-match-insights-provider-157rxm8 eu4oa1w0\"><span data-testid=\"C#-tile\" class=\"js-match-insights-provider-1lnlp3w e1wnkr790\">C#</span><svg xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" role=\"img\" fill=\"currentColor\" viewBox=\"0 0 18 18\" aria-label=\"missing qualification\" class=\"js-match-insights-provider-tv5n3a eac13zx0\"><path d=\"M5.113 7.693a.5.5 0 010-.707l.212-.213a.5.5 0 01.707 0L9 9.741l2.969-2.968a.5.5 0 01.707 0l.212.213a.5.5 0 010 .707l-3.313 3.312a.387.387 0 01-.009.01l-.212.211a.5.5 0 01-.707 0l-.212-.212-.007-.006-3.315-3.315z\"></path></svg></div></button><style data-emotion=\"js-match-insights-provider cm9z6g\">body .js-match-insights-provider-cm9z6g{border-radius:0;color:#767676;font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;text-decoration:none;transition:border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),background-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1),border-bottom-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),border-bottom-style 200ms cubic-bezier(0.645, 0.045, 0.355, 1),border-bottom-width 200ms cubic-bezier(0.645, 0.045, 0.355, 1),border-radius 200ms cubic-bezier(0.645, 0.045, 0.355, 1),box-shadow 200ms cubic-bezier(0.645, 0.045, 0.355, 1),color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);border-bottom:1px solid;cursor:pointer;font-size:0.75rem;background:none;border:0;border-bottom:1px solid;display:inline-block;margin-left:0.75rem;align-self:center;padding-left:0;padding-right:0;margin-top:0.25rem;}body .js-match-insights-provider-cm9z6g:hover{color:#164081;}body .js-match-insights-provider-cm9z6g:active{color:#0d2d5e;}body .js-match-insights-provider-cm9z6g:focus{outline:none;border-bottom:1px solid;border-bottom-color:transparent;border-radius:4px;box-shadow:0 0 0 1px;}body .js-match-insights-provider-cm9z6g:focus:not([data-focus-visible-added]){box-shadow:none;border-bottom:1px solid;border-radius:0;}body .js-match-insights-provider-cm9z6g:visited{color:#767676;}body .js-match-insights-provider-cm9z6g:hover,body .js-match-insights-provider-cm9z6g:active{color:#424242;}@media (prefers-reduced-motion: reduce){body .js-match-insights-provider-cm9z6g{transition:none;}}body .js-match-insights-provider-cm9z6g:focus:active:not([data-focus-visible-added]){box-shadow:none;border-bottom:1px solid;border-radius:0;}</style><button class=\"js-match-insights-provider-cm9z6g e19afand0\">+ show more</button></li></ul><style data-emotion=\"js-match-insights-provider r1lqoj\">body .js-match-insights-provider-r1lqoj{display:flex;box-sizing:border-box;margin:0;min-width:0;border-style:none;margin-inline:0;padding-inline:0;padding-block:0;align-items:center;justify-content:space-between;padding-top:0.25rem;padding-bottom:0.25rem;display:block;margin-top:0.5rem;}body .js-match-insights-provider-r1lqoj legend{float:none;}</style><fieldset class=\"js-match-insights-provider-r1lqoj e37uo190\"><style data-emotion=\"js-match-insights-provider h9kwwf\">body .js-match-insights-provider-h9kwwf{box-sizing:border-box;margin:0;min-width:0;flex-grow:1;overflow-wrap:break-word;color:#595959;font-size:0.75rem;padding-right:0.25rem;}</style><legend class=\"js-match-insights-provider-h9kwwf eu4oa1w0\"><span>Do you have experience in <b>iOS</b>?</span></legend><style data-emotion=\"js-match-insights-provider 1lps5p3\">body .js-match-insights-provider-1lps5p3{display:flex;box-sizing:border-box;margin:0;min-width:0;justify-content:flex-start;flex-shrink:1;min-width:max-content;margin-top:0.5rem;}</style><div class=\"js-match-insights-provider-1lps5p3 e37uo190\"><style data-emotion=\"js-match-insights-provider s1k8bj\">body .js-match-insights-provider-s1k8bj{box-sizing:border-box;background:none;appearance:none;text-align:left;text-decoration:none;border:none;cursor:pointer;user-select:none;align-items:center;justify-content:center;position:relative;margin:0;padding-left:1rem;padding-right:1rem;line-height:1.5;font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;font-size:1rem;font-weight:700;border-radius:0.5rem;border-width:1px;border-style:solid;transition:border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),background-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1),box-shadow 200ms cubic-bezier(0.645, 0.045, 0.355, 1),color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);display:inline-flex;width:auto;padding-top:0.3125rem;padding-bottom:0.3125rem;border-color:#d4d2d0;background-color:#ffffff;color:#2557a7;margin-right:0.25rem;}body .js-match-insights-provider-s1k8bj::-moz-focus-inner{border:0;}@media (prefers-reduced-motion: reduce){body .js-match-insights-provider-s1k8bj{transition:none;}}body .js-match-insights-provider-s1k8bj:disabled{opacity:0.4;pointer-events:none;}body .js-match-insights-provider-s1k8bj:focus{outline:none;box-shadow:0 0 0 0.125rem #ffffff,0 0 0 0.1875rem #2557a7;}body .js-match-insights-provider-s1k8bj:focus:not([data-focus-visible-added]){box-shadow:none;}body .js-match-insights-provider-s1k8bj[aria-disabled='true']{cursor:default;}body .js-match-insights-provider-s1k8bj::before{content:\"\";position:absolute;height:calc(100% + 10px);width:calc(100% + 10px);opacity:0%;}body .js-match-insights-provider-s1k8bj:focus::before{display:none;}body .js-match-insights-provider-s1k8bj:visited{color:#2557a7;}body .js-match-insights-provider-s1k8bj:hover:not([aria-disabled='true']){color:#2557a7;border-color:#6792f0;background-color:#eef1fe;}body .js-match-insights-provider-s1k8bj:active:not([aria-disabled='true']){box-shadow:inset 0 0.125rem 0.25rem rgba(45, 45, 45, 0.2),inset 0 0.0625rem 0.1875rem rgba(45, 45, 45, 0.12),inset 0 0 0.125rem rgba(45, 45, 45, 0.2);border-color:#164081;color:#164081;background-color:#c7d2f6;}body .js-match-insights-provider-s1k8bj[aria-disabled='true']{border-color:rgba(212,210,208,0.4);color:rgba(37,87,167,0.4);}</style><button data-testid=\"iOS-yes\" class=\"js-match-insights-provider-s1k8bj e8ju0x51\"><span>Yes</span></button><style data-emotion=\"js-match-insights-provider 1b1q3os\">body .js-match-insights-provider-1b1q3os{box-sizing:border-box;background:none;appearance:none;text-align:left;text-decoration:none;border:none;cursor:pointer;user-select:none;align-items:center;justify-content:center;position:relative;margin:0;padding-left:1rem;padding-right:1rem;line-height:1.5;font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;font-size:1rem;font-weight:700;border-radius:0.5rem;border-width:1px;border-style:solid;transition:border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),background-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1),box-shadow 200ms cubic-bezier(0.645, 0.045, 0.355, 1),color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);display:inline-flex;width:auto;padding-top:0.3125rem;padding-bottom:0.3125rem;border-color:#d4d2d0;background-color:#ffffff;color:#2557a7;}body .js-match-insights-provider-1b1q3os::-moz-focus-inner{border:0;}@media (prefers-reduced-motion: reduce){body .js-match-insights-provider-1b1q3os{transition:none;}}body .js-match-insights-provider-1b1q3os:disabled{opacity:0.4;pointer-events:none;}body .js-match-insights-provider-1b1q3os:focus{outline:none;box-shadow:0 0 0 0.125rem #ffffff,0 0 0 0.1875rem #2557a7;}body .js-match-insights-provider-1b1q3os:focus:not([data-focus-visible-added]){box-shadow:none;}body .js-match-insights-provider-1b1q3os[aria-disabled='true']{cursor:default;}body .js-match-insights-provider-1b1q3os::before{content:\"\";position:absolute;height:calc(100% + 10px);width:calc(100% + 10px);opacity:0%;}body .js-match-insights-provider-1b1q3os:focus::before{display:none;}body .js-match-insights-provider-1b1q3os:visited{color:#2557a7;}body .js-match-insights-provider-1b1q3os:hover:not([aria-disabled='true']){color:#2557a7;border-color:#6792f0;background-color:#eef1fe;}body .js-match-insights-provider-1b1q3os:active:not([aria-disabled='true']){box-shadow:inset 0 0.125rem 0.25rem rgba(45, 45, 45, 0.2),inset 0 0.0625rem 0.1875rem rgba(45, 45, 45, 0.12),inset 0 0 0.125rem rgba(45, 45, 45, 0.2);border-color:#164081;color:#164081;background-color:#c7d2f6;}body .js-match-insights-provider-1b1q3os[aria-disabled='true']{border-color:rgba(212,210,208,0.4);color:rgba(37,87,167,0.4);}</style><button data-testid=\"iOS-no\" class=\"js-match-insights-provider-1b1q3os e8ju0x51\"><span>No</span></button><style data-emotion=\"js-match-insights-provider 1ocbp6o\">body .js-match-insights-provider-1ocbp6o{box-sizing:border-box;background:none;appearance:none;text-align:left;text-decoration:none;border:none;cursor:pointer;user-select:none;align-items:center;justify-content:center;position:relative;margin:0;padding-left:1rem;padding-right:1rem;line-height:1.5;font-family:\"Noto Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"Liberation Sans\",\"Roboto\",\"Noto\",sans-serif;font-size:1rem;font-weight:700;border-radius:0.5rem;border-width:1px;border-style:solid;transition:border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),background-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1),opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1),box-shadow 200ms cubic-bezier(0.645, 0.045, 0.355, 1),color 200ms cubic-bezier(0.645, 0.045, 0.355, 1);display:inline-flex;width:auto;padding-top:0.3125rem;padding-bottom:0.3125rem;border-color:#d4d2d0;background-color:#ffffff;color:#2557a7;margin-left:0.25rem;border:none;}body .js-match-insights-provider-1ocbp6o::-moz-focus-inner{border:0;}@media (prefers-reduced-motion: reduce){body .js-match-insights-provider-1ocbp6o{transition:none;}}body .js-match-insights-provider-1ocbp6o:disabled{opacity:0.4;pointer-events:none;}body .js-match-insights-provider-1ocbp6o:focus{outline:none;box-shadow:0 0 0 0.125rem #ffffff,0 0 0 0.1875rem #2557a7;}body .js-match-insights-provider-1ocbp6o:focus:not([data-focus-visible-added]){box-shadow:none;}body .js-match-insights-provider-1ocbp6o[aria-disabled='true']{cursor:default;}body .js-match-insights-provider-1ocbp6o::before{content:\"\";position:absolute;height:calc(100% + 10px);width:calc(100% + 10px);opacity:0%;}body .js-match-insights-provider-1ocbp6o:focus::before{display:none;}body .js-match-insights-provider-1ocbp6o:visited{color:#2557a7;}body .js-match-insights-provider-1ocbp6o:hover:not([aria-disabled='true']){color:#2557a7;border-color:#6792f0;background-color:#eef1fe;}body .js-match-insights-provider-1ocbp6o:active:not([aria-disabled='true']){box-shadow:inset 0 0.125rem 0.25rem rgba(45, 45, 45, 0.2),inset 0 0.0625rem 0.1875rem rgba(45, 45, 45, 0.12),inset 0 0 0.125rem rgba(45, 45, 45, 0.2);border-color:#164081;color:#164081;background-color:#c7d2f6;}body .js-match-insights-provider-1ocbp6o[aria-disabled='true']{border-color:rgba(212,210,208,0.4);color:rgba(37,87,167,0.4);}</style><button data-testid=\"iOS-skip\" class=\"js-match-insights-provider-1ocbp6o e8ju0x51\"><span>Skip</span></button></div></fieldset></div></div></div><style data-emotion=\"js-match-insights-provider 1lugej0\">body .js-match-insights-provider-1lugej0{display:flex;flex-wrap:wrap;text-align:center;align-items:center;justify-content:center;color:#595959;width:100%;margin-top:1.5rem;margin-bottom:1.5rem;}body .js-match-insights-provider-1lugej0::before,body .js-match-insights-provider-1lugej0::after{content:\"\";flex:1 1 auto;background-color:#e4e2e0;height:1px;}body .js-match-insights-provider-1lugej0 .e15p7aqh0{padding:0.5rem;}</style><div role=\"separator\" aria-orientation=\"horizontal\" class=\"js-match-insights-provider-1lugej0 e15p7aqh1\"><style data-emotion=\"js-match-insights-provider 1b6omqv\">body .js-match-insights-provider-1b6omqv{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap;word-wrap:normal;}</style><span class=\"js-match-insights-provider-1b6omqv esbq1260\"><span>&amp;nbsp;</span></span></div></div></div>",
+    "MosaicProviderCallToApplyFeedback": ""
+  },
+  "locale": "en_US",
+  "localeData": {
+    "": [
+      null,
+      "Project-Id-Version: \nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2023-11-16 23:17-0600\nPO-Revision-Date: 2022-10-21 16:25+0000\nLast-Translator: Auto Generated <noreply@indeed.com>\nLanguage-Team: English (United States) <https://weblate.corp.indeed.com/projects/indeed/indeedmobile-i18n-content/en_US/>\nLanguage: en_US\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Generator: Weblate 3.9.1\n"
+    ],
+    "iphone_home_find_jobs\u0004Find Jobs": [null, "Find Jobs"],
+    "iphone_home_location_caption_capitalized\u0004City, state, or zip code": [
+      null,
+      "City, state, zip code, or \"remote\""
+    ],
+    "mobVJJobDetailsPreferenceMatchShift\u0004Shift & Schedule": [
+      null,
+      "Shift and Schedule"
+    ]
+  },
+  "loggedIn": true,
+  "mobResourceTimingEnabled": false,
+  "mobtk": "1hfhu8f6tkmed800",
+  "mosaicData": null,
+  "oneGraphApiKey": "db7ac28c69eff9413df48909e55558cf4bf371590d8bef3165e4facbb7277a39",
+  "oneGraphApiUrl": "https://apis.indeed.com/graphql/",
+  "originalJobLinkModel": {
+    "a11yNewtabIconActive": true,
+    "cookieName": "RCLK",
+    "cookiePath": "/",
+    "cookieValue": "jk=8273da7fbc7fd5ba&vjtk=1hfhu8f6tkmed800&ts=1700335467741&rd=&qd="
+  },
+  "pageId": "viewjob",
+  "parenttk": null,
+  "phoneLinkType": null,
+  "preciseLocationModel": null,
+  "profileBaseUrl": "https://profile.indeed.com",
+  "queryString": null,
+  "rawResumeMatchRequirementList": [],
+  "recentQueryString": "q1=happy lemon&l1=united states&r1=-1&q2=sr. front end developer (vue) procurement sciences&l2=united states&r2=-1&q3=sr. front end developer (vue)&l3=united states&r3=-1",
+  "recommendedJobsModel": {
+    "shouldLazyLoad": false,
+    "shouldShow": false
+  },
+  "recommendedSearchesModel": {
+    "recommendedSearches": [],
+    "shouldShow": false
+  },
+  "relatedLinks": [
+    {
+      "href": "/q-senior-engineer-l-remote-jobs.html",
+      "linkText": "Senior Engineer jobs in Remote",
+      "what": "Senior Engineer",
+      "where": "Remote"
+    },
+    {
+      "href": "/q-tempo-l-remote-jobs.html",
+      "linkText": "Jobs at Tempo in Remote",
+      "what": "Tempo",
+      "where": "Remote"
+    },
+    {
+      "href": "/salary?from=vj&q1=Senior+Engineer&l1=Remote",
+      "linkText": "Senior Engineer salaries in Remote",
+      "what": "Senior Engineer",
+      "where": "Remote"
+    }
+  ],
+  "requestPath": "/viewjob?jk=8273da7fbc7fd5ba",
+  "resumeFooterModel": null,
+  "resumePromoCardModel": null,
+  "rtl": false,
+  "salaryGuideModel": {
+    "acmeMicrocontentEndpoint": "https://cocos-api.indeed.com",
+    "country": "US",
+    "estimatedSalaryModel": null,
+    "formattedLocation": "Remote",
+    "jobKey": "8273da7fbc7fd5ba",
+    "language": "en"
+  },
+  "salaryInfoModel": {
+    "disclaimerIcon": null,
+    "featureTokens": [],
+    "indeedEstimateText": null,
+    "matchingSalary": false,
+    "minimumPayPreferencePresent": false,
+    "salaryEstimationDisclaimer": null,
+    "salaryLabel": {
+      "diffLabelModel": null,
+      "salaryCostOfLivingLabelModel": null,
+      "salarySatisfactionLabelModel": null,
+      "salaryTopPayByOccupationModel": null
+    },
+    "salaryMax": 115000,
+    "salaryMin": 115000,
+    "salarySource": "EXTRACTION",
+    "salaryText": "$115,000 a year",
+    "salaryTextFormatted": false,
+    "salaryType": "YEARLY",
+    "userMinimumPayAmount": null,
+    "userMinimumPaySalaryType": null
+  },
+  "saveJobButtonContainerModel": {
+    "alreadySavedButtonModel": {
+      "actions": ["Saved", "Applied", "Interviewing", "Offered", "Hired"],
+      "buttonSize": null,
+      "buttonType": null,
+      "contentHtml": "Saved",
+      "href": "/",
+      "iconSize": null
+    },
+    "applyFromComputerLogUrl": "/m/rpc/log/emailmyself?jk=8273da7fbc7fd5ba&mobvjtk=1hfhu8f6tkmed800&sbt=3fc33e539c7dc5cd43197500759357b2&ctk=1evehh85lu2la800&acctKey=bcca090f34a62c52",
+    "currentJobState": "VISITED",
+    "didYouApplyPromptModel": {
+      "calloutModel": {
+        "actionsList": null,
+        "actionsMap": {
+          "NO": {
+            "children": "Not interested",
+            "className": null,
+            "href": null,
+            "target": null
+          },
+          "LATER": {
+            "children": "Maybe later",
+            "className": null,
+            "href": null,
+            "target": null
+          },
+          "YES": {
+            "children": "Yes",
+            "className": null,
+            "href": null,
+            "target": null
+          }
+        },
+        "caretPosition": null,
+        "children": null,
+        "dismissAriaLabel": "Close",
+        "dismissAttributes": null,
+        "dismissHref": null,
+        "heading": "Did you apply?"
+      },
+      "jobKey": "8273da7fbc7fd5ba",
+      "possibleResponses": {
+        "NO": "NO",
+        "LATER": "LATER",
+        "YES": "YES"
+      },
+      "userCanView": false
+    },
+    "didYouApplyResponseUrl": "/m/rpc/didyouapply?tk=1hfhu8f6tkmed800&jobKey=8273da7fbc7fd5ba&originPage=viewjob&from=viewjob",
+    "hashedCSRFToken": "3fc33e539c7dc5cd43197500759357b2",
+    "isAlreadySavedButtonVisible": false,
+    "isDisableJobStatusChange": true,
+    "isLoggedIn": true,
+    "isSaveWithoutLoginEnabled": false,
+    "isSticky": false,
+    "isSyncJobs": false,
+    "mobtk": "1hfhu8f6tkmed800",
+    "myIndeedLoginLink": "https://secure.indeed.com/account/login?co=US&hl=en_US&continue=http%3A%2F%2Fwww.indeed.com%2Fviewjob%3Fjk%3D8273da7fbc7fd5ba&from=jsfe-desktopstandalone-save-indeedmobile",
+    "myJobsAPIHref": "/rpc/log/myjobs/transition_job_state?client=mobile&cause=statepicker&preserveTimestamp=false&tk=1hfhu8f6tkmed800&jobKey=8273da7fbc7fd5ba&originPage=viewjob",
+    "myJobsURL": "https://myjobs.indeed.com?co=US&hl=en_US&from=mobvj",
+    "pageId": "viewjob",
+    "passportInterceptModalModel": null,
+    "possibleJobActions": {
+      "SAVED": "save",
+      "APPLIED": "apply",
+      "INTERVIEWING": "interview",
+      "OFFERED": "offer",
+      "HIRED": "hire",
+      "VISITED": "visit",
+      "ARCHIVED": "archive"
+    },
+    "possibleJobStates": {
+      "SAVED": "Saved",
+      "APPLIED": "Applied",
+      "INTERVIEWING": "Interviewing",
+      "OFFERED": "Offered",
+      "HIRED": "Hired",
+      "VISITED": "Visited",
+      "ARCHIVED": "Archived"
+    },
+    "saveButtonModel": {
+      "applyBtnNewStyle": null,
+      "buttonSize": "block",
+      "buttonType": "secondary",
+      "contentHtml": "Save this job",
+      "dataHref": null,
+      "disclaimer": null,
+      "href": "/",
+      "icon": {
+        "iconTitle": "save-icon",
+        "iconType": null
+      },
+      "isBlock": false,
+      "isBookmarkIcon": true,
+      "isSimpleVjImproveActive": null,
+      "largeScreenSizeText": null,
+      "newTabWarningText": null,
+      "occupationIds": null,
+      "openInNewTab": false,
+      "referrerpolicy": null,
+      "rel": null,
+      "sanitizedHref": null,
+      "sanitizedHtml": null,
+      "sticky": false,
+      "target": null,
+      "title": null,
+      "viewJobDisplay": "DESKTOP_STANDALONE"
+    },
+    "showSaveJobInlineCallout": false,
+    "uistates": {
+      "INTERVIEWING": "INTERVIEWING",
+      "OFFERED": "OFFERED",
+      "SAVED": "SAVED",
+      "VISITED": "VISITED",
+      "HIRED": "HIRED",
+      "ARCHIVED": "ARCHIVED",
+      "APPLIED": "APPLIED"
+    },
+    "viewJobDisplay": "DESKTOP_STANDALONE"
+  },
+  "saveJobFailureModalModel": {
+    "closeAriaLabel": "Close",
+    "closeButtonText": "Close",
+    "message": "Please retry",
+    "signInButtonText": null,
+    "signInHref": null,
+    "title": "Failed to Save Job"
+  },
+  "saveJobLimitExceededModalModel": {
+    "closeAriaLabel": "Close",
+    "closeButtonText": null,
+    "message": "You reached the limit. Please log in to save additional jobs.",
+    "signInButtonText": "Sign in",
+    "signInHref": "https://secure.indeed.com/account/login?co=US&hl=en_US&continue=http%3A%2F%2Fwww.indeed.com%2Fviewjob%3Fjk%3D8273da7fbc7fd5ba&from=viewjob_savejoblimitmodal",
+    "title": "You've already saved 20 jobs"
+  },
+  "segmentId": "food_servers",
+  "segmentPhoneNumberButtonLinkModel": null,
+  "shouldLogResolution": true,
+  "shouldShowConditionalBackButton": false,
+  "showEmployerResponsiveCard": true,
+  "showGlobalNavContent": true,
+  "showReportInJobButtons": false,
+  "sponsored": false,
+  "staticPrefix": "//c03.s3.indeed.com/m/s/",
+  "stickyType": "ALWAYS",
+  "successfullySignedInModel": null,
+  "viewJobAppDownloadPromoModel": null,
+  "viewJobButtonLinkContainerModel": null,
+  "viewJobDisplay": "DESKTOP_STANDALONE",
+  "viewJobDisplayParam": "dtsa",
+  "viewjobDislikes": false,
+  "whatWhereFormModel": {
+    "wherePrefill": "United States"
+  },
+  "yellowLightFeatureOptionsModel": null,
+  "zoneProviders": {
+    "aboveViewjobButtons": [],
+    "aboveExtractedJobDescription": ["js-match-insights-provider"],
+    "aboveFullJobDescription": [],
+    "legacyProvidersViewJob": ["mosaic-provider-reportcontent"],
+    "belowJobDescription": [],
+    "belowFullJobDescription": [],
+    "belowViewjobButtons": [],
+    "belowBenefits": [],
+    "viewjobModals": ["MosaicProviderCallToApplyFeedback"],
+    "rightRail": [],
+    "aboveBenefits": [],
+    "betweenJobDescriptionAndButtons": [],
+    "ssrVJModals": [],
+    "belowVJButtonsAndRightRail": [],
+    "belowViewjobNav": []
+  }
+}

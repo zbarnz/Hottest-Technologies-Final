@@ -2,6 +2,9 @@ import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { Listing } from "./entity/Listing";
 import { JobBoard } from "./entity/JobBoard";
+import { AutoApply } from "./entity/AutoApply";
+import { GPTLog } from "./entity/GPTLog";
+import { User } from "./entity/User";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -12,7 +15,7 @@ export const AppDataSource = new DataSource({
   database: "hottesttechnologies",
   synchronize: true,
   logging: false,
-  entities: [Listing, JobBoard], //can also import like "src/entity/*.ts"
+  entities: [Listing, JobBoard, AutoApply, GPTLog, User], //can also import like "src/entity/*.ts"
   migrations: [],
   subscribers: [],
 });

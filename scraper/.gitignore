@@ -5,4 +5,7 @@ build/
 tmp/
 temp/
 keys/
-.env
+apply.ts
+src/prompts/apply
+lib/scrapers/indeed/scripts/apply.ts
+otherApplyAssets/

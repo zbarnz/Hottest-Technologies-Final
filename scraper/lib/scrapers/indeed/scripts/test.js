@@ -1,0 +1,150 @@
+[
+  {
+    "viewId": "q_0",
+    "name": "q_247e43b627dc424c50036a52690a8b16",
+    "type": "TEXT",
+    "question": "LinkedIn Profile",
+    "max": null,
+    "requiredFormat": "NONE",
+    "characterLimit": null,
+    "options": [],
+  },
+  {
+    "viewId": "q_1",
+    "name": "q_a0e29ac65462577db9269a4ff1bffe29",
+    "type": "TEXT",
+    "question": "Website",
+    "max": null,
+    "requiredFormat": "NONE",
+    "characterLimit": null,
+    "options": [],
+  },
+  {
+    "viewId": "q_2",
+    "name": "q_70524b6a94d44c1284cb3bcc00cca562",
+    "type": "SELECT",
+    "question": "Are you legally authorized to work in the United States",
+    "max": null,
+    "requiredFormat": "NONE",
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "1" },
+      { "label": "No", "value": "0" },
+    ],
+  },
+  {
+    "viewId": "q_3",
+    "name": "q_fe94d5afe6c4a0b1f476a5968ffeeb8d",
+    "type": "SELECT",
+    "question":
+      "Will you now or in the future require sponsorship for an employment-authorizing status or visa?",
+    "max": null,
+    "requiredFormat": "NONE",
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "1" },
+      { "label": "No", "value": "0" },
+    ],
+  },
+  {
+    "viewId": "q_4",
+    "name": "q_9801ba7357f132877a3bd70be523085c",
+    "type": "SELECT",
+    "question":
+      "Have you worked for 3+ years as a full time software engineer?",
+    "max": null,
+    "requiredFormat": "NONE",
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "1" },
+      { "label": "No", "value": "0" },
+    ],
+  },
+  {
+    "viewId": "q_5",
+    "name": "q_ad8fe8fbee3c2fd54573658f2d86acf9",
+    "type": "SELECT",
+    "question":
+      "Are you excited about working on data/ML challenges? (Not having experience in these fields is not a problem)",
+    "max": null,
+    "requiredFormat": "NONE",
+    "characterLimit": null,
+    "options": [
+      { "label": "Yes", "value": "1" },
+      { "label": "No", "value": "0" },
+    ],
+  },
+  {
+    "viewId": "q_6",
+    "name": "q_86efe02c248de0b75e20cf14449c9af9",
+    "type": "SELECT",
+    "question":
+      "Voluntary Self-Identification of Disability<br><br>  <br><br>    Form CC-305<br><br>    Page 1 of 1<br><br>  <br><br>  <br><br>    OMB Control Number 1250-0005<br><br>    Expires 04/30/2026<br><br>  <br><br>Why are you being asked to complete this form?<br><br>We are a federal contractor or subcontractor. The law requires us to provide equal employment opportunity to qualified people with disabilities. We have a goal of having at least 7% of our workers as people with disabilities. The law says we must measure our progress towards this goal. To do this, we must ask applicants and employees if they have a disability or have ever had one. People can become disabled, so we need to ask this question at least every five years.<br><br>Completing this form is voluntary, and we hope that you will choose to do so. Your answer is confidential. No one who makes hiring decisions will see it. Your decision to complete the form and your answer will not harm you in any way. If you want to learn more about the law or this form, visit the U.S. Department of Labor’s Office of Federal Contract Compliance Programs (OFCCP) website at www.dol.gov/ofccp.<br><br>How do you know if you have a disability?<br><br>A disability is a condition that substantially limits one or more of your “major life activities.” If you have or have ever had such a condition, you are a person with a disability. Disabilities include, but are not limited to:<br><br>  Alcohol or other substance use disorder (not currently using drugs illegally)<br><br>  Autoimmune disorder, for example, lupus, fibromyalgia, rheumatoid arthritis, HIV/AIDS<br><br>  Blind or low vision<br><br>  Cancer (past or present)<br><br>  Cardiovascular or heart disease<br><br>  Celiac disease<br><br>  Cerebral palsy<br><br>  Deaf or serious difficulty hearing<br><br>  Diabetes<br><br>  Disfigurement, for example, disfigurement caused by burns, wounds, accidents, or congenital disorders<br><br>  Epilepsy or other seizure disorder<br><br>  Gastrointestinal disorders, for example, Crohn's Disease, irritable bowel syndrome<br><br>  Intellectual or developmental disability<br><br>  Mental health conditions, for example, depression, bipolar disorder, anxiety disorder, schizophrenia, PTSD<br><br>  Missing limbs or partially missing limbs<br><br>  Mobility impairment, benefiting from the use of a wheelchair, scooter, walker, leg brace(s) and/or other supports<br><br>  Nervous system condition, for example, migraine headaches, Parkinson’s disease, multiple sclerosis (MS)<br><br>  Neurodivergence, for example, attention-deficit/hyperactivity disorder (ADHD), autism spectrum disorder, dyslexia, dyspraxia, other learning disabilities<br><br>  Partial or complete paralysis (any cause)<br><br>  Pulmonary or respiratory conditions, for example, tuberculosis, asthma, emphysema<br><br>  Short stature (dwarfism)<br><br>  Traumatic brain injury<br><br> Disability Status?",
+    "max": null,
+    "requiredFormat": "NONE",
+    "characterLimit": null,
+    "options": [
+      { "label": "I do not want to answer", "value": "3" },
+      {
+        "label":
+          "No, I do not have a disability and have not had one in the past",
+        "value": "2",
+      },
+      {
+        "label": "Yes, I have a disability, or have had one in the past",
+        "value": "1",
+      },
+    ],
+  },
+  {
+    "viewId": "q_7",
+    "name": "q_14dc0d97e570c98a544ed5f2db668d6d",
+    "type": "SELECT",
+    "question": "Are you a Verteran?",
+    "max": null,
+    "requiredFormat": "NONE",
+    "characterLimit": null,
+    "options": [
+      { "label": "I don't wish to answer", "value": "3" },
+      {
+        "label":
+          "I identify as one or more of the classifications of a protected veteran",
+        "value": "2",
+      },
+      { "label": "I am not a protected veteran", "value": "1" },
+    ],
+  },
+  {
+    "viewId": "q_8",
+    "name": "q_2cf00e356ba66c3306ac7388bd5d3df6",
+    "type": "SELECT",
+    "question": "Race/Ethnicity",
+    "max": null,
+    "requiredFormat": "NONE",
+    "characterLimit": null,
+    "options": [
+      { "label": "Decline To Self Identify", "value": "8" },
+      { "label": "Two or More Races", "value": "7" },
+      { "label": "Native Hawaiian or Other Pacific Islander", "value": "6" },
+      { "label": "White", "value": "5" },
+      { "label": "Hispanic or Latino", "value": "4" },
+      { "label": "Black or African American", "value": "3" },
+      { "label": "Asian", "value": "2" },
+      { "label": "American Indian or Alaskan Native", "value": "1" },
+    ],
+  },
+  {
+    "viewId": "q_9",
+    "name": "q_a2bda3afb7844cb43cf5e84f6093f3b4",
+    "type": "SELECT",
+    "question": "Gender?",
+    "max": null,
+    "requiredFormat": "NONE",
+    "characterLimit": null,
+    "options": [
+      { "label": "Decline To Self Identify", "value": "3" },
+      { "label": "Female", "value": "2" },
+      { "label": "Male", "value": "1" },
+    ],
+  },
+];

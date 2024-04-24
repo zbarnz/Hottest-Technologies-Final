@@ -1,5 +1,5 @@
 import { JobBoard } from "../../../src/entity/JobBoard";
-import { saveListing, getListing } from "../../controllers/listing";
+import { createListing, getListing } from "../../controllers/listing";
 
 import { firefox, Browser, Page } from "playwright";
 import { Listing } from "../../../src/entity/Listing";
@@ -20,14 +20,20 @@ export async function cloudflareCheck(page: Page): Promise<boolean> {
   const isCloudflare = await page.evaluate(() => {
     const titleElement = document.querySelector("title");
     if (titleElement) {
-      return titleElement.textContent.toLowerCase().includes("cloudflare");
+      const cloudflareTitle: boolean =
+        titleElement.textContent.toLowerCase().includes("Just a moment...") ||
+        titleElement.textContent.toLowerCase().includes("cloudflare");
+      return cloudflareTitle;
     }
     return false;
   });
   return isCloudflare ? true : false;
 }
 
-async function listingExists(jobListingId, jobBoardId) {
+async function listingExists(
+  jobListingId,
+  jobBoardId
+): Promise<Listing["jobListingId"]> {
   const existingListing = await getListing(jobListingId, jobBoardId);
 
   if (existingListing) {
@@ -53,12 +59,13 @@ async function pullKeyList(
     }
 
     await page.goto(url);
-    await page.waitForTimeout(getRandomInt(5000, 10000));
+    await page.waitForSelector(".gnav", { state: "visible" });
+    await page.waitForTimeout(getRandomInt(2000, 5000));
 
     const isCloudflare = await cloudflareCheck(page);
 
     if (isCloudflare) {
-      throw new Error("Cloudflare detected!");
+      await page.waitForSelector(".gnav", { timeout: 1800000 }); //indeed nav panel wait for 30 minutes
     }
 
     const jobKeys: any = await page.evaluate(() => {
@@ -86,7 +93,9 @@ async function getJobInfo(key: string, page: Page): Promise<any | null> {
   let browser: Browser;
   try {
     await page.goto(`https://www.indeed.com/viewjob?jk=${key}`);
-    await page.waitForTimeout(getRandomInt(5000, 10000));
+    await page.waitForSelector(".gnav", { state: "visible" });
+
+    await page.waitForTimeout(getRandomInt(2000, 5000));
 
     const isCloudflare = await cloudflareCheck(page);
 
@@ -126,20 +135,26 @@ async function getJobInfo(key: string, page: Page): Promise<any | null> {
 async function mainScrape(
   term: string,
   skip?: number,
-  existingPage?: Page
-): Promise<Page> {
+  existingPage?: Page,
+  existingBrowser?: Browser
+): Promise<{ page: Page; browser: Browser }> {
   let browser: Browser;
   let page: Page;
 
   if (!existingPage) {
+    if (existingBrowser) {
+      existingBrowser.close();
+    }
+
     browser = await firefox.launch({
-      headless: true,
+      headless: false,
     });
 
     const context = await browser.newContext();
     page = await context.newPage();
   } else {
     page = existingPage;
+    browser = existingBrowser;
   }
 
   const keyList = await pullKeyList(term, page, skip);
@@ -148,7 +163,10 @@ async function mainScrape(
     for (let jobListingId of keyList) {
       const jobBoardId = 1; //TODO grab indeed's job board id from db instead of hardcode
 
-      const existingListing = await listingExists(jobListingId, jobBoardId); //TODO create connection pool and remove from arrayk
+      const existingListing: string = await listingExists(
+        jobListingId,
+        jobBoardId
+      ); //TODO create connection pool and remove from arrayk
 
       if (existingListing) {
         console.log(
@@ -160,25 +178,29 @@ async function mainScrape(
       let jobInfo = await getJobInfo(jobListingId, page);
 
       if (jobInfo) {
-        await compileSaveListing(jobInfo, jobListingId, 1);
+        await compileSaveListing(jobInfo, jobListingId, 1, true);
       }
     }
   }
 
-  return page;
+  return { page, browser };
 }
 
 async function compileSaveListing(
   data: any,
   jobListingId: string,
-  jobBoardId: number
+  jobBoardId: number,
+  existingListingChecked: boolean
 ) {
-  const exists = await listingExists(jobListingId, jobBoardId);
+  let existingListingId: Listing["jobListingId"];
 
-  if (exists) {
-    console.log(
-      "Cannot create listing: listing exists: " + JSON.stringify(exists)
-    );
+  //TODO this function really needs a doc
+  if (!existingListingChecked) {
+    existingListingId = await listingExists(jobListingId, jobBoardId);
+  }
+
+  if (existingListingId) {
+    console.log("Cannot create listing: listing exists: " + existingListingId);
     return;
   }
 
@@ -231,7 +253,7 @@ async function compileSaveListing(
   listing.locationObject = data.jobLocation ?? null;
   listing.directApplyFlag = data.directApply;
 
-  const res = await saveListing(listing);
+  const res = await createListing(listing);
   console.log("Listing added: " + res.id);
   return res;
 }

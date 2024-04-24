@@ -4,10 +4,14 @@ import {
   Column,
   ManyToOne,
   JoinColumn,
+  Index,
+  Unique
 } from "typeorm";
 
 import { JobBoard } from "./JobBoard";
 
+@Unique(["jobListingId", "jobBoardId"])
+@Index(["jobListingId", "jobBoardId"])
 @Entity()
 export class Listing {
   @PrimaryGeneratedColumn()
@@ -63,10 +67,12 @@ export class Listing {
   @Column({ name: "closed_flag", default: false })
   closedFlag: boolean = false;
 
+  @Index()
   @ManyToOne((type) => JobBoard)
   @JoinColumn({ name: "job_board_id" })
   jobBoardId: number;
 
+  @Index()
   @Column({ name: "job_listing_id" })
   jobListingId: string;
 

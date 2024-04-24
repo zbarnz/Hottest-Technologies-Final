@@ -1,16 +1,19 @@
 import { Listing } from "../../src/entity/Listing";
 import { getConnection } from "../../src/data-source";
 
+import { User } from "../../src/entity/User";
+import { AutoApply } from "../../src/entity/AutoApply";
+
 //import { utcToUnix } from "../../../src/utils/date";
 
 const THIRTY_DAYS_IN_MILLISECONDS = 30 * 24 * 60 * 60 * 1000;
 
 /**
- * basic save function. NO UPDATES ALLOWED
+ * basic create function. NO UPDATES ALLOWED
  * @param {Listing}  listing - A valid listing object
- * @returns {Promise<Listing[]>} Saved listing
+ * @returns {Promise<Listing[]>} created listing
  */
-export async function saveListing(listing: Listing) {
+export async function createListing(listing: Listing) {
   const connection = await getConnection();
   return await connection.manager.save(listing);
 }
@@ -26,14 +29,30 @@ export async function getListing(
   jobBoardId: Listing["jobBoardId"]
 ): Promise<Listing> {
   const connection = await getConnection();
-  return await connection.manager.findOneBy(Listing, {
-    jobBoardId,
-    jobListingId,
+
+  const listing: Listing = await connection.manager //findOne was producing inefficient queries
+    .createQueryBuilder(Listing, "listing")
+    .select("listing.jobListingId")
+    .where("listing.jobListingId = :jobListingId", { jobListingId })
+    .andWhere("listing.jobBoardId = :jobBoardId", { jobBoardId })
+    .getOne();
+
+  return listing;
+}
+
+export async function getListingById(id: Listing["id"]) {
+  const connection = await getConnection();
+
+  const listing: Listing = await connection.manager.findOne(Listing, {
+    where: { id },
   });
+
+  return listing;
 }
 
 /**
  * This function finds listings in the database that have not been applied to b
+ * @param {User} user - The user applying
  * @param {number}  minSalary - A Listing's minimum maxSalary value
  * @param {boolean} remote - find only remote jobs?
  * @param {string[]} [skills] - List of user's skills
@@ -42,6 +61,7 @@ export async function getListing(
  * @returns {Promise<Listing[]>} Unapplied listings that matches user's preferences
  */
 export async function findUnappliedListing(
+  user: User,
   minSalary?: number,
   remote?: boolean,
   skills?: string[],
@@ -50,6 +70,7 @@ export async function findUnappliedListing(
   limit?: number
 ): Promise<Listing[]> {
   const connection = await getConnection();
+  const userId = user.id;
 
   if (!requiredMatches) {
     requiredMatches = Math.ceil(skills.length * 0.1); //listing must match 10% of skills
@@ -67,10 +88,17 @@ export async function findUnappliedListing(
 
   let query = connection.manager
     .createQueryBuilder(Listing, "listing")
+    .leftJoin(
+      AutoApply,
+      "autoApply",
+      "autoApply.listing = listing.id AND autoApply.user = :userId",
+      { userId }
+    )
     .addSelect(skillMatchQuery, "matchCount")
     .where("listing.maxSalary >= :minSalary", { minSalary }) //max sure the listing max salary is higher than the users min acceptable salary
-    .andWhere("listing.remoteFlag")
+    .andWhere("autoApply.id IS NULL")
     .andWhere("listing.directApplyFlag")
+    .andWhere("listing.closedFlag = false")
     .orderBy("listing.datePosted", "DESC")
     .take(limit || 1);
 
