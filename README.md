@@ -1,14 +1,11 @@
 # Hottest Technologies
 
-hottesttechnologies.com
+Outdated project
+hottesttechnologies is going private.
 
-The website with statistics and trends about popular technologies.
+Still an impressive codebase
 
-## Scraper
 
-see: https://github.com/SocexSolutions/Hottest-Technologies/blob/master/scraper/readme.md
-
-# TODO: UPDATE THIS
 
 ```
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
